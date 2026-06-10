@@ -35,13 +35,9 @@ footer{text-align:center;font-size:0.78rem;color:var(--muted);padding:2rem 0 1re
 </style>
 </head>
 <body>
-<div style="background:#ffeb3b;color:#000;padding:10px 16px;font-weight:700;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-현재 로드된 파일: c:/Users/shong/Downloads/korean-story-world/index.html
-</div>
 <header>
 <h1>📚 한국어 월드 자료실</h1>
-<span class="updated">마지막 업데이트: 2026년 6월</span>
-<span class="updated" style="margin-top:0.5rem;background:rgba(255,255,255,0.2);">TEST: 최신 index.html 적용됨</span>
+<span class="updated" id="updatedDate">마지막 업데이트: 2026년 6월</span>
 </header>
 <main>
 <div class="section">
@@ -224,6 +220,16 @@ var c=document.getElementById(id+'-chevron');
 g.classList.toggle('open');
 c.classList.toggle('open');
 }
+document.addEventListener('DOMContentLoaded', function(){
+  var date = document.lastModified ? new Date(document.lastModified) : new Date();
+  var year = date.getFullYear();
+  var month = ('0' + (date.getMonth() + 1)).slice(-2);
+  var day = ('0' + date.getDate()).slice(-2);
+  var updated = document.getElementById('updatedDate');
+  if(updated){
+    updated.innerText = '마지막 업데이트: ' + year + '년 ' + month + '월 ' + day + '일';
+  }
+});
 </script>
 </body>
 </html>
