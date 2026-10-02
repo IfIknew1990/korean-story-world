@@ -125,6 +125,10 @@ textarea{width:100%; box-sizing:border-box; font:inherit; font-size:13px; min-he
 #card3 .nm{font-size:28px; font-weight:bold; text-align:center;} #card3 .lab{font-size:12px; opacity:.6; margin-top:6px;}
 #card3 .ex{font-size:18px; margin:2px 0;} #card3 .en2{font-size:13px; opacity:.72;} #card3 button{margin-top:8px;}
 #loading3{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#5b5350; font-size:15px; text-align:center; padding:20px;}
+.howl{padding-left:20px; margin:4px 0 10px; line-height:1.55; font-size:15px;} .howl li{margin:3px 0;}
+.cont{display:none; text-align:right; font-size:13px; color:var(--accent); margin-top:4px; animation:blink 1.3s infinite;}
+@keyframes blink{0%,100%{opacity:1} 50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){ .cont{animation:none;} }
 </style>
 </head>
 <body>
@@ -136,6 +140,7 @@ textarea{width:100%; box-sizing:border-box; font:inherit; font-size:13px; min-he
     <div class="g"><span id="stars">★ 0</span></div>
     <div class="g"><span id="phase"></span></div>
     <div class="btns">
+      <button class="ib" id="bHelp" aria-label="How to play" title="How to play">❓</button>
       <button class="ib" id="bPhone" aria-label="폰 사전 Phone dictionary" title="폰 사전 · Phone dictionary">📱</button>
       <button class="ib" id="bMusic" aria-label="음악 Music" title="음악 · Music">🎵</button>
       <button class="ib" id="bSfx" aria-label="효과음 Sound effects" title="효과음 · Sound effects">🔊</button>
@@ -153,7 +158,7 @@ textarea{width:100%; box-sizing:border-box; font:inherit; font-size:13px; min-he
     <div id="diary"><div class="dhead"></div><div class="dlines"></div></div>
   </div>
   <div id="panel">
-    <div id="dlg"><div class="tag" id="tag"></div><div class="box" id="txt"></div><div class="opts" id="opts"></div></div>
+    <div id="dlg"><div class="tag" id="tag"></div><div class="box" id="txt"></div><div class="opts" id="opts"></div><div class="cont" id="cont">▼ Tap to continue</div></div>
     <div class="tip" id="tip"></div>
   </div>
 </div>
@@ -163,14 +168,16 @@ textarea{width:100%; box-sizing:border-box; font:inherit; font-size:13px; min-he
   <div class="en" style="margin-bottom:8px">A Day with Nara's Mom</div>
   <p>어머님이 한국에서 오신 날, 티나의 하루를 함께해요. 집안일을 하고, 갑자기 생기는 일도 해결하면서 한국어를 써 봐요.</p>
   <p class="en">Spend a day with Tina while her mother-in-law (어머님) is visiting from Korea. Do the chores, handle surprises, and speak Korean as you go.</p>
-  <div class="how" style="margin-top:10px">
-    <p>🚶 걷기: 화면을 누르거나 방향키를 써요.<br><span class="en">Move: tap the screen, or use the arrow keys.</span></p>
-    <p>❗ "!" 를 누르면 할 일이 시작돼요. (키보드는 Z)<br><span class="en">Tap a "!" to start a task. (Keyboard: Z)</span></p>
-    <p>💭 점선 구름은 혼잣말이에요. 💬 실선 말풍선은 다른 사람에게 하는 말이에요.<br><span class="en">A dotted cloud is Tina thinking to herself. A solid bubble is Tina speaking to someone.</span></p>
-    <p>📱 밑줄 있는 단어를 누르면 폰에서 뜻을 볼 수 있어요.<br><span class="en">Tap an underlined word to look it up on Tina's phone.</span></p>
-    <p>⚡ 체력이 0이 되거나 아기가 너무 오래 울면 아침부터 다시 해요.<br><span class="en">If Energy hits 0, or the baby cries for too long, you restart the day.</span></p>
-    <p>🔊 소리를 켜고 해 보세요. 🎵 음악과 🔊 효과음은 따로 끌 수 있어요.<br><span class="en">Turn your sound on. Music and sound effects can be muted separately.</span></p>
-  </div>
+  <h2 style="font-size:17px;margin:12px 0 4px">How to play</h2>
+    <ol class="howl">
+      <li><b>Tap the text box</b> (or "▼ Tap to continue") to move the story forward.</li>
+      <li>When the story stops, <b>tap a red "!"</b> or <b>a task button at the top</b>. Tina walks there and starts.</li>
+      <li>You can also <b>tap the floor</b> to walk, or <b>tap furniture</b> to learn its Korean name.</li>
+      <li>When choices appear, <b>tap one</b>. On a phone they are below the text box — <b>scroll down</b> if you can't see them.</li>
+      <li><b>Dotted cloud</b> = Tina is thinking. <b>Solid bubble</b> = Tina is talking to someone.</li>
+      <li><b>Tap an underlined word</b> to see its meaning.</li>
+      <li><b>Turn your sound on.</b> 🎵 music, 🔊 sound effects and 🗣️ voices can be turned off separately. Tap ❓ anytime to see this again.</li>
+    </ol>
   <p style="margin:12px 0 4px;font-size:14px">날짜 고르기 <span class="en">· Choose a day</span></p>
   <div class="days">
     <button class="ib dayb" data-day="1">1일째 · Day 1<br><small>집안일 · Chores</small></button>
@@ -180,6 +187,20 @@ textarea{width:100%; box-sizing:border-box; font:inherit; font-size:13px; min-he
   <p style="margin-top:14px;font-size:14px">저장 코드로 이어서 하기 <span class="en">· Continue with a save code</span></p>
   <textarea id="codeIn" placeholder="NARA1-… (저장 코드 · save code)" aria-label="저장 코드 save code"></textarea>
   <button class="big alt" id="btnLoad">불러오기 · Load</button> <span id="loadMsg" style="font-size:14px"></span>
+</div></div>
+
+<div class="ov" id="ovHelp"><div class="sheet">
+  <h2>How to play</h2>
+  <ol class="howl">
+      <li><b>Tap the text box</b> (or "▼ Tap to continue") to move the story forward.</li>
+      <li>When the story stops, <b>tap a red "!"</b> or <b>a task button at the top</b>. Tina walks there and starts.</li>
+      <li>You can also <b>tap the floor</b> to walk, or <b>tap furniture</b> to learn its Korean name.</li>
+      <li>When choices appear, <b>tap one</b>. On a phone they are below the text box — <b>scroll down</b> if you can't see them.</li>
+      <li><b>Dotted cloud</b> = Tina is thinking. <b>Solid bubble</b> = Tina is talking to someone.</li>
+      <li><b>Tap an underlined word</b> to see its meaning.</li>
+      <li><b>Turn your sound on.</b> 🎵 music, 🔊 sound effects and 🗣️ voices can be turned off separately. Tap ❓ anytime to see this again.</li>
+    </ol>
+  <button class="big" data-close="ovHelp">OK</button>
 </div></div>
 
 <div class="ov" id="ovPhone"><div class="sheet">
@@ -535,13 +556,13 @@ if(Object.keys(VOICES).length) $('bVoice').hidden = false;
 
 // =============== 대화 UI ===============
 let advRes = null;
-function waitAdvance(){ return new Promise(r => { advRes = r; }); }
-function advance(){ if(advRes){ const r = advRes; advRes = null; r(); } }
+function waitAdvance(){ $('cont').style.display = 'block'; return new Promise(r => { advRes = r; }); }
+function advance(){ if(advRes){ const r = advRes; advRes = null; $('cont').style.display = 'none'; r(); } }
 $('panel').addEventListener('click', e => { if(e.target.closest('button') || e.target.closest('.w')) return; advance(); });
 function showBox(kind, who, tag, html, en){
   $('dlg').className = 'dlg ' + kind + ' who-' + who;
   const t = $('tag'); t.textContent = tag; t.style.display = tag ? '' : 'none';
-  $('txt').innerHTML = html + (en ? `<div class="en">${esc(en)}</div>` : ''); $('opts').innerHTML = ''; $('tip').textContent = '';
+  $('txt').innerHTML = html + (en ? `<div class="en">${esc(en)}</div>` : ''); $('opts').innerHTML = ''; $('tip').textContent = ''; $('cont').style.display = 'none';
 }
 function speakerInfo(sp){
   return sp === 'TH' ? ['think', '티나의 생각'] : sp === 'T' ? ['speak', '티나'] : sp === 'M' ? ['speak', '어머님'] :
@@ -579,6 +600,8 @@ function action({prompt, label, taps = 1, sfx: sn}){
     $('opts').innerHTML = ''; $('opts').appendChild(bt); S.pickN = 1; S.pickFn = () => bt.click();
   });
 }
+function showOpts(){ requestAnimationFrame(() => { const o = $('opts'); if(o.lastElementChild) o.lastElementChild.scrollIntoView({block: 'nearest', behavior: 'smooth'}); }); }
+new MutationObserver(() => { if($('opts').children.length) showOpts(); }).observe($('opts'), {childList: true});
 function toast2(lines){
   const el = document.createElement('span');
   el.innerHTML = lines.map(([k, e]) => `${esc(k)}${e ? `<small>${esc(e)}</small>` : ''}`).join('<br>');
@@ -1239,6 +1262,7 @@ function openPhone(idx){
   $('phoneBody').innerHTML = h; $('ovPhone').classList.add('on');
 }
 $('bPhone').onclick = () => openPhone(null);
+$('bHelp').onclick = () => $('ovHelp').classList.add('on');
 document.addEventListener('click', e => {
   const w = e.target.closest('.w'); if(w && w.dataset.d != null){ openPhone(+w.dataset.d); return; }
   const b = e.target.closest('#phoneBody button[data-d]'); if(b){ openPhone(+b.dataset.d); return; }
