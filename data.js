@@ -12,7 +12,7 @@
        (최근 날짜 순으로 8개). 예전 영상처럼 date가 없으면 그 줄에 안 나와요
 
    ■ 새 재생목록(칸) 추가: { section: ... } 덩어리 하나를 통째로 복사해서 붙이고 고치기
-     - section: "story" = Story Videos / "repeat" = Repeat Videos / "hangul" = Hangul
+     - section: "story" = Story Videos / "shadowing" = Shadowing / "hangul" = Hangul
      - playlist: 유튜브 재생목록 이름 그대로. 탭에는 마지막 " | " 뒤 부분만 보여요
        (예: "Korean Shadowing | Beginner 2" → 탭 이름 "Beginner 2")
      - ko: 탭에 영어 아래 작게 보일 한글 이름(예: "초급 2"). 없어도 돼요
@@ -47,8 +47,8 @@ var VIDEOS = [
     { title: "Beginner Korean Story | Peter Hates Bananas? EP1", youtube: "https://youtu.be/tPmjW4tIt5I", date: "2026-10-20" },
   ]},
 
-  // ==================== Repeat Videos ====================
-  { section: "repeat", playlist: "Korean Shadowing | Beginner 1 (old)", ko: "초급 1", videos: [
+  // ==================== Shadowing ====================
+  { section: "shadowing", playlist: "Korean Shadowing | Beginner 1 (old)", ko: "초급 1", videos: [
     { title: "S011-2 제리가 마트에서 키위를 많이 샀어요.", youtube: "https://youtu.be/SnzDwWsADNo" },
     { title: "S000-2 요코도 한국에 있어요?", youtube: "https://youtu.be/0B-YhjdRlWI" },
     { title: "S002-X 제리가 언제 일해요?", youtube: "https://youtu.be/5er8QsD3Fzw" },
@@ -79,7 +79,7 @@ var VIDEOS = [
     { title: "티나가 몇 시에 일어났어요", youtube: "https://youtu.be/2XZJMZI9C2M" },
     { title: "아, 배 아파", youtube: "https://youtu.be/jede514O3Yg" },
   ]},
-  { section: "repeat", playlist: "Korean Shadowing | Beginner 2", ko: "초급 2", videos: [
+  { section: "shadowing", playlist: "Korean Shadowing | Beginner 2", ko: "초급 2", videos: [
     { title: "S018-1 제리는 미국 사람이고 토니는 영국사람이에요", youtube: "https://youtu.be/Y9QlQyF8bWg" },
     { title: "S022 제리는 강아지를 가지고 싶어해요 Audio only", youtube: "https://youtu.be/UC4a4QyhRwk" },
     { title: "S023 제리는 강아지를 사러 갔어요", youtube: "https://youtu.be/zoFsR02O5Yg" },
@@ -115,7 +115,7 @@ var VIDEOS = [
     { title: "미주가 배가 아파서 엄마가 미주를 병원에 데리고 갔어요.", youtube: "https://youtu.be/s3U9-j2fl3s" },
     { title: "뭐 하려고?", youtube: "https://youtu.be/I-8nxp6h2kY" },
   ]},
-  { section: "repeat", playlist: "Korean Shadowing | Beginner 3", ko: "초급 3", videos: [
+  { section: "shadowing", playlist: "Korean Shadowing | Beginner 3", ko: "초급 3", videos: [
     { title: "토니가 배고프다고 빵집에 가자는 거야", youtube: "https://youtu.be/tPYKTtj2vcM" },
     { title: "토니가 배고프다고 빵집에 가자는 거예요", youtube: "https://youtu.be/6C2cyqF93mY" },
     { title: "헤어지자는 말이야", youtube: "https://youtu.be/yrc7Arrtie4" },
@@ -142,7 +142,7 @@ var VIDEOS = [
     { title: "S025 삼성 핸드폰이 있어야 삼성 페이를 쓸 수 있어요", youtube: "https://youtu.be/XqqpZi0Ee1c" },
     { title: "간접화법 2 Amended", youtube: "https://youtu.be/KlmRMcPgBco" },
   ]},
-  { section: "repeat", playlist: "Korean Shadowing | Intermediate", ko: "중급", videos: [
+  { section: "shadowing", playlist: "Korean Shadowing | Intermediate", ko: "중급", videos: [
     { title: "너 요즘에 소개팅녀랑 잘 되가냐?", youtube: "https://youtu.be/momhd8AzhW0" },
     { title: "한 번도 돈을 안 내는 거야", youtube: "https://youtu.be/VvdpMBLnkAI" },
     { title: "나 목요일에 민수랑 모모코랑 영화 보러 다녀왔거든", youtube: "https://youtu.be/IZda9ebomtQ" },
@@ -153,19 +153,19 @@ var VIDEOS = [
     { title: "준호야 오랜만이야", youtube: "https://youtu.be/6JHuBziWL-k" },
     { title: "야, 햄버거가 당기는데땡기는데, 롯데리아 갈래", youtube: "https://youtu.be/WVjU24paufA" },
   ]},
-  { section: "repeat", playlist: "Beginner Korean Shadowing | Series 1", ko: "시리즈 1", videos: [
+  { section: "shadowing", playlist: "Beginner Korean Shadowing | Series 1", ko: "시리즈 1", videos: [
     { title: "Beginner Korean Shadowing | Where Is Jerry? | S0001", youtube: "https://youtu.be/zUzSxWer1bw", date: "2026-10-20" },
     { title: "Beginner Korean Shadowing | Jerry Is at School | S0002", youtube: "https://youtu.be/I1SaaJyJJL0", date: "2026-10-20" },
     { title: "Beginner Korean Shadowing | Do You Like Coffee? | S0003", youtube: "https://youtu.be/GwCR2M6txvc", date: "2026-10-20" },
     { title: "Beginner Korean Shadowing | Do You Eat Kimchi? | S0004", youtube: "https://youtu.be/OC-3qYe1lhY", date: "2026-10-20" },
   ]},
-  { section: "repeat", playlist: "Korean Shadowing | Sentence Endings", ko: "문장 종결 어미", videos: [
+  { section: "shadowing", playlist: "Korean Shadowing | Sentence Endings", ko: "문장 종결 어미", videos: [
     { title: "F001 먹을래?", youtube: "https://youtu.be/U3QPfe8c-So" },
     { title: "F002 우리 내일 영화 볼까", youtube: "https://youtu.be/bosuXygZUYU" },
     { title: "F003  거든 /  잖아 반말", youtube: "https://youtu.be/VqglPFATXxM" },
     { title: "F004  거든요  잖아요 존댓말", youtube: "https://youtu.be/zsbY6KNjdhg" },
   ]},
-  { section: "repeat", playlist: "Korean Shadowing | Real-Life Situations", ko: "상황별 한국어", videos: [
+  { section: "shadowing", playlist: "Korean Shadowing | Real-Life Situations", ko: "상황별 한국어", videos: [
     { title: "식당 한국어", youtube: "https://youtu.be/c2iIca8ocYs" },
   ]},
 

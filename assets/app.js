@@ -8,11 +8,11 @@
   var LEVELS_KO = { 'Beginner 1': '초급 1', 'Beginner 2': '초급 2', 'Beginner 3': '초급 3', 'Intermediate 1': '중급 1', 'Intermediate 2': '중급 2' };
   var SECTIONS = {
     story: { title: 'Story Videos', ko: '이야기 영상', desc: 'Watch a story in Korean', char: 'peter' },
-    repeat: { title: 'Repeat Videos', ko: '따라 하기 영상', desc: 'Watch and repeat out loud', char: 'alien' },
+    shadowing: { title: 'Shadowing', ko: '섀도잉', desc: 'Watch and repeat out loud', char: 'alien' },
     books: { title: 'Books + Audio', ko: '책과 오디오', desc: 'Read and listen to stories', char: 'ghost' },
     hangul: { title: 'Hangul', ko: '한글', desc: 'Learn the Korean alphabet', char: 'knight' }
   };
-  var ORDER = ['story', 'repeat', 'books', 'hangul'];
+  var ORDER = ['story', 'shadowing', 'books', 'hangul'];
 
   var ICONS = {
     back: '<path d="M15 18l-6-6 6-6"/>',
@@ -120,13 +120,14 @@
 
   /* ---------- read data.js ---------- */
   var problems = [];
-  var tabsBySection = { story: [], repeat: [], hangul: [] };   // [{ name, label, slug, videos: [] }]
+  var tabsBySection = { story: [], shadowing: [], hangul: [] };   // [{ name, label, slug, videos: [] }]
   var allVideos = [];
   (window.VIDEOS || []).forEach(function (pl, i) {
     if (!pl) return;
     var where = 'VIDEOS block #' + (i + 1) + ' "' + (pl.playlist || '') + '"';
     var section = String(pl.section || '').toLowerCase().trim();
-    if (!tabsBySection[section]) return problems.push(where + ': section must be "story", "repeat" or "hangul".');
+    if (section === 'repeat') section = 'shadowing';   // old name
+    if (!tabsBySection[section]) return problems.push(where + ': section must be "story", "shadowing" or "hangul".');
     var name = String(pl.playlist || '').trim();
     if (!name) return problems.push(where + ': playlist name is missing.');
     var label = name.split(' | ').pop().trim();
@@ -418,8 +419,9 @@
       try { return decodeURIComponent(s); } catch (e) { return s; }
     });
     var html = null;
+    if (parts[0] === 'repeat') { location.replace('#/shadowing' + (parts[1] ? '/' + parts[1] : '')); return; }   // old links
     if (!parts[0]) html = viewHome();
-    else if (parts[0] === 'story' || parts[0] === 'repeat' || parts[0] === 'hangul') html = viewVideos(parts[0], parts[1]);
+    else if (parts[0] === 'story' || parts[0] === 'shadowing' || parts[0] === 'hangul') html = viewVideos(parts[0], parts[1]);
     else if (parts[0] === 'books') {
       if (parts[3]) html = viewEpisode(parts[2], parts[3]);
       else if (parts[2]) html = viewBook(parts[2]);
