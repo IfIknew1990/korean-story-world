@@ -143,6 +143,7 @@ var VIDEOS = [
     { title: "간접화법 2 Amended", youtube: "https://youtu.be/KlmRMcPgBco" },
     // ↓ 새로 추가한 영상
     { title: "비가 와서 그런지 파전이 더 맛있었어요", youtube: "https://youtu.be/My0sj9RZ5g4", date: "2026-10-20" },
+    { title: "이 집 파전은 좀 비싸기는 한데 맛있어.", youtube: "https://youtu.be/y1BBV_Y5ZUY", date: "2026-10-20" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Intermediate", ko: "중급", videos: [
     { title: "너 요즘에 소개팅녀랑 잘 되가냐?", youtube: "https://youtu.be/momhd8AzhW0" },
