@@ -1,17 +1,22 @@
 /* =====================================================================
-   한국어 월드 자료실 — 데이터 파일 (이 파일 하나만 고치면 돼요)
+   K-Storyteller Library — 데이터 파일 (이 파일 하나만 고치면 돼요)
    =====================================================================
 
-   ■ 새 영상 추가: VIDEOS 맨 아래에 한 줄 복사해서 붙이고 고치기
-     { type: "story", level: "Beginner 1", title: "영상 제목", youtube: "https://youtu.be/xxxx" },
-     - type: "story" = Story Videos / "repeat" = Repeat Videos
-     - level: Beginner 1, Beginner 2, Beginner 3, Intermediate 1, Intermediate 2 중 하나
+   ■ 새 영상 추가: 아래 VIDEOS에서 그 영상이 들어 있는 유튜브 재생목록 칸을 찾아,
+     videos: [ ... ] 안에 한 줄 복사해서 붙이고 고치기 (위에서 아래 순서대로 화면에 나와요)
+       { title: "영상 제목", youtube: "https://youtu.be/xxxx", date: "2026-11-01" },
      - youtube: 유튜브 공유 링크를 그대로 붙여 넣으면 돼요(주소 모양은 상관없어요)
+     - date: 사이트에 올린 날짜. 첫 화면 "New" 줄이 이 날짜가 최근인 순서로 8개를 보여 줘요
+
+   ■ 새 재생목록(칸) 추가: { section: ... } 덩어리 하나를 통째로 복사해서 붙이고 고치기
+     - section: "story" = Story Videos / "repeat" = Repeat Videos / "hangul" = Hangul
+     - playlist: 유튜브 재생목록 이름 그대로. 탭에는 마지막 " | " 뒤 부분만 보여요
+       (예: "Korean Shadowing | Beginner 2" → 탭 이름 "Beginner 2")
 
    ■ 새 책 에피소드 추가: EPISODES 맨 아래에 아래 덩어리를 복사해서 붙이고 고치기
      {
        book: "책 이름", level: "Beginner 1", episode: 2, title: "에피소드 제목(없어도 됨)",
-       date: "2026-11-01",          // 올린 날짜. 14일 동안 "New" 표시가 붙어요
+       date: "2026-11-01",          // 올린 날짜. 14일 동안 "New" 표시가 붙고, 첫 화면 New 줄에도 나와요
        images: ["tina-2.png", "tina-3.png"],   // 1~2장. 첫째는 글 맨 위, 둘째는 이야기 중간
        audio: "https://drive.google.com/file/d/xxxx/view?usp=sharing",   // 드라이브 공유 링크
        text: `
@@ -20,53 +25,150 @@
      두 번째 문단. 문단 사이는 빈 줄 하나로 나눠요.
      `,
      },
+     - 책 레벨: Beginner 1, Beginner 2, Beginner 3, Intermediate 1, Intermediate 2 중 하나
      - 삽화: 그림 원본을 originals 폴더에 넣고 shrink-images.bat을 더블클릭하세요.
        images에는 원본 파일 이름을 그대로 적으면 돼요(예: "tina-2.png").
      - 둘째 그림을 원하는 곳(글 끝도 됨)에 넣고 싶으면 글 안에 [그림] 이라고 한 줄 적어요. 없으면 이야기 중간에 들어가요.
      - 오디오가 유튜브 영상이면: audio: "유튜브 링크", start: "2:15"  (그 시간부터 재생)
-     - 오디오가 없으면 audio 줄을 지워요. 그러면 재생 창과 Listen only 버튼이 숨겨져요.
+     - 오디오가 없으면 audio 줄을 지워요. 그러면 재생 창과 모드 버튼이 숨겨져요.
      - 글 안에 ` (백틱) 글자는 쓰지 마세요.
 
-   ■ 레벨 칸은 항목이 하나라도 있을 때만 화면에 나와요.
+   ■ 영상이나 책이 하나도 없는 칸(탭)은 화면에 나오지 않아요.
    ===================================================================== */
 
 var VIDEOS = [
-  // ---------- Story Videos ----------
-  { type: "story", level: "Beginner 1", title: "Peter Hates Bananas? EP1", youtube: "https://youtu.be/tPmjW4tIt5I" }, // 레벨 임시
 
-  // ---------- Repeat Videos (새 채널 K-Storyteller) ----------
-  { type: "repeat", level: "Beginner 1", title: "S0001 Where Is Jerry?", youtube: "https://youtu.be/zUzSxWer1bw" },      // 레벨 임시
-  { type: "repeat", level: "Beginner 1", title: "S0002 Jerry Is at School", youtube: "https://youtu.be/I1SaaJyJJL0" },   // 레벨 임시
-  { type: "repeat", level: "Beginner 1", title: "S0003 Do You Like Coffee?", youtube: "https://youtu.be/GwCR2M6txvc" },  // 레벨 임시
-  { type: "repeat", level: "Beginner 1", title: "S0004 Do You Eat Kimchi?", youtube: "https://youtu.be/OC-3qYe1lhY" },   // 레벨 임시
+  // ==================== Story Videos ====================
+  { section: "story", playlist: "Learn Korean Through Stories | Beginner", videos: [
+    { title: "Beginner Korean Story | Peter Hates Bananas? EP1", youtube: "https://youtu.be/tPmjW4tIt5I", date: "2026-10-20" },
+  ]},
 
-  // ---------- Repeat Videos (섀도잉 문장구조, 예전 사이트에서 옮김) ----------
-  { type: "repeat", level: "Beginner 1", title: "S000 제리가 한국에 있어요.", youtube: "https://youtu.be/j0WrUE7zo6c" },
-  { type: "repeat", level: "Beginner 1", title: "S000-1 제리가 지금 학교에 있어요.", youtube: "https://youtu.be/YEgfIudEQ60" },
-  { type: "repeat", level: "Beginner 1", title: "S000-2 요코도 한국에 있어요?", youtube: "https://youtu.be/0B-YhjdRlWI" },
-  { type: "repeat", level: "Beginner 1", title: "S001 제리가 사람이에요", youtube: "https://youtu.be/u0ddWsLXtsU" },
-  { type: "repeat", level: "Beginner 1", title: "S001-1 고릴라가 사람이 아니에요", youtube: "https://youtu.be/OHydusXOWWA" },
-  { type: "repeat", level: "Beginner 1", title: "S002 제리가 매일 맥도날드에 가요", youtube: "https://youtu.be/KOGGMMWlXdo" },
-  { type: "repeat", level: "Beginner 1", title: "S002-1 토요일에 일해요", youtube: "https://youtu.be/5er8QsD3Fzw" },
+  // ==================== Repeat Videos ====================
+  { section: "repeat", playlist: "Korean Shadowing | Beginner 1 (old)", videos: [
+    { title: "S011-2 제리가 마트에서 키위를 많이 샀어요.", youtube: "https://youtu.be/SnzDwWsADNo", date: "2025-10-22" },
+    { title: "S000-2 요코도 한국에 있어요?", youtube: "https://youtu.be/0B-YhjdRlWI", date: "2026-03-04" },
+    { title: "S002-X 제리가 언제 일해요?", youtube: "https://youtu.be/5er8QsD3Fzw", date: "2026-05-05" },
+    { title: "S002-4 제리가 매일 맥도날드에 가요", youtube: "https://youtu.be/KOGGMMWlXdo", date: "2026-05-20" },
+    { title: "S003 너 이 버스를  타?", youtube: "https://youtu.be/QvcqGIyoKEw", date: "2026-05-25" },
+    { title: "S003-1 오늘은 음악을 안 들었어", youtube: "https://youtu.be/0PDhWHAcjoQ", date: "2026-06-01" },
+    { title: "S000 제리가 한국에 있어요", youtube: "https://youtu.be/j0WrUE7zo6c", date: "2026-06-10" },
+    { title: "S000-1 제리가 지금 학교에 있어요.", youtube: "https://youtu.be/YEgfIudEQ60", date: "2026-06-10" },
+    { title: "S001 제리가 사람이에요", youtube: "https://youtu.be/u0ddWsLXtsU", date: "2026-06-15" },
+    { title: "S001-1 고릴라가 사람이 아니에요", youtube: "https://youtu.be/OHydusXOWWA", date: "2026-06-15" },
+    { title: "S002-3 요코가 비건이에요", youtube: "https://youtu.be/vaacbII9KK4", date: "2026-06-24" },
+    { title: "S002 요코가 레이디 가가랑 일요일에 맥도날드에서 일해요", youtube: "https://youtu.be/DfhUcsQuL-E", date: "2026-07-12" },
+    { title: "S002-1  제리가 버거킹에서 일해요? 맥도날드에서 일해요?", youtube: "https://youtu.be/yOOXFUVmmx0", date: "2026-07-12" },
+    { title: "S002-2  제리가 버거킹에서 일해요? 공부해요?", youtube: "https://youtu.be/DF56oSKsAf8", date: "2026-07-12" },
+    { title: "S003-1 내가 매일 아침에 버스에서 음악을 듣잖아", youtube: "https://youtu.be/F0UEYuF6ngw", date: "2026-07-14" },
+    { title: "수영을 배우고 싶어요", youtube: "https://youtu.be/1Yy8DJlV_4Y", date: "2026-07-19" },
+    { title: "수고하셨습니다", youtube: "https://youtu.be/tS_TBmRu-ks", date: "2026-07-19" },
+    { title: "S004 제리가     강아지가  있어요", youtube: "https://youtu.be/c1vUxwRw3m4", date: "2026-08-18" },
+    { title: "오트밀이 없으면 뭐 먹어요", youtube: "https://youtu.be/Dlf_oYZ-CF4", date: "2026-08-28" },
+    { title: "요코는 술을 많이 마셔도 다음 날 머리가 안 아파요", youtube: "https://youtu.be/EfVOH1XqaKM", date: "2026-08-28" },
+    { title: "S004-1 제리가 강아지가 한 마리 있어요.", youtube: "https://youtu.be/tCrsDPc_iFE", date: "2026-08-30" },
+    { title: "날씨가 좋으면 밖에서 요가를 해요", youtube: "https://youtu.be/gKX3FDtpTXM", date: "2026-09-07" },
+    { title: "어제 아침에 날씨가 좋아서 제리가 밖에서 요가를 했어요", youtube: "https://youtu.be/DDl_W_waUZc", date: "2026-09-28" },
+    { title: "민수가 지금 서울에 살아요 전에는 부산에 살았어요", youtube: "https://youtu.be/8FCa-GB_Qc4", date: "2026-09-28" },
+    { title: "오늘 토요일이에요", youtube: "https://youtu.be/0KBCcjHUjOU", date: "2026-10-10" },
+    { title: "티나가 고모 집에서 살아요", youtube: "https://youtu.be/Y7-my-X0j-w", date: "2026-10-10" },
+    { title: "요코가 오늘 아침에 스터디 카페에 시험을 준비하러 갔어요.", youtube: "https://youtu.be/QnVll_ZWJwM", date: "2026-10-10" },
+    { title: "티나가 몇 시에 일어났어요", youtube: "https://youtu.be/2XZJMZI9C2M", date: "2026-10-10" },
+    { title: "아, 배 아파", youtube: "https://youtu.be/jede514O3Yg", date: "2026-10-10" },
+  ]},
+  { section: "repeat", playlist: "Korean Shadowing | Beginner 2", videos: [
+    { title: "S018-1 제리는 미국 사람이고 토니는 영국사람이에요", youtube: "https://youtu.be/Y9QlQyF8bWg", date: "2023-10-01" },
+    { title: "S022 제리는 강아지를 가지고 싶어해요 Audio only", youtube: "https://youtu.be/UC4a4QyhRwk", date: "2023-10-02" },
+    { title: "S023 제리는 강아지를 사러 갔어요", youtube: "https://youtu.be/zoFsR02O5Yg", date: "2023-10-04" },
+    { title: "간접화법", youtube: "https://youtu.be/w52HMaNf0b8", date: "2023-10-05" },
+    { title: "간접화법 3", youtube: "https://youtu.be/puLLAeS_4SI", date: "2023-10-06" },
+    { title: "간접화법 4", youtube: "https://youtu.be/_gM4JRbBXBA", date: "2023-10-08" },
+    { title: "S022 제리는 강아지를 가지고 싶어해요 Part 1", youtube: "https://youtu.be/fvXfltW6y6w", date: "2023-10-20" },
+    { title: "S022 제리는 강아지를 가지고 싶어해요 Part 2", youtube: "https://youtu.be/C1upUISb21Q", date: "2023-10-28" },
+    { title: "S022 제리는 강아지를 가지고 싶어해요 Part 3", youtube: "https://youtu.be/8HNzPtbpY3k", date: "2023-11-10" },
+    { title: "S024 제리는 한국말을 할 수 있어요", youtube: "https://youtu.be/8r6AmILfVjQ", date: "2023-11-10" },
+    { title: "간접화법 5", youtube: "https://youtu.be/SEfQFY4nl90", date: "2025-05-24" },
+    { title: "벌칙이 손목을 때리는 거 였어", youtube: "https://youtu.be/uRtQ0Xvehog", date: "2026-06-16" },
+    { title: "벌칙이 손목을 때리는 거 였어요", youtube: "https://youtu.be/zDV5zTmAKBA", date: "2026-06-16" },
+    { title: "어제 가족들이랑 다 같이 햄버거를 시켜서 먹었는데 엘리스가 또 햄버거를 다 안 먹고 남긴 거야", youtube: "https://youtu.be/yub5cU9E3oI", date: "2026-06-20" },
+    { title: "오늘 제리가 가족들이랑 다 같이 햄버거를 시켜서 먹었어요", youtube: "https://youtu.be/6fgBL8GjgeQ", date: "2026-06-20" },
+    { title: "(간접화법 1) 제리가 롯데월드에 가자고 했어요", youtube: "https://youtu.be/-WR5O1aksE8", date: "2026-06-20" },
+    { title: "어제 나하고 동생들이 엄마한테 쿠키 만들어 달라고 졸랐거든", youtube: "https://youtu.be/EL0FAHmog2s", date: "2026-07-19" },
+    { title: "(반말) 어제가 생일이라서 강아지들한테 ‘강아지 쿠키’를 만들어 주고 싶었거든", youtube: "https://youtu.be/RELFnmDTdO0", date: "2026-07-19" },
+    { title: "(존댓말) 어제가 생일이라서 강아지들한테 ‘강아지 쿠키’를 만들어 주고 싶었거든요", youtube: "https://youtu.be/f_zus_HmkDM", date: "2026-07-19" },
+    { title: "제리가 강아지를 사고 싶어해요", youtube: "https://youtu.be/j8owXkzlmZw", date: "2026-07-19" },
+    { title: "민수가 오늘 저녁에 부산에 가야 돼요", youtube: "https://youtu.be/ofh9H4HdIzA", date: "2026-07-24" },
+    { title: "이번에는  100kg 바벨을 들어봤는데 이번에는 너무 무겁더라구", youtube: "https://youtu.be/A3gp6p15oaQ", date: "2026-07-30" },
+    { title: "먹지 마  그거 상했어", youtube: "https://youtu.be/5QM8y4Kia7M", date: "2026-08-08" },
+    { title: "S023 new 제리가 강아지를 사러 갔어요", youtube: "https://youtu.be/Xbw441soIzU", date: "2026-08-16" },
+    { title: "제리가 반바지를 입고 자전거를 탔어요", youtube: "https://youtu.be/_x0q5EkcB9g", date: "2026-08-27" },
+    { title: "돈이 2천원 밖에 없었어요", youtube: "https://youtu.be/0bjJatCxJWM", date: "2026-09-02" },
+    { title: "민수가 오늘 아침을 조금밖에 안 먹었어요", youtube: "https://youtu.be/2qX2iZCCe1M", date: "2026-09-14" },
+    { title: "토니가 직업이 의사예요", youtube: "https://youtu.be/8JIhoPqQo_g", date: "2026-09-28" },
+    { title: "제리 할아버지가 담배를 끊기로 했어요", youtube: "https://youtu.be/X8bAik9LpnE", date: "2026-09-28" },
+    { title: "제리가  내일 롯데월드에 가자고 했어요", youtube: "https://youtu.be/59w1dyTxdqg", date: "2026-09-29" },
+    { title: "제리가 오늘 비가 오는데 밖에서 축구를 해서 옷이 다 젖었어요.", youtube: "https://youtu.be/kP6PqxpOmfA", date: "2026-10-08" },
+    { title: "제리가 제일 좋아하는 음식은 돈까스예요.", youtube: "https://youtu.be/Tt_oNk8LuPk", date: "2026-10-08" },
+    { title: "미주가 배가 아파서 엄마가 미주를 병원에 데리고 갔어요.", youtube: "https://youtu.be/s3U9-j2fl3s", date: "2026-10-08" },
+    { title: "뭐 하려고?", youtube: "https://youtu.be/I-8nxp6h2kY", date: "2026-10-16" },
+  ]},
+  { section: "repeat", playlist: "Korean Shadowing | Beginner 3", videos: [
+    { title: "토니가 배고프다고 빵집에 가자는 거야", youtube: "https://youtu.be/tPYKTtj2vcM", date: "2026-06-19" },
+    { title: "토니가 배고프다고 빵집에 가자는 거예요", youtube: "https://youtu.be/6C2cyqF93mY", date: "2026-06-19" },
+    { title: "헤어지자는 말이야", youtube: "https://youtu.be/yrc7Arrtie4", date: "2026-09-05" },
+    { title: "내가 이제 그만하자고 하니까 무슨 말이냐고 묻는 거야.", youtube: "https://youtu.be/rjdRDbSmaL8", date: "2026-10-16" },
+    { title: "어머님, 이거 좀 도와주세요", youtube: "https://youtu.be/ARsxQtxl3UU", date: "2026-10-18" },
+    // ↓ "Long Repetition" 재생목록에서 이 칸으로 옮긴 영상 (재생목록 순서 그대로)
+    { title: "S043   내일 일찍 일어나야 돼요", youtube: "https://youtu.be/7gy7KhXBPSw", date: "2026-03-04" },
+    { title: "S042    맛있는 거 먹는 거 좋아해?", youtube: "https://youtu.be/bVvi0XwCLHo", date: "2026-03-02" },
+    { title: "S041  이거 니 거야?", youtube: "https://youtu.be/pmNeZp0IpU8", date: "2026-03-02" },
+    { title: "S040 제리가 앉을 수 있게 아버지가 가방을 뒷자석으로 옮겼어요", youtube: "https://youtu.be/xZN67cYyIQs", date: "2025-12-01" },
+    { title: "S039  제리는 보통 아침을 먹기 전에 이를 닦아요", youtube: "https://youtu.be/Nf6aZajSBso", date: "2025-11-11" },
+    { title: "S038 민수야 오늘 비 올지도 모르니까 우산 세 개만 챙겨", youtube: "https://youtu.be/U2Pu4lcsTOU", date: "2025-09-18" },
+    { title: "S037 배우는 연기를 잘 해야 돼요.", youtube: "https://youtu.be/z17MG6ybAbk", date: "2025-07-23" },
+    { title: "S036 너 하루에 몇 시간 자?", youtube: "https://youtu.be/jVHxXAHvwM4", date: "2025-06-21" },
+    { title: "S035 제리가 매일 15번 버스를 타고 학교에 가요", youtube: "https://youtu.be/t4aILpXaFOU", date: "2025-06-21" },
+    { title: "S034 어제 공원에서 2시간 동안 걸었어요", youtube: "https://youtu.be/TTitkxebJ8k", date: "2025-06-13" },
+    { title: "S033 제리가 캠핑을 가기로 했어요", youtube: "https://youtu.be/x4dKLKf7Is0", date: "2025-06-13" },
+    { title: "S031 제리는 오늘 비가 오는데 밖에서 축구를 해서 제리옷이 다 젖었어요", youtube: "https://youtu.be/F9JEuWN_z9s", date: "2024-05-14" },
+    { title: "S030 티나는 전에 비건이 아니었어요", youtube: "https://youtu.be/j4WAE5YFzm8", date: "2024-04-15" },
+    { title: "S029 현빈은 주인공이어서 사랑의 불시착에 많이 나와요", youtube: "https://youtu.be/WmLcvubxwP8", date: "2024-03-10" },
+    { title: "S028 누나, 내가 마시던 우유 못 봤어", youtube: "https://youtu.be/xKY9tm_v1yg", date: "2024-02-07" },
+    { title: "S027 어렸을 때 자주 가던 식당 이름이 기억이 안나요", youtube: "https://youtu.be/dhf7yD2Z1so", date: "2024-02-07" },
+    { title: "S026 제가 제일 좋아하는 한국 음식은 떡볶이예요", youtube: "https://youtu.be/CmU6RSyK35A", date: "2024-01-31" },
+    { title: "S025 삼성 핸드폰이 있어야 삼성 페이를 쓸 수 있어요", youtube: "https://youtu.be/XqqpZi0Ee1c", date: "2024-01-30" },
+    { title: "간접화법 2 Amended", youtube: "https://youtu.be/KlmRMcPgBco", date: "2023-10-06" },
+  ]},
+  { section: "repeat", playlist: "Korean Shadowing | Intermediate", videos: [
+    { title: "너 요즘에 소개팅녀랑 잘 되가냐?", youtube: "https://youtu.be/momhd8AzhW0", date: "2026-06-19" },
+    { title: "한 번도 돈을 안 내는 거야", youtube: "https://youtu.be/VvdpMBLnkAI", date: "2026-07-13" },
+    { title: "나 목요일에 민수랑 모모코랑 영화 보러 다녀왔거든", youtube: "https://youtu.be/IZda9ebomtQ", date: "2026-07-14" },
+    { title: "키오스크에서 표 사려고 하는데, 좋은 자리는 이미 다 팔렸더라구", youtube: "https://youtu.be/rsnrmAJMlP0", date: "2026-07-15" },
+    { title: "민수가 젤 좋아하는 영화라고도 말하고 염정아랑 문근영 같은 유명한 배우들도 나온다고도 말해서 좀 기대감이 생겼어", youtube: "https://youtu.be/C0F8A9XZf-0", date: "2026-07-15" },
+    // ↓ "Long Repetition" 재생목록에서 이 칸으로 옮긴 영상 (재생목록 순서 그대로)
+    { title: "서울에 맛집 좀 추천해 주세요.", youtube: "https://youtu.be/Mxh4MnC2mcU", date: "2026-09-12" },
+    { title: "준호야 오랜만이야", youtube: "https://youtu.be/6JHuBziWL-k", date: "2026-08-28" },
+    { title: "야, 햄버거가 당기는데땡기는데, 롯데리아 갈래", youtube: "https://youtu.be/WVjU24paufA", date: "2026-07-19" },
+  ]},
+  { section: "repeat", playlist: "Beginner Korean Shadowing | Series 1", videos: [
+    { title: "Beginner Korean Shadowing | Where Is Jerry? | S0001", youtube: "https://youtu.be/zUzSxWer1bw", date: "2026-10-20" },
+    { title: "Beginner Korean Shadowing | Jerry Is at School | S0002", youtube: "https://youtu.be/I1SaaJyJJL0", date: "2026-10-20" },
+    { title: "Beginner Korean Shadowing | Do You Like Coffee? | S0003", youtube: "https://youtu.be/GwCR2M6txvc", date: "2026-10-20" },
+    { title: "Beginner Korean Shadowing | Do You Eat Kimchi? | S0004", youtube: "https://youtu.be/OC-3qYe1lhY", date: "2026-10-20" },
+  ]},
+  { section: "repeat", playlist: "Korean Shadowing | Sentence Endings", videos: [
+    { title: "F001 먹을래?", youtube: "https://youtu.be/U3QPfe8c-So", date: "2026-05-05" },
+    { title: "F002 우리 내일 영화 볼까", youtube: "https://youtu.be/bosuXygZUYU", date: "2026-05-09" },
+    { title: "F003  거든 /  잖아 반말", youtube: "https://youtu.be/VqglPFATXxM", date: "2026-06-01" },
+    { title: "F004  거든요  잖아요 존댓말", youtube: "https://youtu.be/zsbY6KNjdhg", date: "2026-06-01" },
+  ]},
+  { section: "repeat", playlist: "Korean Shadowing | Real-Life Situations", videos: [
+    { title: "식당 한국어", youtube: "https://youtu.be/c2iIca8ocYs", date: "2026-06-21" },
+  ]},
 
-  { type: "repeat", level: "Beginner 2", title: "벌칙이 손목을 때리는 거였어", youtube: "https://youtu.be/uRtQ0Xvehog" },
-  { type: "repeat", level: "Beginner 2", title: "벌칙이 손목을 때리는 거였어요", youtube: "https://youtu.be/zDV5zTmAKBA" },
-  { type: "repeat", level: "Beginner 2", title: "가족들이랑 다 같이 햄버거를 시켜서 먹었어요", youtube: "https://youtu.be/6fgBL8GjgeQ" },
-  { type: "repeat", level: "Beginner 2", title: "가족들이랑 다 같이 햄버거를 시켜서 먹었는데 엘리스가 또 햄버거를 다 안 먹고 남긴 거야", youtube: "https://youtu.be/yub5cU9E3oI" },
-  { type: "repeat", level: "Beginner 2", title: "(간접화법 1) 제리가 롯데월드에 가자고 했어요", youtube: "https://youtu.be/-WR5O1aksE8" },
-
-  { type: "repeat", level: "Beginner 3", title: "토니가 배고프다고 빵집에 가자는 거야", youtube: "https://youtu.be/tPYKTtj2vcM" },
-  { type: "repeat", level: "Beginner 3", title: "토니가 배고프다고 빵집에 가자는 거예요", youtube: "https://youtu.be/6C2cyqF93mY" },
-
-  { type: "repeat", level: "Intermediate 1", title: "S000 너 요즘에 소개팅녀랑 잘 되가냐?", youtube: "https://youtu.be/momhd8AzhW0" },
-
-  // ---------- 레벨이 정해지지 않아 화면에 안 보이게 해 둔 영상 ----------
-  // 레벨이 정해지면 맨 앞의 // 를 지우고 level을 채우세요.
-  // { type: "repeat", level: "", title: "F001 먹을래?", youtube: "https://youtu.be/U3QPfe8c-So" },
-  // { type: "repeat", level: "", title: "F002 우리 내일 영화 볼까", youtube: "https://youtu.be/bosuXygZUYU" },
-  // { type: "repeat", level: "", title: "F003 거든 / 잖아", youtube: "https://youtu.be/VqglPFATXxM" },
-  // { type: "repeat", level: "", title: "F004 거든요 잖아요", youtube: "https://youtu.be/zsbY6KNjdhg" },
-  // { type: "repeat", level: "", title: "식당 한국어", youtube: "https://youtu.be/c2iIca8ocYs" },
+  // ==================== Hangul ====================
+  { section: "hangul", playlist: "한글 (Korean Alphabet)", videos: [
+    { title: "한글 1 (아 야 어 여 가 갸 거 겨 나 냐 너 녀)", youtube: "https://youtu.be/IcHob0k5S8k", date: "2026-06-10" },
+  ]},
 ];
 
 var EPISODES = [
@@ -88,7 +190,7 @@ var EPISODES = [
 
   {
     book: "금고", level: "Beginner 3", episode: 1, title: "",
-    date: "",
+    date: "2026-10-01",
     images: ["safe-1.png", "safe-2.png"],   // 둘째 그림은 결말 장면이라 글 끝([그림])에 둠
     audio: "https://drive.google.com/file/d/14kY8WI1GHgnZHgw9-SSZ0OVvP7bi44eo/view",
     text: `
@@ -186,7 +288,7 @@ var EPISODES = [
 
   {
     book: "우리 사이, 괜찮지 않아요", level: "Intermediate 2", episode: 1, title: "최악의 첫 만남",
-    date: "",
+    date: "2026-10-20",
     images: ["urisai-1.jpeg"],
     audio: "https://youtu.be/Hqq2thiCE38", start: "0:00",
     text: `
@@ -224,7 +326,7 @@ var EPISODES = [
 
   {
     book: "우리 사이, 괜찮지 않아요", level: "Intermediate 2", episode: 2, title: "그 남자가 사장님이다",
-    date: "",
+    date: "2026-10-20",
     images: ["urisai-2.jpeg"],
     audio: "https://youtu.be/Hqq2thiCE38", start: "2:37",
     text: `
@@ -260,7 +362,7 @@ var EPISODES = [
 
   {
     book: "우리 사이, 괜찮지 않아요", level: "Intermediate 2", episode: 3, title: "무서운 것 같으면서도 안 무서운 대표님",
-    date: "",
+    date: "2026-10-20",
     images: ["urisai-3.jpeg"],
     audio: "https://youtu.be/Hqq2thiCE38", start: "4:25",
     text: `
@@ -298,7 +400,7 @@ var EPISODES = [
 
   {
     book: "우리 사이, 괜찮지 않아요", level: "Intermediate 2", episode: 4, title: "대표님의 비밀",
-    date: "",
+    date: "2026-10-20",
     images: ["urisai-4.jpeg"],
     audio: "https://youtu.be/Hqq2thiCE38", start: "6:26",
     text: `
@@ -336,7 +438,7 @@ var EPISODES = [
 
   {
     book: "우리 사이, 괜찮지 않아요", level: "Intermediate 2", episode: 5, title: "전 남자친구가 나타났다",
-    date: "",
+    date: "2026-10-20",
     images: ["urisai-5.jpeg"],
     audio: "https://youtu.be/zE4ozICWFpk", start: "0:00",
     text: `
@@ -370,7 +472,7 @@ var EPISODES = [
 
   {
     book: "우리 사이, 괜찮지 않아요", level: "Intermediate 2", episode: 6, title: "옥상에서",
-    date: "",
+    date: "2026-10-20",
     images: ["urisai-6.jpeg"],
     audio: "https://youtu.be/zE4ozICWFpk", start: "2:20",
     text: `
@@ -412,7 +514,7 @@ var EPISODES = [
 
   {
     book: "우리 사이, 괜찮지 않아요", level: "Intermediate 2", episode: 7, title: "서준의 과거",
-    date: "",
+    date: "2026-10-20",
     images: ["urisai-7.jpeg"],
     audio: "https://youtu.be/zE4ozICWFpk", start: "4:45",
     text: `

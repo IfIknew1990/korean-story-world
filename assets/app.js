@@ -4,27 +4,29 @@
 
   var LEVELS = ['Beginner 1', 'Beginner 2', 'Beginner 3', 'Intermediate 1', 'Intermediate 2'];
   var NEW_DAYS = 14;
+  var NEW_RAIL = 8;
   var SECTIONS = {
-    story: { title: 'Story Videos', desc: 'Watch a story in Korean', icon: 'film' },
-    repeat: { title: 'Repeat Videos', desc: 'Watch and repeat out loud', icon: 'repeat' },
-    books: { title: 'Books + Audio', desc: 'Read and listen to stories', icon: 'bookAudio' }
+    story: { title: 'Story Videos', desc: 'Watch a story in Korean', char: 'peter' },
+    repeat: { title: 'Repeat Videos', desc: 'Watch and repeat out loud', char: 'alien' },
+    books: { title: 'Books + Audio', desc: 'Read and listen to stories', char: 'ghost' },
+    hangul: { title: 'Hangul', desc: 'Learn the Korean alphabet', char: 'knight' }
   };
+  var ORDER = ['story', 'repeat', 'books', 'hangul'];
 
   var ICONS = {
     back: '<path d="M15 18l-6-6 6-6"/>',
     chevron: '<path d="M9 18l6-6-6-6"/>',
-    film: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/>',
-    repeat: '<path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/>',
-    bookAudio: '<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v15H6.5A2.5 2.5 0 0 0 4 19.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/><path d="M9.5 12V9.6a2.5 2.5 0 0 1 5 0V12"/><rect x="8.5" y="11" width="2" height="3" rx=".8"/><rect x="13.5" y="11" width="2" height="3" rx=".8"/>',
     book: '<path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/>',
     eye: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>',
     headphones: '<path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>',
-    play: '<path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/>',
     external: '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/>',
     text: '<path d="M4 6h16M4 12h16M4 18h10"/>'
   };
   function icon(name) {
     return '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONS[name] + '</svg>';
+  }
+  function charImg(section, cls) {
+    return '<img class="' + cls + '" src="brand/char-' + SECTIONS[section].char + '.png" alt="">';
   }
 
   /* ---------- helpers ---------- */
@@ -33,6 +35,9 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
+  function slug(s) {
+    return String(s).toLowerCase().replace(/[^0-9a-zㄱ-ㆎ가-힣]+/g, '-').replace(/^-+|-+$/g, '');
+  }
   function levelOf(s) {
     var key = String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     for (var i = 0; i < LEVELS.length; i++) {
@@ -40,9 +45,6 @@
     }
     return null;
   }
-  function slug(level) { return level.toLowerCase().replace(/\s+/g, '-'); }
-  function levelFromSlug(s) { return levelOf(s); }
-
   // Pull the 11-character video id out of any YouTube link (or a bare id).
   function youtubeId(url) {
     url = String(url || '').trim();
@@ -62,12 +64,9 @@
     if (t == null || t === '') return 0;
     if (typeof t === 'number') return Math.max(0, Math.floor(t));
     t = String(t).trim();
+    if (/:/.test(t)) return t.split(':').reduce(function (acc, p) { return acc * 60 + (parseInt(p, 10) || 0); }, 0);
     var hms = t.match(/^(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s?)?$/);
-    if (/:/.test(t)) {
-      return t.split(':').reduce(function (acc, p) { return acc * 60 + (parseInt(p, 10) || 0); }, 0);
-    }
-    if (hms) return (+hms[1] || 0) * 3600 + (+hms[2] || 0) * 60 + (+hms[3] || 0);
-    return 0;
+    return hms ? (+hms[1] || 0) * 3600 + (+hms[2] || 0) * 60 + (+hms[3] || 0) : 0;
   }
   function startFromUrl(url) {
     var m = String(url || '').match(/[?&#](?:t|start)=([\dhms]+)/);
@@ -77,27 +76,40 @@
     var base = String(name || '').trim().replace(/^.*[\\/]/, '').replace(/\.[a-z0-9]+$/i, '');
     return 'img/' + encodeURIComponent(base) + '.webp';
   }
+  function dayValue(date) {
+    var d = new Date(String(date || '').trim() + 'T00:00:00');
+    return isNaN(d) ? 0 : d.getTime();
+  }
   function isNew(date) {
-    if (!date) return false;
-    var d = new Date(String(date).trim() + 'T00:00:00');
-    if (isNaN(d)) return false;
-    var age = (Date.now() - d.getTime()) / 86400000;
+    var t = dayValue(date);
+    if (!t) return false;
+    var age = (Date.now() - t) / 86400000;
     return age >= -1 && age <= NEW_DAYS;
   }
 
   /* ---------- read data.js ---------- */
   var problems = [];
-  var videos = [];
-  (window.VIDEOS || []).forEach(function (v, i) {
-    if (!v) return;
-    var where = 'VIDEOS #' + (i + 1) + ' "' + (v.title || '') + '"';
-    var type = String(v.type || '').toLowerCase().trim();
-    var level = levelOf(v.level);
-    var id = youtubeId(v.youtube);
-    if (type !== 'story' && type !== 'repeat') return problems.push(where + ': type must be "story" or "repeat".');
-    if (!level) return problems.push(where + ': unknown level "' + (v.level || '') + '".');
-    if (!id) return problems.push(where + ': YouTube link not recognised.');
-    videos.push({ type: type, level: level, title: v.title || 'Untitled video', id: id });
+  var tabsBySection = { story: [], repeat: [], hangul: [] };   // [{ name, label, slug, videos: [] }]
+  var allVideos = [];
+  (window.VIDEOS || []).forEach(function (pl, i) {
+    if (!pl) return;
+    var where = 'VIDEOS block #' + (i + 1) + ' "' + (pl.playlist || '') + '"';
+    var section = String(pl.section || '').toLowerCase().trim();
+    if (!tabsBySection[section]) return problems.push(where + ': section must be "story", "repeat" or "hangul".');
+    var name = String(pl.playlist || '').trim();
+    if (!name) return problems.push(where + ': playlist name is missing.');
+    var label = name.split(' | ').pop().trim();
+    var tab = null;
+    tabsBySection[section].forEach(function (t) { if (t.label === label) tab = t; });
+    if (!tab) { tab = { name: name, label: label, slug: slug(label) || 'list-' + i, videos: [] }; tabsBySection[section].push(tab); }
+    (pl.videos || []).forEach(function (v, j) {
+      if (!v) return;
+      var id = youtubeId(v.youtube);
+      if (!id) return problems.push(where + ' video #' + (j + 1) + ' "' + (v.title || '') + '": YouTube link not recognised.');
+      var item = { section: section, tab: tab, title: v.title || 'Untitled video', id: id, date: v.date || '' };
+      tab.videos.push(item);
+      allVideos.push(item);
+    });
   });
 
   var books = {}; // name -> { name, level, episodes: [] }
@@ -132,78 +144,107 @@
   });
   bookOrder.forEach(function (n) { books[n].episodes.sort(function (a, b) { return a.num - b.num; }); });
   function bookIsNew(b) { return b.episodes.some(function (e) { return isNew(e.date); }); }
+  function bookDate(b) { return Math.max.apply(null, b.episodes.map(function (e) { return dayValue(e.date); })); }
 
-  function levelsFor(section) {
-    return LEVELS.filter(function (lv) {
-      if (section === 'books') return bookOrder.some(function (n) { return books[n].level === lv; });
-      return videos.some(function (v) { return v.type === section && v.level === lv; });
-    });
+  // Tabs for a section — only the ones that have something in them.
+  function tabsFor(section) {
+    if (section === 'books') {
+      return LEVELS.filter(function (lv) {
+        return bookOrder.some(function (n) { return books[n].level === lv; });
+      }).map(function (lv) { return { label: lv, slug: slug(lv) }; });
+    }
+    return (tabsBySection[section] || []).filter(function (t) { return t.videos.length; });
   }
-  function sectionHasItems(section) { return levelsFor(section).length > 0; }
+  function hasItems(section) { return tabsFor(section).length > 0; }
 
   /* ---------- views ---------- */
   var app = document.getElementById('app');
 
-  function backLink(href, label) {
-    return '<a class="back" href="' + href + '">' + icon('back') + '<span>' + esc(label || 'Back') + '</span></a>';
+  function backLink(href) {
+    return '<a class="back" href="' + href + '">' + icon('back') + '<span>Back</span></a>';
+  }
+  function thumb(id) {
+    return '<div class="tile-media video"><img loading="lazy" src="https://i.ytimg.com/vi/' + id + '/mqdefault.jpg" alt=""></div>';
+  }
+  function videoTile(v) {
+    return '<a class="tile lift" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">' + thumb(v.id) +
+      '<div class="tile-body"><p class="tile-title">' + esc(v.title) + '</p></div></a>';
+  }
+
+  function newRail() {
+    var items = allVideos.map(function (v, i) {
+      return { t: dayValue(v.date), i: i, html: function () {
+        return '<a class="rail-item lift" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">' + thumb(v.id) +
+          '<div class="tile-body"><span class="rail-kind">' + SECTIONS[v.section].title + '</span>' +
+          '<p class="tile-title">' + esc(v.title) + '</p></div></a>';
+      } };
+    });
+    bookOrder.forEach(function (n, k) {
+      var b = books[n];
+      items.push({ t: bookDate(b), i: allVideos.length + k, html: function () {
+        var cover = b.episodes[0].images[0];
+        return '<a class="rail-item lift" href="' + bookHref(b) + '">' +
+          '<div class="tile-media video">' + (cover ? '<img loading="lazy" src="' + imgSrc(cover) + '" alt="">' : '') + '</div>' +
+          '<div class="tile-body"><span class="rail-kind">Books + Audio</span>' +
+          '<p class="tile-title book-font" lang="ko">' + esc(b.name) + '</p></div></a>';
+      } });
+    });
+    items = items.filter(function (x) { return x.t; })
+      .sort(function (a, b) { return b.t - a.t || a.i - b.i; })
+      .slice(0, NEW_RAIL);
+    if (!items.length) return '';
+    return '<section class="rail-wrap" aria-labelledby="new-title">' +
+      '<h2 class="rail-title" id="new-title"><span class="badge-new">New</span> Just added</h2>' +
+      '<div class="rail">' + items.map(function (x) { return x.html(); }).join('') + '</div></section>';
   }
 
   function viewHome() {
-    var cards = ['story', 'repeat', 'books'].filter(sectionHasItems).map(function (key) {
+    var cards = ORDER.filter(hasItems).map(function (key) {
       var s = SECTIONS[key];
       return '<a class="home-card lift" href="#/' + key + '">' +
-        '<span class="icon-badge">' + icon(s.icon) + '</span>' +
-        '<span><span class="home-card-title">' + s.title + '</span>' +
-        '<span class="home-card-desc" style="display:block">' + s.desc + '</span></span>' +
-        '<span class="go">' + icon('chevron') + '</span></a>';
+        '<span class="home-card-text"><span class="home-card-title">' + s.title + '</span>' +
+        '<span class="home-card-desc">' + s.desc + '</span></span>' +
+        charImg(key, 'home-card-char') + '</a>';
     }).join('');
     return '<h1 class="greeting">Welcome back! Happy studying.</h1>' +
       '<p class="greeting-sub">What would you like to do today?</p>' +
-      '<nav class="home-cards" aria-label="Sections">' + cards + '</nav>';
-  }
-
-  function tabs(section, current) {
-    var lvls = levelsFor(section);
-    if (!lvls.length) return '';
-    return '<div class="tabs" role="tablist" aria-label="Level">' + lvls.map(function (lv) {
-      return '<a class="tab" role="tab" data-replace href="#/' + section + '/' + slug(lv) + '" aria-selected="' + (lv === current) + '">' + lv + '</a>';
-    }).join('') + '</div>';
+      '<nav class="home-cards" aria-label="Sections">' + cards + '</nav>' + newRail();
   }
 
   function heading(section) {
-    var s = SECTIONS[section];
-    return '<h1 class="page-title"><span class="icon-badge">' + icon(s.icon) + '</span>' + s.title + '</h1>';
+    return '<h1 class="page-title">' + charImg(section, 'title-char') + '<span>' + SECTIONS[section].title + '</span></h1>';
   }
 
-  function pickLevel(section, levelSlug) {
-    var lvls = levelsFor(section);
-    var lv = levelFromSlug(levelSlug);
-    return lvls.indexOf(lv) >= 0 ? lv : lvls[0];
+  function pickTab(section, tabSlug) {
+    var tabs = tabsFor(section);
+    for (var i = 0; i < tabs.length; i++) if (tabs[i].slug === tabSlug) return tabs[i];
+    return tabs[0] || null;
   }
 
-  function viewVideos(section, levelSlug) {
-    var lv = pickLevel(section, levelSlug);
-    if (!lv) return null;
-    var items = videos.filter(function (v) { return v.type === section && v.level === lv; });
+  function tabBar(section, current) {
+    var tabs = tabsFor(section);
+    if (!tabs.length) return '';
+    return '<div class="tabs" role="tablist" aria-label="Choose a list">' + tabs.map(function (t) {
+      return '<a class="tab" role="tab" data-replace href="#/' + section + '/' + t.slug + '" aria-selected="' + (t.slug === current.slug) + '">' + esc(t.label) + '</a>';
+    }).join('') + '</div>';
+  }
 
-    return backLink('#/') + heading(section) + tabs(section, lv) +
-      '<div class="grid">' + items.map(function (v) {
-        return '<a class="tile lift" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">' +
-          '<div class="tile-media video"><img loading="lazy" src="https://i.ytimg.com/vi/' + v.id + '/mqdefault.jpg" alt="">' +
-          '</div>' +
-          '<div class="tile-body"><p class="tile-title">' + esc(v.title) + '</p></div></a>';
-      }).join('') + '</div>';
+  function viewVideos(section, tabSlug) {
+    var tab = pickTab(section, tabSlug);
+    if (!tab) return null;
+    return backLink('#/') + heading(section) + tabBar(section, tab) +
+      '<p class="tab-count">' + tab.videos.length + (tab.videos.length === 1 ? ' video' : ' videos') + '</p>' +
+      '<div class="grid">' + tab.videos.map(videoTile).join('') + '</div>';
   }
 
   function bookHref(b) { return '#/books/' + slug(b.level) + '/' + encodeURIComponent(b.name); }
   function epLabel(ep) { return 'Episode ' + ep.num; }
 
   function viewBooks(levelSlug) {
-    var lv = pickLevel('books', levelSlug);
-    if (!lv) return null;
-    var list = bookOrder.map(function (n) { return books[n]; }).filter(function (b) { return b.level === lv; });
-
-    return backLink('#/') + heading('books') + tabs('books', lv) +
+    var tab = pickTab('books', levelSlug);
+    if (!tab) return null;
+    var list = bookOrder.map(function (n) { return books[n]; }).filter(function (b) { return b.level === tab.label; });
+    return backLink('#/') + heading('books') + tabBar('books', tab) +
       '<div class="grid">' + list.map(function (b) {
         var cover = b.episodes[0].images[0];
         var n = b.episodes.length;
@@ -215,13 +256,8 @@
       }).join('') + '</div>';
   }
 
-  function findBook(levelSlug, name) {
+  function viewBook(name) {
     var b = books[name];
-    return b && slug(b.level) === levelSlug ? b : (b || null);
-  }
-
-  function viewBook(levelSlug, name) {
-    var b = findBook(levelSlug, name);
     if (!b) return null;
     return backLink('#/books/' + slug(b.level)) +
       '<h1 class="page-title book-font" lang="ko">' + esc(b.name) + '</h1>' +
@@ -231,7 +267,7 @@
         return '<li><a class="ep-row lift" href="' + bookHref(b) + '/' + ep.num + '">' +
           (th ? '<img class="ep-thumb" loading="lazy" src="' + imgSrc(th) + '" alt="">' : '') +
           '<span class="ep-text"><span class="ep-num">' + epLabel(ep) + (isNew(ep.date) ? ' <span class="badge-new">New</span>' : '') + '</span>' +
-          (ep.title ? '<span class="ep-name book-font" lang="ko" style="display:block">' + esc(ep.title) + '</span>' : '') +
+          (ep.title ? '<span class="ep-name book-font" lang="ko">' + esc(ep.title) + '</span>' : '') +
           '</span><span class="go">' + icon('chevron') + '</span></a></li>';
       }).join('') + '</ol>';
   }
@@ -241,10 +277,8 @@
     var blocks = text.replace(/\r\n?/g, '\n').split(/\n[ \t]*\n/);
     var out = [], markerAt = -1;
     blocks.forEach(function (blk) {
-      var lines = blk.split('\n');
-      // a marker line can sit inside a block too
       var keep = [];
-      lines.forEach(function (ln) {
+      blk.split('\n').forEach(function (ln) {
         if (marker.test(ln)) {
           if (keep.join('').trim()) { out.push(keep.join('\n').trim()); keep = []; }
           if (markerAt < 0) markerAt = out.length;
@@ -266,8 +300,8 @@
       '<a class="open-link" href="https://www.youtube.com/watch?v=' + a.id + (t ? '&t=' + t + 's' : '') + '" target="_blank" rel="noopener">' + icon('external') + 'Open in YouTube</a>';
   }
 
-  function viewEpisode(levelSlug, name, num) {
-    var b = findBook(levelSlug, name);
+  function viewEpisode(name, num) {
+    var b = books[name];
     if (!b) return null;
     var idx = -1;
     b.episodes.forEach(function (e, i) { if (e.num === +num) idx = i; });
@@ -335,10 +369,10 @@
     });
     var html = null;
     if (!parts[0]) html = viewHome();
-    else if (parts[0] === 'story' || parts[0] === 'repeat') html = viewVideos(parts[0], parts[1]);
+    else if (parts[0] === 'story' || parts[0] === 'repeat' || parts[0] === 'hangul') html = viewVideos(parts[0], parts[1]);
     else if (parts[0] === 'books') {
-      if (parts[3]) html = viewEpisode(parts[1], parts[2], parts[3]);
-      else if (parts[2]) html = viewBook(parts[1], parts[2]);
+      if (parts[3]) html = viewEpisode(parts[2], parts[3]);
+      else if (parts[2]) html = viewBook(parts[2]);
       else html = viewBooks(parts[1]);
     }
     if (html == null) { location.replace('#/'); return; }
@@ -350,7 +384,7 @@
   app.addEventListener('click', function (ev) {
     var t = ev.target.closest ? ev.target.closest('[data-mode], .show-text, [data-replace]') : null;
     if (!t) return;
-    if (t.hasAttribute('data-replace')) {          // level tabs: don't pile up history
+    if (t.hasAttribute('data-replace')) {          // tabs: don't pile up history
       ev.preventDefault();
       location.replace(t.getAttribute('href'));
       return;
