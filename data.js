@@ -45,6 +45,7 @@ var VIDEOS = [
   // ==================== Story Videos ====================
   { section: "story", playlist: "Learn Korean Through Stories | Beginner", ko: "초급", videos: [
     { title: "Beginner Korean Story | Peter Hates Bananas? EP1", youtube: "https://youtu.be/tPmjW4tIt5I", date: "2026-10-20" },
+    { title: "Beginner Korean Story | A Gorilla Works at Starbucks? EP2", youtube: "https://youtu.be/zlph8Dxw7MM", date: "2026-10-20" },
   ]},
 
   // ==================== Shadowing ====================
