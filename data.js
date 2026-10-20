@@ -141,6 +141,8 @@ var VIDEOS = [
     { title: "S026 제가 제일 좋아하는 한국 음식은 떡볶이예요", youtube: "https://youtu.be/CmU6RSyK35A" },
     { title: "S025 삼성 핸드폰이 있어야 삼성 페이를 쓸 수 있어요", youtube: "https://youtu.be/XqqpZi0Ee1c" },
     { title: "간접화법 2 Amended", youtube: "https://youtu.be/KlmRMcPgBco" },
+    // ↓ 새로 추가한 영상
+    { title: "비가 와서 그런지 파전이 더 맛있었어요", youtube: "https://youtu.be/My0sj9RZ5g4", date: "2026-10-20" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Intermediate", ko: "중급", videos: [
     { title: "너 요즘에 소개팅녀랑 잘 되가냐?", youtube: "https://youtu.be/momhd8AzhW0" },
