@@ -5,11 +5,12 @@
   var LEVELS = ['Beginner 1', 'Beginner 2', 'Beginner 3', 'Intermediate 1', 'Intermediate 2'];
   var NEW_DAYS = 14;
   var NEW_RAIL = 8;
+  var LEVELS_KO = { 'Beginner 1': '초급 1', 'Beginner 2': '초급 2', 'Beginner 3': '초급 3', 'Intermediate 1': '중급 1', 'Intermediate 2': '중급 2' };
   var SECTIONS = {
-    story: { title: 'Story Videos', desc: 'Watch a story in Korean', char: 'peter' },
-    repeat: { title: 'Repeat Videos', desc: 'Watch and repeat out loud', char: 'alien' },
-    books: { title: 'Books + Audio', desc: 'Read and listen to stories', char: 'ghost' },
-    hangul: { title: 'Hangul', desc: 'Learn the Korean alphabet', char: 'knight' }
+    story: { title: 'Story Videos', ko: '이야기 영상', desc: 'Watch a story in Korean', char: 'peter' },
+    repeat: { title: 'Repeat Videos', ko: '따라 하기 영상', desc: 'Watch and repeat out loud', char: 'alien' },
+    books: { title: 'Books + Audio', ko: '책과 오디오', desc: 'Read and listen to stories', char: 'ghost' },
+    hangul: { title: 'Hangul', ko: '한글', desc: 'Learn the Korean alphabet', char: 'knight' }
   };
   var ORDER = ['story', 'repeat', 'books', 'hangul'];
 
@@ -20,6 +21,8 @@
     eye: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>',
     headphones: '<path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>',
     external: '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/>',
+    left: '<path d="M15 18l-6-6 6-6"/>',
+    right: '<path d="M9 18l6-6-6-6"/>',
     text: '<path d="M4 6h16M4 12h16M4 18h10"/>'
   };
   function icon(name) {
@@ -80,6 +83,34 @@
     var d = new Date(String(date || '').trim() + 'T00:00:00');
     return isNaN(d) ? 0 : d.getTime();
   }
+  // English title on top, Korean underneath (smaller).
+  function twoLine(en, ko) {
+    return '<span class="t-en">' + esc(en) + '</span>' + (ko ? '<span class="t-ko" lang="ko">' + esc(ko) + '</span>' : '');
+  }
+  // "Beginner Korean Shadowing | Where Is Jerry? | S0001" -> { num: "S0001", text: "Where Is Jerry?" }
+  // "S022 제리는 강아지를 가지고 싶어해요" -> { num: "S022", text: "제리는 강아지를 가지고 싶어해요" }
+  var CODE = /^(?:S|F)\d{3,4}(?:-[0-9A-Za-z]+)?$/;
+  function shortTitle(raw) {
+    var t = String(raw || '').replace(/\s+/g, ' ').trim();
+    var num = '';
+    var parts = t.split(/\s*\|\s*/).filter(Boolean);
+    if (parts.length > 1) {
+      parts = parts.filter(function (p) { return !/^(?:(?:Beginner|Intermediate|Advanced)\s+)?Korean\s+(?:Shadowing|Story|Stories)$/i.test(p) && !/^Learn Korean\b/i.test(p); });
+      parts = parts.filter(function (p) {
+        if (!num && (CODE.test(p) || /^EP\s?\d+$/i.test(p))) { num = p; return false; }
+        return true;
+      });
+      t = parts.join(' | ');
+    }
+    var m;
+    if (!num && (m = t.match(/^((?:S|F)\d{3,4}(?:-[0-9A-Za-z]+)?)\s+(.+)$/))) { num = m[1]; t = m[2]; }
+    if (!num && (m = t.match(/^(.+?)\s+(EP\s?\d+)$/i))) { num = m[2]; t = m[1]; }
+    return { num: num, text: t || String(raw || '') };
+  }
+  function titleHtml(raw) {
+    var s = shortTitle(raw);
+    return (s.num ? '<span class="tile-num">' + esc(s.num) + '</span>' : '') + '<p class="tile-title">' + esc(s.text) + '</p>';
+  }
   function isNew(date) {
     var t = dayValue(date);
     if (!t) return false;
@@ -101,7 +132,7 @@
     var label = name.split(' | ').pop().trim();
     var tab = null;
     tabsBySection[section].forEach(function (t) { if (t.label === label) tab = t; });
-    if (!tab) { tab = { name: name, label: label, slug: slug(label) || 'list-' + i, videos: [] }; tabsBySection[section].push(tab); }
+    if (!tab) { tab = { name: name, label: label, ko: String(pl.ko || '').trim(), slug: slug(label) || 'list-' + i, videos: [] }; tabsBySection[section].push(tab); }
     (pl.videos || []).forEach(function (v, j) {
       if (!v) return;
       var id = youtubeId(v.youtube);
@@ -151,7 +182,7 @@
     if (section === 'books') {
       return LEVELS.filter(function (lv) {
         return bookOrder.some(function (n) { return books[n].level === lv; });
-      }).map(function (lv) { return { label: lv, slug: slug(lv) }; });
+      }).map(function (lv) { return { label: lv, ko: LEVELS_KO[lv], slug: slug(lv) }; });
     }
     return (tabsBySection[section] || []).filter(function (t) { return t.videos.length; });
   }
@@ -167,16 +198,16 @@
     return '<div class="tile-media video"><img loading="lazy" src="https://i.ytimg.com/vi/' + id + '/mqdefault.jpg" alt=""></div>';
   }
   function videoTile(v) {
-    return '<a class="tile lift" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">' + thumb(v.id) +
-      '<div class="tile-body"><p class="tile-title">' + esc(v.title) + '</p></div></a>';
+    return '<a class="tile lift" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener" title="' + esc(v.title) + '">' + thumb(v.id) +
+      '<div class="tile-body">' + titleHtml(v.title) + '</div></a>';
   }
 
+  // "Just added": only items that carry a date in data.js (the day they were added to this site).
   function newRail() {
     var items = allVideos.map(function (v, i) {
       return { t: dayValue(v.date), i: i, html: function () {
-        return '<a class="rail-item lift" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">' + thumb(v.id) +
-          '<div class="tile-body"><span class="rail-kind">' + SECTIONS[v.section].title + '</span>' +
-          '<p class="tile-title">' + esc(v.title) + '</p></div></a>';
+        return '<a class="rail-item lift" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener" title="' + esc(v.title) + '">' + thumb(v.id) +
+          '<div class="tile-body"><span class="rail-kind">' + SECTIONS[v.section].title + '</span>' + titleHtml(v.title) + '</div></a>';
       } };
     });
     bookOrder.forEach(function (n, k) {
@@ -195,14 +226,33 @@
     if (!items.length) return '';
     return '<section class="rail-wrap" aria-labelledby="new-title">' +
       '<h2 class="rail-title" id="new-title"><span class="badge-new">New</span> Just added</h2>' +
-      '<div class="rail">' + items.map(function (x) { return x.html(); }).join('') + '</div></section>';
+      '<div class="rail-frame">' +
+      '<button type="button" class="rail-btn prev" data-rail="-1" aria-label="Scroll left">' + icon('left') + '</button>' +
+      '<div class="rail" id="rail">' + items.map(function (x) { return x.html(); }).join('') + '</div>' +
+      '<button type="button" class="rail-btn next" data-rail="1" aria-label="Scroll right">' + icon('right') + '</button>' +
+      '</div></section>';
+  }
+
+  // Arrow buttons: one screen per click; dimmed at the start / end. No auto-scroll.
+  function railState() {
+    var r = document.getElementById('rail');
+    if (!r) return;
+    var prev = document.querySelector('.rail-btn.prev'), next = document.querySelector('.rail-btn.next');
+    prev.disabled = r.scrollLeft <= 2;
+    next.disabled = r.scrollLeft + r.clientWidth >= r.scrollWidth - 2;
+  }
+  function railMove(dir) {
+    var r = document.getElementById('rail');
+    if (!r) return;
+    var smooth = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    r.scrollBy({ left: dir * Math.max(160, r.clientWidth - 48), behavior: smooth ? 'smooth' : 'auto' });
   }
 
   function viewHome() {
     var cards = ORDER.filter(hasItems).map(function (key) {
       var s = SECTIONS[key];
       return '<a class="home-card lift" href="#/' + key + '">' +
-        '<span class="home-card-text"><span class="home-card-title">' + s.title + '</span>' +
+        '<span class="home-card-text"><span class="home-card-title">' + twoLine(s.title, s.ko) + '</span>' +
         '<span class="home-card-desc">' + s.desc + '</span></span>' +
         charImg(key, 'home-card-char') + '</a>';
     }).join('');
@@ -212,7 +262,7 @@
   }
 
   function heading(section) {
-    return '<h1 class="page-title">' + charImg(section, 'title-char') + '<span>' + SECTIONS[section].title + '</span></h1>';
+    return '<h1 class="page-title">' + charImg(section, 'title-char') + '<span class="title-stack">' + twoLine(SECTIONS[section].title, SECTIONS[section].ko) + '</span></h1>';
   }
 
   function pickTab(section, tabSlug) {
@@ -225,7 +275,7 @@
     var tabs = tabsFor(section);
     if (!tabs.length) return '';
     return '<div class="tabs" role="tablist" aria-label="Choose a list">' + tabs.map(function (t) {
-      return '<a class="tab" role="tab" data-replace href="#/' + section + '/' + t.slug + '" aria-selected="' + (t.slug === current.slug) + '">' + esc(t.label) + '</a>';
+      return '<a class="tab" role="tab" data-replace href="#/' + section + '/' + t.slug + '" aria-selected="' + (t.slug === current.slug) + '">' + twoLine(t.label, t.ko) + '</a>';
     }).join('') + '</div>';
   }
 
@@ -377,13 +427,16 @@
     }
     if (html == null) { location.replace('#/'); return; }
     app.innerHTML = html + teacherNote();
+    var rail = document.getElementById('rail');
+    if (rail) { rail.addEventListener('scroll', railState, { passive: true }); railState(); }
     window.scrollTo(0, 0);
     document.title = (parts[0] && SECTIONS[parts[0]] ? SECTIONS[parts[0]].title + ' · ' : '') + 'K-Storyteller Library';
   }
 
   app.addEventListener('click', function (ev) {
-    var t = ev.target.closest ? ev.target.closest('[data-mode], .show-text, [data-replace]') : null;
+    var t = ev.target.closest ? ev.target.closest('[data-mode], .show-text, [data-replace], [data-rail]') : null;
     if (!t) return;
+    if (t.hasAttribute('data-rail')) { railMove(+t.getAttribute('data-rail')); return; }
     if (t.hasAttribute('data-replace')) {          // tabs: don't pile up history
       ev.preventDefault();
       location.replace(t.getAttribute('href'));
@@ -394,5 +447,6 @@
   });
 
   window.addEventListener('hashchange', render);
+  window.addEventListener('resize', railState);
   render();
 })();
