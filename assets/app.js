@@ -7,7 +7,7 @@
   var NEW_RAIL = 8;
   var LEVELS_KO = { 'Beginner 1': '초급 1', 'Beginner 2': '초급 2', 'Beginner 3': '초급 3', 'Intermediate 1': '중급 1', 'Intermediate 2': '중급 2' };
   var SECTIONS = {
-    story: { title: 'Story Videos', ko: '이야기 영상', desc: 'Watch a story in Korean', char: 'peter' },
+    story: { title: 'Story Videos', ko: '이야기 영상', desc: 'Watch a story in Korean', char: 'peter-fixed' },
     shadowing: { title: 'Shadowing', ko: '섀도잉', desc: 'Watch and repeat out loud', char: 'alien' },
     books: { title: 'Books + Audio', ko: '책과 오디오', desc: 'Read and listen to stories', char: 'ghost' },
     hangul: { title: 'Hangul', ko: '한글', desc: 'Learn the Korean alphabet', char: 'knight' }
