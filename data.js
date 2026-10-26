@@ -115,6 +115,9 @@ var VIDEOS = [
     { title: "제리가 제일 좋아하는 음식은 돈까스예요.", youtube: "https://youtu.be/Tt_oNk8LuPk" },
     { title: "미주가 배가 아파서 엄마가 미주를 병원에 데리고 갔어요.", youtube: "https://youtu.be/s3U9-j2fl3s" },
     { title: "뭐 하려고?", youtube: "https://youtu.be/I-8nxp6h2kY" },
+    { title: "미주가 강아지를 집에 데리고 왔어요", youtube: "https://youtu.be/ep6u4ypk3N4", date: "2026-10-26" },
+    { title: "민수가 공부를 잘 못해요. ( 그렇지만) 서울 대학교에 가고 싶어해요.", youtube: "https://youtu.be/51PYqobRMB4", date: "2026-10-26" },
+    { title: "태형이하고 민주가 강아지를 주인한테 데려다 줬어요.", youtube: "https://youtu.be/nS9T5G3mznQ", date: "2026-10-26" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Beginner 3", ko: "초급 3", videos: [
     { title: "토니가 배고프다고 빵집에 가자는 거야", youtube: "https://youtu.be/tPYKTtj2vcM" },
@@ -145,6 +148,7 @@ var VIDEOS = [
     // ↓ 새로 추가한 영상
     { title: "비가 와서 그런지 파전이 더 맛있었어요", youtube: "https://youtu.be/My0sj9RZ5g4", date: "2026-10-20" },
     { title: "이 집 파전은 좀 비싸기는 한데 맛있어.", youtube: "https://youtu.be/y1BBV_Y5ZUY", date: "2026-10-20" },
+    { title: "아니거든, 바삭하거든!", youtube: "https://youtu.be/qIqn167HrEs", date: "2026-10-26" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Intermediate", ko: "중급", videos: [
     { title: "너 요즘에 소개팅녀랑 잘 되가냐?", youtube: "https://youtu.be/momhd8AzhW0" },
