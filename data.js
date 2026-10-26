@@ -105,7 +105,7 @@ var VIDEOS = [
     { title: "이번에는  100kg 바벨을 들어봤는데 이번에는 너무 무겁더라구", youtube: "https://youtu.be/A3gp6p15oaQ" },
     { title: "먹지 마  그거 상했어", youtube: "https://youtu.be/5QM8y4Kia7M" },
     { title: "S023 new 제리가 강아지를 사러 갔어요", youtube: "https://youtu.be/Xbw441soIzU" },
-    { title: "제리가 반바지를 입고 자전거를 탔어요", youtube: "https://youtu.be/_x0q5EkcB9g" },
+    { title: "제리가 반바지를 입고 나갔어요", youtube: "https://youtu.be/t8JmTWejN3o", date: "2026-10-26" },
     { title: "돈이 2천원 밖에 없었어요", youtube: "https://youtu.be/0bjJatCxJWM" },
     { title: "민수가 오늘 아침을 조금밖에 안 먹었어요", youtube: "https://youtu.be/2qX2iZCCe1M" },
     { title: "토니가 직업이 의사예요", youtube: "https://youtu.be/8JIhoPqQo_g" },
