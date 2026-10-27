@@ -240,7 +240,7 @@
       (videoIsNew(v) ? '<span class="badge-new">New</span>' : '') +
       '<div class="tile-body">' + titleHtml(v.title) + '</div></a>' +
       '<div class="tile-actions">' +
-      '<button type="button" class="tile-btn" data-copy="' + v.id + '" aria-label="Copy link: ' + name + '">' + icon('link') + '<span>Copy link</span></button>' +
+      '<button type="button" class="tile-btn" data-copy="' + v.id + '" aria-label="Copy title and link: ' + name + '">' + icon('link') + '<span>Copy</span></button>' +
       '<button type="button" class="tile-btn pick" data-pick="' + v.id + '" aria-pressed="' + picked + '" aria-label="Pick: ' + name + '">' + icon(picked ? 'check' : 'plus') + '<span>' + (picked ? 'Picked' : 'Pick') + '</span></button>' +
       '</div></div>';
   }
@@ -577,7 +577,10 @@
     var b = ev.target.closest ? ev.target.closest('[data-copy], [data-pick]') : null;
     if (b) {
       var id = b.getAttribute('data-copy');
-      if (id) { copyText(linkOf(id), function (ok) { toast(ok ? 'Link copied' : 'Could not copy. Please try again.'); }); return; }
+      if (id) {   // same "title + link" form as copying picked videos
+        copyText(shortTitle(byId[id].title).text + '\n' + linkOf(id), function (ok) { toast(ok ? 'Copied title + link' : 'Could not copy. Please try again.'); });
+        return;
+      }
       id = b.getAttribute('data-pick');
       if (selected[id]) delete selected[id]; else selected[id] = true;
       redrawTile(id);
