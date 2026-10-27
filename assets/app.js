@@ -3,7 +3,8 @@
   'use strict';
 
   var LEVELS = ['Beginner 1', 'Beginner 2', 'Beginner 3', 'Intermediate 1', 'Intermediate 2'];
-  var NEW_DAYS = 14;
+  var NEW_DAYS = 14;        // books
+  var VIDEO_NEW_DAYS = 7;   // video cards: NEW for 7 days after the day they were added to this site (date in data.js)
   var NEW_RAIL = 8;
   var LEVELS_KO = { 'Beginner 1': '초급 1', 'Beginner 2': '초급 2', 'Beginner 3': '초급 3', 'Intermediate 1': '중급 1', 'Intermediate 2': '중급 2' };
   var SECTIONS = {
@@ -23,7 +24,12 @@
     external: '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/>',
     left: '<path d="M15 18l-6-6 6-6"/>',
     right: '<path d="M9 18l6-6-6-6"/>',
-    text: '<path d="M4 6h16M4 12h16M4 18h10"/>'
+    text: '<path d="M4 6h16M4 12h16M4 18h10"/>',
+    link: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+    check: '<path d="M20 6L9 17l-5-5"/>',
+    plus: '<path d="M12 5v14M5 12h14"/>',
+    search: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
+    close: '<path d="M18 6L6 18M6 6l12 12"/>'
   };
   function icon(name) {
     return '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONS[name] + '</svg>';
@@ -111,17 +117,43 @@
     var s = shortTitle(raw);
     return (s.num ? '<span class="tile-num">' + esc(s.num) + '</span>' : '') + '<p class="tile-title">' + esc(s.text) + '</p>';
   }
-  function isNew(date) {
+  function isNew(date, days) {
     var t = dayValue(date);
     if (!t) return false;
     var age = (Date.now() - t) / 86400000;
-    return age >= -1 && age <= NEW_DAYS;
+    return age >= -1 && (days ? age < days : age <= NEW_DAYS);
   }
+  function videoIsNew(v) { return isNew(v.date, VIDEO_NEW_DAYS); }
+  function tabHasNew(t) { return t.videos.some(videoIsNew); }
+  function sectionHasNew(section) { return (tabsBySection[section] || []).some(tabHasNew); }
+
+  /* ---------- sentences + grammar patterns: videos.json (made daily from the teacher's video list) ---------- */
+  var INFO = {};            // id -> { s: [sentences], p: pattern key }
+  var PATTERNS = {};
+  var PATTERN_ORDER = [];
+  var PATTERN_TABS = [];
+  function loadVideoList() {
+    if (!window.fetch) return;
+    fetch('videos.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d) return;
+      PATTERNS = d.patterns || {};
+      PATTERN_ORDER = d.pattern_order || [];
+      PATTERN_TABS = d.pattern_tabs || [];
+      (d.videos || []).forEach(function (v) { INFO[v.id] = { s: v.sentences || [], p: v.pattern || '' }; });
+      var q = document.getElementById('q');
+      var keep = q && document.activeElement === q;
+      render(true);
+      if (keep) { q = document.getElementById('q'); q.focus(); q.setSelectionRange(q.value.length, q.value.length); }
+    }).catch(function () {});
+  }
+  function squash(s) { return String(s || '').toLowerCase().replace(/[^0-9a-z가-힣]/g, ''); }
+  function linkOf(id) { return 'https://youtu.be/' + id; }
 
   /* ---------- read data.js ---------- */
   var problems = [];
   var tabsBySection = { story: [], shadowing: [], hangul: [] };   // [{ name, label, slug, videos: [] }]
   var allVideos = [];
+  var byId = {};
   (window.VIDEOS || []).forEach(function (pl, i) {
     if (!pl) return;
     var where = 'VIDEOS block #' + (i + 1) + ' "' + (pl.playlist || '') + '"';
@@ -139,6 +171,7 @@
       var id = youtubeId(v.youtube);
       if (!id) return problems.push(where + ' video #' + (j + 1) + ' "' + (v.title || '') + '": YouTube link not recognised.');
       var item = { section: section, tab: tab, title: v.title || 'Untitled video', id: id, date: v.date || '' };
+      if (!byId[id]) byId[id] = item;
       tab.videos.push(item);
       allVideos.push(item);
     });
@@ -198,9 +231,81 @@
   function thumb(id) {
     return '<div class="tile-media video"><img loading="lazy" src="https://i.ytimg.com/vi/' + id + '/mqdefault.jpg" alt=""></div>';
   }
+  // Card = link to YouTube + two small buttons: copy this link / pick it (to copy several at once).
   function videoTile(v) {
-    return '<a class="tile lift" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener" title="' + esc(v.title) + '">' + thumb(v.id) +
-      '<div class="tile-body">' + titleHtml(v.title) + '</div></a>';
+    var picked = !!selected[v.id];
+    var name = esc(shortTitle(v.title).text);
+    return '<div class="tile lift video-tile' + (picked ? ' picked' : '') + '" data-id="' + v.id + '">' +
+      '<a class="tile-link" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener" title="' + esc(v.title) + '">' + thumb(v.id) +
+      (videoIsNew(v) ? '<span class="badge-new">New</span>' : '') +
+      '<div class="tile-body">' + titleHtml(v.title) + '</div></a>' +
+      '<div class="tile-actions">' +
+      '<button type="button" class="tile-btn" data-copy="' + v.id + '" aria-label="Copy link: ' + name + '">' + icon('link') + '<span>Copy link</span></button>' +
+      '<button type="button" class="tile-btn pick" data-pick="' + v.id + '" aria-pressed="' + picked + '" aria-label="Pick: ' + name + '">' + icon(picked ? 'check' : 'plus') + '<span>' + (picked ? 'Picked' : 'Pick') + '</span></button>' +
+      '</div></div>';
+  }
+  function grid(list) { return '<div class="grid">' + list.map(videoTile).join('') + '</div>'; }
+
+  /* ---------- copy links ---------- */
+  var selected = {};          // id -> true, kept while moving between tabs
+  function copyText(text, done) {
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      done(ok);
+    }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+    else fallback();
+  }
+  function toast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(function () { t.classList.remove('show'); }, 2200);
+  }
+  function pickedIds() { return Object.keys(byId).filter(function (id) { return selected[id]; }); }
+  function pickBar() {
+    var bar = document.getElementById('pickbar');
+    var n = pickedIds().length;
+    bar.hidden = !n;
+    document.body.classList.toggle('has-pickbar', !!n);
+    if (n) bar.querySelector('.pick-count').textContent = n + (n === 1 ? ' video picked' : ' videos picked');
+  }
+  function copyPicked() {
+    var ids = pickedIds();
+    var text = ids.map(function (id) { return shortTitle(byId[id].title).text + '\n' + linkOf(id); }).join('\n\n');
+    copyText(text, function (ok) { toast(ok ? 'Copied ' + ids.length + (ids.length === 1 ? ' title + link' : ' titles + links') : 'Could not copy. Please try again.'); });
+  }
+
+  /* ---------- search (part of a sentence or a title) ---------- */
+  var query = '';
+  function searchBox() {
+    return '<form class="search" role="search" onsubmit="return false">' +
+      '<label class="search-field">' + icon('search') +
+      '<input type="search" id="q" placeholder="Search a sentence, e.g. 강아지" value="' + esc(query) + '" autocomplete="off" aria-label="Search videos by sentence or title">' +
+      '</label></form><div id="search-results" aria-live="polite"></div>';
+  }
+  function searchHits(q) {
+    var nq = squash(q);
+    if (!nq) return [];
+    return Object.keys(byId).map(function (id) { return byId[id]; }).filter(function (v) {
+      return [v.title].concat((INFO[v.id] || {}).s || []).some(function (s) { return squash(s).indexOf(nq) >= 0; });
+    });
+  }
+  function showSearch() {
+    var box = document.getElementById('search-results');
+    var body = document.getElementById('page-body');
+    if (!box || !body) return;
+    var q = query.trim();
+    body.hidden = !!q;
+    if (!q) { box.innerHTML = ''; return; }
+    var hits = searchHits(q);
+    box.innerHTML = '<p class="tab-count">' + (hits.length ? hits.length + (hits.length === 1 ? ' video' : ' videos') : 'No videos') + ' with “' + esc(q) + '”</p>' + grid(hits);
   }
 
   // "Just added": only items that carry a date in data.js (the day they were added to this site).
@@ -253,13 +358,14 @@
     var cards = ORDER.filter(hasItems).map(function (key) {
       var s = SECTIONS[key];
       return '<a class="home-card lift" href="#/' + key + '">' +
+        (sectionHasNew(key) ? '<span class="badge-new home-new">New</span>' : '') +
         '<span class="home-card-text"><span class="home-card-title">' + twoLine(s.title, s.ko) + '</span>' +
         '<span class="home-card-desc">' + s.desc + '</span></span>' +
         charImg(key, 'home-card-char') + '</a>';
     }).join('');
     return '<h1 class="greeting">Welcome back! Happy studying.</h1>' +
-      '<p class="greeting-sub">What would you like to do today?</p>' +
-      '<nav class="home-cards" aria-label="Sections">' + cards + '</nav>' + newRail();
+      '<p class="greeting-sub">What would you like to do today?</p>' + searchBox() +
+      '<div id="page-body"><nav class="home-cards" aria-label="Sections">' + cards + '</nav>' + newRail() + '</div>';
   }
 
   function heading(section) {
@@ -276,16 +382,38 @@
     var tabs = tabsFor(section);
     if (!tabs.length) return '';
     return '<div class="tabs" role="tablist" aria-label="Choose a list">' + tabs.map(function (t) {
-      return '<a class="tab" role="tab" data-replace href="#/' + section + '/' + t.slug + '" aria-selected="' + (t.slug === current.slug) + '">' + twoLine(t.label, t.ko) + '</a>';
+      return '<a class="tab" role="tab" data-replace href="#/' + section + '/' + t.slug + '" aria-selected="' + (t.slug === current.slug) + '">' + twoLine(t.label, t.ko) +
+        (t.videos && tabHasNew(t) ? '<span class="badge-new tab-new">New</span>' : '') + '</a>';
     }).join('') + '</div>';
   }
 
   function viewVideos(section, tabSlug) {
     var tab = pickTab(section, tabSlug);
     if (!tab) return null;
-    return backLink('#/') + heading(section) + tabBar(section, tab) +
-      '<p class="tab-count">' + tab.videos.length + (tab.videos.length === 1 ? ' video' : ' videos') + '</p>' +
-      '<div class="grid">' + tab.videos.map(videoTile).join('') + '</div>';
+    // NEW videos first (in their data.js order), then everything else in its usual order.
+    var list = tab.videos.filter(videoIsNew).concat(tab.videos.filter(function (v) { return !videoIsNew(v); }));
+    return backLink('#/') + heading(section) + searchBox() + '<div id="page-body">' + tabBar(section, tab) +
+      '<p class="tab-count">' + list.length + (list.length === 1 ? ' video' : ' videos') + '</p>' +
+      (PATTERN_TABS.indexOf(tab.name) >= 0 ? patternGroups(list) : grid(list)) + '</div>';
+  }
+
+  // Big lists (e.g. Beginner 2): one group per grammar pattern, in PATTERN_ORDER; videos without a pattern yet -> "More videos".
+  function patternGroups(videos) {
+    var groups = {}, keys = [];
+    videos.forEach(function (v) {
+      var p = (INFO[v.id] || {}).p;
+      var k = p && PATTERNS[p] ? p : '';
+      if (!groups[k]) { groups[k] = []; keys.push(k); }
+      groups[k].push(v);
+    });
+    function rank(k) { var i = PATTERN_ORDER.indexOf(k); return !k ? 1e6 : i < 0 ? 1e5 : i; }
+    keys.sort(function (a, b) { return rank(a) - rank(b); });
+    return keys.map(function (k) {
+      var p = PATTERNS[k];
+      return '<section class="pattern-group"><h2 class="pattern-title">' +
+        (p ? '<span class="t-en">' + esc(p.en) + '</span>' + (p.ko ? '<span class="t-ko" lang="ko">' + esc(p.ko) + '</span>' : '') : '<span class="t-en">More videos</span>') +
+        '</h2>' + grid(groups[k]) + '</section>';
+    }).join('');
   }
 
   function bookHref(b) { return '#/books/' + slug(b.level) + '/' + encodeURIComponent(b.name); }
@@ -414,7 +542,7 @@
   }
 
   /* ---------- router ---------- */
-  function render() {
+  function render(keepScroll) {
     var parts = location.hash.replace(/^#\/?/, '').split('/').map(function (s) {
       try { return decodeURIComponent(s); } catch (e) { return s; }
     });
@@ -429,13 +557,33 @@
     }
     if (html == null) { location.replace('#/'); return; }
     app.innerHTML = html + teacherNote();
+    showSearch();
+    pickBar();
     var rail = document.getElementById('rail');
     if (rail) { rail.addEventListener('scroll', railState, { passive: true }); railState(); }
-    window.scrollTo(0, 0);
+    if (keepScroll !== true) window.scrollTo(0, 0);
     document.title = (parts[0] && SECTIONS[parts[0]] ? SECTIONS[parts[0]].title + ' · ' : '') + 'K-Storyteller Library';
   }
 
+  app.addEventListener('input', function (ev) {
+    if (ev.target.id !== 'q') return;
+    query = ev.target.value;
+    showSearch();
+  });
+  function redrawTile(id) {
+    Array.prototype.forEach.call(document.querySelectorAll('.video-tile[data-id="' + id + '"]'), function (tile) { tile.outerHTML = videoTile(byId[id]); });
+  }
   app.addEventListener('click', function (ev) {
+    var b = ev.target.closest ? ev.target.closest('[data-copy], [data-pick]') : null;
+    if (b) {
+      var id = b.getAttribute('data-copy');
+      if (id) { copyText(linkOf(id), function (ok) { toast(ok ? 'Link copied' : 'Could not copy. Please try again.'); }); return; }
+      id = b.getAttribute('data-pick');
+      if (selected[id]) delete selected[id]; else selected[id] = true;
+      redrawTile(id);
+      pickBar();
+      return;
+    }
     var t = ev.target.closest ? ev.target.closest('[data-mode], .show-text, [data-replace], [data-rail]') : null;
     if (!t) return;
     if (t.hasAttribute('data-rail')) { railMove(+t.getAttribute('data-rail')); return; }
@@ -448,7 +596,22 @@
     else setMode(t.getAttribute('data-mode'));
   });
 
-  window.addEventListener('hashchange', render);
+  document.body.insertAdjacentHTML('beforeend',
+    '<div class="pickbar" id="pickbar" hidden><span class="pick-count"></span>' +
+    '<button type="button" class="pick-copy">' + icon('link') + '<span>Copy titles + links</span></button>' +
+    '<button type="button" class="pick-clear" aria-label="Clear picks">' + icon('close') + '</button></div>' +
+    '<div class="toast" id="toast" role="status" aria-live="polite"></div>');
+  document.getElementById('pickbar').addEventListener('click', function (ev) {
+    if (ev.target.closest('.pick-copy')) copyPicked();
+    else if (ev.target.closest('.pick-clear')) {
+      var ids = pickedIds();
+      selected = {};
+      ids.forEach(redrawTile);
+      pickBar();
+    }
+  });
+  window.addEventListener('hashchange', function () { query = ''; render(); });
+  loadVideoList();
   window.addEventListener('resize', railState);
   render();
 })();

@@ -425,3 +425,78 @@ button { font: inherit; color: inherit; }
   .rail-btn:disabled { opacity: 0; pointer-events: none; }
   .rail-btn .icon { width: 24px; height: 24px; }
 }
+
+/* ---------- Video card: copy link / pick (2026-10-26) ---------- */
+.video-tile .tile-link { display: flex; flex-direction: column; flex: 1; text-decoration: none; color: inherit; position: relative; }
+.video-tile .tile-link:focus-visible { outline: 3px solid var(--yellow); outline-offset: -3px; }
+.tile-actions { display: flex; gap: 6px; padding: 0 8px 9px; }
+.tile-btn {
+  flex: 1;
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  min-height: 34px; padding: 4px 6px;
+  border: 2px solid var(--line); border-radius: 4px;
+  background: transparent; color: var(--text-soft);
+  font: inherit; font-size: 0.78rem; font-weight: 700;
+  cursor: pointer;
+}
+.tile-btn .icon { width: 15px; height: 15px; }
+.tile-btn:hover { border-color: var(--text-soft); color: var(--text); }
+.tile-btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 1px; }
+.tile-btn.pick[aria-pressed="true"] { background: var(--yellow); border-color: var(--yellow); color: var(--sky); }
+.video-tile.picked { border-color: var(--yellow); }
+@media (max-width: 400px) { .tile-actions { gap: 4px; padding: 0 6px 8px; } .tile-btn { padding: 4px 2px; font-size: 0.74rem; } .tile-btn .icon { display: none; } }
+
+/* bar at the bottom while videos are picked */
+.pickbar {
+  position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 20;
+  display: flex; align-items: center; gap: 10px;
+  width: calc(100% - 32px); max-width: 560px;
+  padding: 8px 8px 8px 14px;
+  background: var(--panel-hi); color: var(--text);
+  border: 3px solid var(--edge); border-radius: var(--radius); box-shadow: 4px 4px 0 var(--edge);
+}
+.pickbar[hidden] { display: none; }
+.pick-count { flex: 1; font-weight: 700; font-size: 0.9rem; }
+.pick-copy, .pick-clear {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 6px 12px;
+  border: 2px solid var(--edge); border-radius: 4px; font: inherit; font-weight: 800; cursor: pointer;
+}
+.pick-copy { background: var(--yellow); color: var(--sky); font-size: 0.88rem; }
+.pick-copy .icon, .pick-clear .icon { width: 17px; height: 17px; }
+.pick-clear { background: transparent; color: var(--text); border-color: var(--line); padding: 6px 9px; }
+body.has-pickbar .page { padding-bottom: 110px; }
+
+.toast {
+  position: fixed; left: 50%; top: 16px; transform: translate(-50%, -12px); z-index: 30;
+  padding: 8px 14px; border-radius: 4px; border: 2px solid var(--edge); box-shadow: 3px 3px 0 var(--edge);
+  background: var(--paper); color: var(--ink); font-weight: 800; font-size: 0.9rem;
+  opacity: 0; pointer-events: none; transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Search ---------- */
+.search { margin: 4px 0 16px; }
+.search-field {
+  display: flex; align-items: center; gap: 8px; max-width: 520px;
+  padding: 0 12px; min-height: 46px;
+  background: var(--sky-deep); border: 2px solid var(--line); border-radius: var(--radius);
+  color: var(--text-mute);
+}
+.search-field:focus-within { border-color: var(--yellow); }
+.search-field input {
+  flex: 1; min-width: 0; border: 0; background: transparent; color: var(--text);
+  font: inherit; font-size: 1rem; padding: 10px 0; outline: none;
+}
+.search-field input::placeholder { color: var(--text-mute); }
+#page-body[hidden] { display: none; }
+
+/* ---------- NEW marks on tabs and home cards ---------- */
+.tab { position: relative; }
+.tab-new, .home-new { position: absolute; font-size: 0.6rem; padding: 0 5px; }
+.tab-new { top: -9px; right: -6px; }
+.home-new { top: 10px; right: 10px; z-index: 2; }
+
+/* ---------- Pattern groups (big lists) ---------- */
+.pattern-group { margin: 0 0 26px; }
+.pattern-title { margin: 6px 0 10px; font-size: 1.05rem; line-height: 1.25; border-left: 4px solid var(--text-mute); padding-left: 10px; }
+.pattern-title .t-ko { font-size: 0.85rem; margin-top: 2px; }
