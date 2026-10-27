@@ -118,6 +118,10 @@ var VIDEOS = [
     { title: "미주가 강아지를 집에 데리고 왔어요", youtube: "https://youtu.be/ep6u4ypk3N4", date: "2026-10-26" },
     { title: "민수가 공부를 잘 못해요. ( 그렇지만) 서울 대학교에 가고 싶어해요.", youtube: "https://youtu.be/51PYqobRMB4", date: "2026-10-26" },
     { title: "태형이하고 민주가 강아지를 주인한테 데려다 줬어요.", youtube: "https://youtu.be/nS9T5G3mznQ", date: "2026-10-26" },
+    { title: "이 사람이 지금 앉아서 물을 마시고 있어요", youtube: "https://youtu.be/YdADhVvJGkg", date: "2026-10-27" },
+    { title: "민수가 수영을 할 수 있어요", youtube: "https://youtu.be/APyeZiKEfaM", date: "2026-10-27" },
+    { title: "민수가 바벨을 10kg에서 100kg으로 바꿨어요", youtube: "https://youtu.be/4XkidYDgFxQ", date: "2026-10-27" },
+    { title: "제리가 보통 안경을 끼고 학교에 가요", youtube: "https://youtu.be/1EX2R9IzAjM", date: "2026-10-27" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Beginner 3", ko: "초급 3", videos: [
     { title: "토니가 배고프다고 빵집에 가자는 거야", youtube: "https://youtu.be/tPYKTtj2vcM" },
