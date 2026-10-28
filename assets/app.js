@@ -139,7 +139,7 @@
       PATTERNS = d.patterns || {};
       PATTERN_ORDER = d.pattern_order || [];
       PATTERN_TABS = d.pattern_tabs || [];
-      (d.videos || []).forEach(function (v) { INFO[v.id] = { s: v.sentences || [], p: v.pattern || '' }; });
+      (d.videos || []).forEach(function (v) { INFO[v.id] = { s: v.sentences || [], p: v.pattern || '', ps: v.patterns || [] }; });
       var q = document.getElementById('q');
       var keep = q && document.activeElement === q;
       render(true);
@@ -218,9 +218,62 @@
         return bookOrder.some(function (n) { return books[n].level === lv; });
       }).map(function (lv) { return { label: lv, ko: LEVELS_KO[lv], slug: slug(lv) }; });
     }
-    return (tabsBySection[section] || []).filter(function (t) { return t.videos.length; });
+    var tabs = (tabsBySection[section] || []).filter(function (t) { return t.videos.length; });
+    if (section === 'shadowing' && grammarReady()) tabs = tabs.concat([GRAMMAR_TAB]);
+    return tabs;
   }
   function hasItems(section) { return tabsFor(section).length > 0; }
+
+  /* ---------- Grammar Index (문형 찾기): patterns from videos.json, ㄱㄴㄷ order ---------- */
+  var GRAMMAR_TAB = { label: 'Grammar Index', ko: '문형 찾기', slug: 'grammar-index', grammar: true, videos: [] };
+  var HANGUL_ROW = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+  function grammarReady() { return Object.keys(PATTERNS).length > 0; }
+  function patternVideos(key) {
+    return Object.keys(byId).filter(function (id) { return ((INFO[id] || {}).ps || []).indexOf(key) >= 0; })
+      .map(function (id) { return byId[id]; });
+  }
+  function patternLetters(key) { var p = PATTERNS[key]; return (p && p.letters && p.letters.length) ? p.letters : ['ㅇ']; }
+  function patternsFor(letter) {        // main ones (first letter) sorted by Korean, then cross-references
+    var keys = Object.keys(PATTERNS).filter(function (k) { return patternVideos(k).length; });
+    var main = keys.filter(function (k) { return patternLetters(k)[0] === letter; }).sort(function (a, b) {
+      return squash(PATTERNS[a].ko).localeCompare(squash(PATTERNS[b].ko), 'ko');
+    });
+    var cross = keys.filter(function (k) { return patternLetters(k).slice(1).indexOf(letter) >= 0; });
+    return { main: main, cross: cross };
+  }
+  function grammarHref(letter, key) {
+    return '#/shadowing/grammar-index/' + encodeURIComponent(letter) + (key ? '/' + encodeURIComponent(key) : '');
+  }
+  function patternItem(k, letter) {
+    var n = patternVideos(k).length;
+    return '<a class="pattern-item lift" href="' + grammarHref(letter, k) + '">' +
+      '<span class="pattern-ko" lang="ko">' + esc(PATTERNS[k].ko) + '</span>' +
+      '<span class="pattern-en">' + esc(PATTERNS[k].en) + '</span>' +
+      '<span class="pattern-count">' + n + (n === 1 ? ' video' : ' videos') + '</span></a>';
+  }
+  function viewGrammar(letter, key) {
+    var avail = HANGUL_ROW.filter(function (L) { var x = patternsFor(L); return x.main.length || x.cross.length; });
+    if (key && PATTERNS[key] && !letter) letter = patternLetters(key)[0];
+    if (avail.indexOf(letter) < 0) letter = avail[0];
+    var bar = '<div class="letter-bar" role="tablist" aria-label="Choose a letter">' + HANGUL_ROW.map(function (L) {
+      var on = avail.indexOf(L) >= 0;
+      return on ? '<a class="letter-btn" role="tab" data-replace href="' + grammarHref(L) + '" aria-selected="' + (L === letter) + '" lang="ko">' + L + '</a>'
+        : '<span class="letter-btn" aria-disabled="true" lang="ko">' + L + '</span>';
+    }).join('') + '</div>';
+    if (key && PATTERNS[key]) {
+      var vids = patternVideos(key);
+      return bar + '<a class="back pattern-back" href="' + grammarHref(letter) + '">' + icon('back') + '<span lang="ko">' + letter + '</span></a>' +
+        '<h2 class="pattern-head"><span class="pattern-ko" lang="ko">' + esc(PATTERNS[key].ko) + '</span>' +
+        '<span class="pattern-en">' + esc(PATTERNS[key].en) + '</span></h2>' +
+        '<p class="tab-count">' + vids.length + (vids.length === 1 ? ' video' : ' videos') + '</p>' + grid(vids);
+    }
+    var x = patternsFor(letter);
+    return bar + '<div class="pattern-list">' + x.main.map(function (k) { return patternItem(k, letter); }).join('') + '</div>' +
+      (x.cross.length ? '<p class="pattern-cross">' + x.cross.map(function (k) {
+        var L = patternLetters(k)[0];
+        return '<a href="' + grammarHref(L, k) + '"><span lang="ko">' + esc(PATTERNS[k].ko) + '</span> → <span lang="ko">' + L + '</span></a>';
+      }).join('') + '</p>' : '');
+  }
 
   /* ---------- views ---------- */
   var app = document.getElementById('app');
@@ -290,11 +343,21 @@
       '<input type="search" id="q" placeholder="Search a sentence, e.g. 강아지" value="' + esc(query) + '" autocomplete="off" aria-label="Search videos by sentence or title">' +
       '</label></form><div id="search-results" aria-live="polite"></div>';
   }
+  function patternHits(q) {             // grammar patterns whose Korean name or English meaning has the words
+    var nq = squash(q);
+    if (!nq) return [];
+    return Object.keys(PATTERNS).filter(function (k) {
+      return patternVideos(k).length && (squash(PATTERNS[k].en).indexOf(nq) >= 0 || squash(PATTERNS[k].ko).indexOf(nq) >= 0);
+    });
+  }
   function searchHits(q) {
     var nq = squash(q);
     if (!nq) return [];
+    var pk = patternHits(q);
     return Object.keys(byId).map(function (id) { return byId[id]; }).filter(function (v) {
-      return [v.title].concat((INFO[v.id] || {}).s || []).some(function (s) { return squash(s).indexOf(nq) >= 0; });
+      var info = INFO[v.id] || {};
+      return [v.title].concat(info.s || []).some(function (s) { return squash(s).indexOf(nq) >= 0; }) ||
+        (info.ps || []).some(function (k) { return pk.indexOf(k) >= 0; });
     });
   }
   function showSearch() {
@@ -305,7 +368,10 @@
     body.hidden = !!q;
     if (!q) { box.innerHTML = ''; return; }
     var hits = searchHits(q);
-    box.innerHTML = '<p class="tab-count">' + (hits.length ? hits.length + (hits.length === 1 ? ' video' : ' videos') : 'No videos') + ' with “' + esc(q) + '”</p>' + grid(hits);
+    var pk = patternHits(q);
+    box.innerHTML = (pk.length ? '<div class="search-patterns"><p class="tab-count">Grammar patterns</p><div class="pattern-list">' +
+        pk.map(function (k) { return patternItem(k, patternLetters(k)[0]); }).join('') + '</div></div>' : '') +
+      '<p class="tab-count">' + (hits.length ? hits.length + (hits.length === 1 ? ' video' : ' videos') : 'No videos') + ' with “' + esc(q) + '”</p>' + grid(hits);
   }
 
   // "Just added": only items that carry a date in data.js (the day they were added to this site).
@@ -365,7 +431,12 @@
     }).join('');
     return '<h1 class="greeting">Welcome back! Happy studying.</h1>' +
       '<p class="greeting-sub">What would you like to do today?</p>' + searchBox() +
-      '<div id="page-body"><nav class="home-cards" aria-label="Sections">' + cards + '</nav>' + newRail() + '</div>';
+      '<div id="page-body"><nav class="home-cards" aria-label="Sections">' + cards +
+      (grammarReady() ? '<a class="home-card home-card-wide lift" href="' + '#/shadowing/grammar-index' + '">' +
+        '<span class="home-card-text"><span class="home-card-title">' + twoLine('Grammar Index', '문형 찾기') + '</span>' +
+        '<span class="home-card-desc">Find videos by grammar pattern (ㄱ ㄴ ㄷ …)</span></span>' +
+        '<img class="home-card-char" src="brand/char-peter.png" alt=""></a>' : '') +
+      '</nav>' + newRail() + '</div>';
   }
 
   function heading(section) {
@@ -387,9 +458,10 @@
     }).join('') + '</div>';
   }
 
-  function viewVideos(section, tabSlug) {
+  function viewVideos(section, tabSlug, sub, sub2) {
     var tab = pickTab(section, tabSlug);
     if (!tab) return null;
+    if (tab.grammar) return backLink('#/') + heading(section) + searchBox() + '<div id="page-body">' + tabBar(section, tab) + viewGrammar(sub, sub2) + '</div>';
     // NEW videos first (in their data.js order), then everything else in its usual order.
     var list = tab.videos.filter(videoIsNew).concat(tab.videos.filter(function (v) { return !videoIsNew(v); }));
     return backLink('#/') + heading(section) + searchBox() + '<div id="page-body">' + tabBar(section, tab) +
@@ -549,7 +621,7 @@
     var html = null;
     if (parts[0] === 'repeat') { location.replace('#/shadowing' + (parts[1] ? '/' + parts[1] : '')); return; }   // old links
     if (!parts[0]) html = viewHome();
-    else if (parts[0] === 'story' || parts[0] === 'shadowing' || parts[0] === 'hangul') html = viewVideos(parts[0], parts[1]);
+    else if (parts[0] === 'story' || parts[0] === 'shadowing' || parts[0] === 'hangul') html = viewVideos(parts[0], parts[1], parts[2], parts[3]);
     else if (parts[0] === 'books') {
       if (parts[3]) html = viewEpisode(parts[2], parts[3]);
       else if (parts[2]) html = viewBook(parts[2]);
