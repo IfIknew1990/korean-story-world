@@ -337,10 +337,11 @@
 
   /* ---------- search (part of a sentence or a title) ---------- */
   var query = '';
-  function searchBox() {
+  function searchBox() {                // phones get the short hint so it isn't cut off
+    var hint = window.matchMedia('(max-width: 480px)').matches ? 'e.g. 강아지, want to' : 'Search a word or grammar, e.g. 강아지, want to';
     return '<form class="search" role="search" onsubmit="return false">' +
       '<label class="search-field">' + icon('search') +
-      '<input type="search" id="q" placeholder="Search a sentence, e.g. 강아지" value="' + esc(query) + '" autocomplete="off" aria-label="Search videos by sentence or title">' +
+      '<input type="search" id="q" placeholder="' + hint + '" value="' + esc(query) + '" autocomplete="off" aria-label="Search videos by sentence or title">' +
       '</label></form><div id="search-results" aria-live="polite"></div>';
   }
   function patternHits(q) {             // grammar patterns whose Korean name or English meaning has the words
