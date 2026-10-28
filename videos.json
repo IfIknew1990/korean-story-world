@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-10-28 12:55 KST",
+ "updated": "2026-10-28 14:42 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -579,6 +579,13 @@
    "letters": [
     "ㅂ"
    ]
+  },
+  "hante": {
+   "en": "to / by (a person)",
+   "ko": "-한테",
+   "letters": [
+    "ㅎ"
+   ]
   }
  },
  "pattern_order": [
@@ -661,7 +668,8 @@
   "seyo",
   "insa",
   "banmal",
-  "buteo"
+  "buteo",
+  "hante"
  ],
  "pattern_tabs": [],
  "videos": [
@@ -1647,7 +1655,8 @@
     "어머니가 제리한테 빨리 밥 먹으라고 했어요."
    ],
    "patterns": [
-    "indirect"
+    "indirect",
+    "hante"
    ],
    "pattern": "indirect",
    "pattern_en": "reported speech (said that / suggested / asked)",
@@ -1686,7 +1695,8 @@
     "제리가 (티나하고) 사귀는 사이라고 대답했어요."
    ],
    "patterns": [
-    "indirect"
+    "indirect",
+    "hante"
    ],
    "pattern": "indirect",
    "pattern_en": "reported speech (said that / suggested / asked)",
@@ -1721,7 +1731,8 @@
     "민지씨, 부장님이 회사를 그만둔다고 들었는데, 진짜예요?"
    ],
    "patterns": [
-    "dago_think"
+    "dago_think",
+    "hante"
    ],
    "pattern": "dago_think",
    "pattern_en": "I think that",
@@ -1859,7 +1870,8 @@
    ],
    "patterns": [
     "indirect",
-    "dallago"
+    "dallago",
+    "hante"
    ],
    "pattern": "indirect",
    "pattern_en": "reported speech (said that / suggested / asked)",
@@ -1946,7 +1958,8 @@
     "aseo",
     "neunde",
     "indirect",
-    "neun_geoya"
+    "neun_geoya",
+    "hante"
    ],
    "pattern": "an",
    "pattern_en": "not (do)",
@@ -1998,7 +2011,8 @@
    ],
    "patterns": [
     "past",
-    "indirect"
+    "indirect",
+    "hante"
    ],
    "pattern": "past",
    "pattern_en": "past tense (did)",
@@ -2026,7 +2040,8 @@
     "rang",
     "dallago",
     "geodeun",
-    "ssi_dang"
+    "ssi_dang",
+    "hante"
    ],
    "pattern": "rang",
    "pattern_en": "with, and",
@@ -2055,7 +2070,8 @@
     "dallago",
     "ajuseyo",
     "geodeun",
-    "ssi_dang"
+    "ssi_dang",
+    "hante"
    ],
    "pattern": "iraseo",
    "pattern_en": "because it is",
@@ -2084,7 +2100,8 @@
     "dallago",
     "ajuseyo",
     "geodeun",
-    "ssi_dang"
+    "ssi_dang",
+    "hante"
    ],
    "pattern": "iraseo",
    "pattern_en": "because it is",
@@ -2133,7 +2150,8 @@
    "patterns": [
     "aya",
     "ado_dwae",
-    "myeon_an"
+    "myeon_an",
+    "hante"
    ],
    "pattern": "aya",
    "pattern_en": "have to",
@@ -2158,7 +2176,8 @@
    "patterns": [
     "neunde",
     "a_bwatda",
-    "deora"
+    "deora",
+    "hante"
    ],
    "pattern": "neunde",
    "pattern_en": "but / and (giving background)",
@@ -2370,7 +2389,8 @@
    ],
    "patterns": [
     "past",
-    "indirect"
+    "indirect",
+    "hante"
    ],
    "pattern": "past",
    "pattern_en": "past tense (did)",
@@ -2501,7 +2521,8 @@
    ],
    "patterns": [
     "past",
-    "deriogada"
+    "deriogada",
+    "hante"
    ],
    "pattern": "past",
    "pattern_en": "past tense (did)",
@@ -2528,7 +2549,8 @@
    ],
    "patterns": [
     "go_sipeohae",
-    "geunde"
+    "geunde",
+    "hante"
    ],
    "pattern": "go_sipeohae",
    "pattern_en": "he / she wants to",
@@ -2555,7 +2577,8 @@
    "patterns": [
     "rang",
     "past",
-    "deryeoda"
+    "deryeoda",
+    "hante"
    ],
    "pattern": "rang",
    "pattern_en": "with, and",
@@ -2613,7 +2636,8 @@
    ],
    "patterns": [
     "reo_ga",
-    "su_itda"
+    "su_itda",
+    "hante"
    ],
    "pattern": "reo_ga",
    "pattern_en": "go (somewhere) to do",
@@ -2640,7 +2664,8 @@
    ],
    "patterns": [
     "eseo_euro",
-    "a_bwatda"
+    "a_bwatda",
+    "hante"
    ],
    "pattern": "eseo_euro",
    "pattern_en": "changed from ~ to ~",
@@ -2742,7 +2767,8 @@
     "그런데 민서는 잘 지내냐는 문자에 답장을 하지 않았어요."
    ],
    "patterns": [
-    "quoted_noun"
+    "quoted_noun",
+    "hante"
    ],
    "pattern": "quoted_noun",
    "pattern_en": "the (words / news) that ...",
@@ -2770,7 +2796,8 @@
     "qword",
     "indirect",
     "nikka",
-    "neun_geoya"
+    "neun_geoya",
+    "hante"
    ],
    "pattern": "qword",
    "pattern_en": "question words: who, when, where, what",
@@ -2797,7 +2824,8 @@
    "patterns": [
     "ajuseyo",
     "neun_geo",
-    "seyo"
+    "seyo",
+    "hante"
    ],
    "pattern": "ajuseyo",
    "pattern_en": "please do (for me) / do for someone",
@@ -2855,7 +2883,8 @@
     "한국 남자들이 여자친구 핸드백 들어주는 거 어떻게 생각해?"
    ],
    "patterns": [
-    "neun_geo"
+    "neun_geo",
+    "hante"
    ],
    "pattern": "neun_geo",
    "pattern_en": "doing ~ (as a noun)",
@@ -2911,7 +2940,8 @@
     "제리가 심심하지 않게 아버지가 블랙핑크 노래를 틀어줬어요."
    ],
    "patterns": [
-    "ge"
+    "ge",
+    "hante"
    ],
    "pattern": "ge",
    "pattern_en": "so that",
@@ -2972,7 +3002,8 @@
    "patterns": [
     "counter",
     "jido",
-    "nikka"
+    "nikka",
+    "hante"
    ],
    "pattern": "counter",
    "pattern_en": "counters (animals, people, things)",
@@ -3087,7 +3118,8 @@
     "past",
     "number",
     "dongan",
-    "goingoing"
+    "goingoing",
+    "hante"
    ],
    "pattern": "past",
    "pattern_en": "past tense (did)",
@@ -3147,7 +3179,8 @@
     "eseo",
     "past",
     "neunde",
-    "daga"
+    "daga",
+    "hante"
    ],
    "pattern": "eseo",
    "pattern_en": "at (a place, doing something)",
@@ -3264,7 +3297,8 @@
     "어제 소개팅한 남자한테 연락(이) 왔어?"
    ],
    "patterns": [
-    "deon"
+    "deon",
+    "hante"
    ],
    "pattern": "deon",
    "pattern_en": "that (I) used to / was doing",
@@ -3294,7 +3328,8 @@
     "ieyo",
     "goingoing",
     "neun_noun",
-    "jeil"
+    "jeil",
+    "hante"
    ],
    "pattern": "ieyo",
    "pattern_en": "am / is / are",
@@ -3321,7 +3356,8 @@
    ],
    "patterns": [
     "su_itda",
-    "aya_only"
+    "aya_only",
+    "hante"
    ],
    "pattern": "su_itda",
    "pattern_en": "can / can't",
@@ -3359,7 +3395,8 @@
     "제리가 먹을 수 있다고 했어요."
    ],
    "patterns": [
-    "indirect"
+    "indirect",
+    "hante"
    ],
    "pattern": "indirect",
    "pattern_en": "reported speech (said that / suggested / asked)",
@@ -3647,7 +3684,8 @@
    "patterns": [
     "neunde",
     "lae",
-    "kka"
+    "kka",
+    "hante"
    ],
    "pattern": "neunde",
    "pattern_en": "but / and (giving background)",
@@ -3832,7 +3870,8 @@
    ],
    "patterns": [
     "geodeun",
-    "janha"
+    "janha",
+    "hante"
    ],
    "pattern": "geodeun",
    "pattern_en": "you see, ... (giving a reason or background)",
@@ -3861,7 +3900,8 @@
    ],
    "patterns": [
     "geodeun",
-    "janha"
+    "janha",
+    "hante"
    ],
    "pattern": "geodeun",
    "pattern_en": "you see, ... (giving a reason or background)",
