@@ -17,6 +17,7 @@
 
   var ICONS = {
     back: '<path d="M15 18l-6-6 6-6"/>',
+    headphones: '<path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>',
     chevron: '<path d="M9 18l6-6-6-6"/>',
     book: '<path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/>',
     eye: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>',
@@ -281,7 +282,17 @@
   function backLink(href) {
     return '<a class="back" href="' + href + '">' + icon('back') + '<span>Back</span></a>';
   }
+  // Old sound-only videos whose YouTube thumbnail is plain black (checked 2026-10-28): drawn as an "Audio lesson" card instead.
+  var AUDIO_ONLY = [
+    '8HNzPtbpY3k', '8r6AmILfVjQ', 'C1upUISb21Q', 'CmU6RSyK35A', 'F9JEuWN_z9s', 'KlmRMcPgBco', 'SEfQFY4nl90',
+    'TTitkxebJ8k', 'UC4a4QyhRwk', 'WmLcvubxwP8', 'XqqpZi0Ee1c', 'Y9QlQyF8bWg', '_gM4JRbBXBA', 'dhf7yD2Z1so',
+    'j4WAE5YFzm8', 'jVHxXAHvwM4', 'puLLAeS_4SI', 't4aILpXaFOU', 'w52HMaNf0b8', 'x4dKLKf7Is0', 'xKY9tm_v1yg',
+    'xZN67cYyIQs', 'zoFsR02O5Yg'
+  ];
   function thumb(id) {
+    if (AUDIO_ONLY.indexOf(id) >= 0) {
+      return '<div class="tile-media video audio-lesson">' + icon('headphones') + '<span>Audio lesson</span></div>';
+    }
     return '<div class="tile-media video"><img loading="lazy" src="https://i.ytimg.com/vi/' + id + '/mqdefault.jpg" alt=""></div>';
   }
   // Card = link to YouTube + two small buttons: copy this link / pick it (to copy several at once).
