@@ -282,7 +282,7 @@
   function backLink(href) {
     return '<a class="back" href="' + href + '">' + icon('back') + '<span>Back</span></a>';
   }
-  // Old sound-only videos whose YouTube thumbnail is plain black (checked 2026-10-28): drawn as an "Audio lesson" card instead.
+  // Old sound-only videos whose YouTube thumbnail is plain black (checked 2026-10-28): drawn as an "Audio only" card instead.
   var AUDIO_ONLY = [
     '8HNzPtbpY3k', '8r6AmILfVjQ', 'C1upUISb21Q', 'CmU6RSyK35A', 'F9JEuWN_z9s', 'KlmRMcPgBco', 'SEfQFY4nl90',
     'TTitkxebJ8k', 'UC4a4QyhRwk', 'WmLcvubxwP8', 'XqqpZi0Ee1c', 'Y9QlQyF8bWg', '_gM4JRbBXBA', 'dhf7yD2Z1so',
@@ -291,7 +291,7 @@
   ];
   function thumb(id) {
     if (AUDIO_ONLY.indexOf(id) >= 0) {
-      return '<div class="tile-media video audio-lesson">' + icon('headphones') + '<span>Audio lesson</span></div>';
+      return '<div class="tile-media video audio-lesson">' + icon('headphones') + '<span>Audio only</span></div>';
     }
     return '<div class="tile-media video"><img loading="lazy" src="https://i.ytimg.com/vi/' + id + '/mqdefault.jpg" alt=""></div>';
   }
