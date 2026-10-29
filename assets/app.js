@@ -702,3 +702,143 @@
   window.addEventListener('resize', railState);
   render();
 })();
+
+/* ---------- Arcade demo in the header: a reaper comes for Peter (once per visit; click Peter to watch again) ---------- */
+(function () {
+  'use strict';
+  var KEY = 'ks-arcade-seen';
+  var FRAMES = ['1-stand', '2-walk', '3-punch', '4-hit'].map(function (n) { return 'brand/reaper-' + n + '.png'; });
+  var STAND_H = 170;                     // height of the standing frame in the files
+  var head = document.querySelector('.masthead');
+  var peter = document.querySelector('.masthead-peter');
+  var text = document.querySelector('.masthead-text');
+  if (!head || !peter || !text || !Element.prototype.animate) return;
+  var calm = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var imgs = null, timers = [], layer = null;
+
+  function reduced() { return !!(calm && calm.matches); }
+  function seen() { try { return sessionStorage.getItem(KEY) === '1'; } catch (e) { return false; } }
+  function markSeen() { try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* private mode: plays again next load */ } }
+  function el(tag, cls, parent) { var e = document.createElement(tag); e.className = cls; parent.appendChild(e); return e; }
+  function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
+
+  function preload(done) {
+    if (imgs) { done(); return; }
+    var left = FRAMES.length, list = [], bad = false;
+    FRAMES.forEach(function (src, i) {
+      var im = new Image();
+      im.onload = function () { if (--left === 0 && !bad) { imgs = list; done(); } };
+      im.onerror = function () { bad = true; };
+      im.src = src;
+      list[i] = im;
+    });
+  }
+
+  function stop() {
+    timers.forEach(clearTimeout);
+    timers = [];
+    if (layer) layer.remove();
+    layer = null;
+    if (peter.getAnimations) peter.getAnimations().forEach(function (a) { a.cancel(); });
+  }
+
+  function play() {
+    stop();
+    var hb = head.getBoundingClientRect(), pb = peter.getBoundingClientRect(), tb = text.getBoundingClientRect();
+    var ground = Math.round(pb.bottom - hb.top);
+    var stageL = Math.round(tb.right - hb.left) + 8;          // never over the logo text
+    var stageW = Math.round(pb.right - hb.left) - stageL;
+    var peterX = stageW - pb.width;                             // Peter's left edge, in stage pixels
+    var k = pb.height * 0.86 / STAND_H;
+    function w(i) { return Math.round(imgs[i].naturalWidth * k); }
+
+    layer = el('div', 'arcade', head);
+    layer.setAttribute('aria-hidden', 'true');
+    var stage = el('div', 'arcade-stage', layer);
+    stage.style.left = stageL + 'px';
+    stage.style.width = stageW + 'px';
+    stage.style.height = ground + 'px';
+    var guy = el('img', 'arcade-reaper', stage);
+    guy.alt = '';
+    var x = -w(1);
+    function frame(i) {
+      guy.src = FRAMES[i];
+      guy.style.width = w(i) + 'px';
+      guy.style.height = Math.round(imgs[i].naturalHeight * k) + 'px';
+    }
+    function moveTo(nx, ms) {
+      guy.animate([{ transform: 'translateX(' + x + 'px)' }, { transform: 'translateX(' + nx + 'px)' }], { duration: ms, fill: 'forwards' });
+      x = nx;
+    }
+    function say(words, centerX, until) {           // speech bubble on the floor, tail pointing up at the speaker
+      var b = el('div', 'arcade-bubble', layer);
+      b.textContent = words;
+      var bw = b.offsetWidth;
+      var left = Math.max(8, Math.min(hb.width - bw - 8, centerX - bw * 0.7));
+      b.style.left = Math.round(left) + 'px';
+      b.style.top = (ground + 4) + 'px';
+      b.style.setProperty('--tail', Math.round(Math.min(bw - 14, Math.max(14, centerX - left))) + 'px');
+      at(until, function () { b.remove(); });
+    }
+    function pow(words, cx, cy) {
+      var p = el('div', 'arcade-pow', layer);
+      p.textContent = words;
+      var left = Math.max(stageL, cx - p.offsetWidth / 2);
+      p.style.left = Math.round(left) + 'px';
+      p.style.top = Math.round(cy - p.offsetHeight / 2) + 'px';
+      p.animate([{ transform: 'scale(.3)', opacity: 1 }, { transform: 'scale(1.25)', opacity: 1, offset: 0.25 },
+        { transform: 'scale(1)', opacity: 1, offset: 0.7 }, { transform: 'scale(1)', opacity: 0 }], { duration: 800, fill: 'forwards' });
+      at(800, function () { p.remove(); });
+    }
+
+    // 1. walks in from the left, walk/stand frames in turn
+    var standX = peterX - w(0) - 4;
+    frame(1);
+    moveTo(standX, 2000);
+    for (var t = 0; t < 2000; t += 250) at(t, (function (n) { return function () { frame(n % 2 ? 0 : 1); }; })(t / 250));
+    // 2-3. the talk
+    at(2000, function () { frame(0); say('고릴라 씨, 같이 가실 시간이에요.', stageL + standX + w(0) / 2, 2200); });
+    at(4300, function () { say('나 지금 바나나 먹는 중인데?', stageL + peterX + pb.width / 2, 2000); });
+    // 4. runs in and punches: Peter shakes, 탁!
+    at(6400, function () { frame(1); moveTo(peterX - w(2) + 6, 220); });
+    at(6620, function () {
+      frame(2);
+      pow('탁!', stageL + peterX + 4, ground - pb.height * 0.62);
+      peter.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(4px)' }, { transform: 'translateX(-3px)' },
+        { transform: 'translateX(2px)' }, { transform: 'translateX(0)' }], { duration: 380 });
+    });
+    // 5. Peter hits back: 쾅!, the reaper spins away to the upper left
+    at(7300, function () {
+      peter.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-7px)' }, { transform: 'translateX(0)' }], { duration: 300 });
+    });
+    at(7420, function () {
+      frame(3);
+      pow('쾅!', stageL + x + w(3) / 2, ground - pb.height * 0.55);
+      guy.animate([{ transform: 'translate(' + x + 'px, 0) rotate(0deg)', opacity: 1 },
+        { transform: 'translate(' + (x - stageW * 0.7) + 'px, ' + (-ground * 1.3) + 'px) rotate(-720deg)', opacity: 0 }],
+        { duration: 900, easing: 'ease-in', fill: 'forwards' });
+    });
+    // 6. Peter hops: 다음 손님!
+    at(8600, function () {
+      peter.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-9px)' }, { transform: 'translateY(0)' },
+        { transform: 'translateY(-4px)' }, { transform: 'translateY(0)' }], { duration: 650, easing: 'ease-out' });
+      say('다음 손님!', stageL + peterX + pb.width / 2, 1700);
+    });
+    at(10500, stop);
+  }
+
+  function start() { if (!reduced()) preload(play); }
+  head.classList.add('arcade-ready');
+  peter.addEventListener('click', function (e) {
+    if (reduced()) return;                 // then it stays a plain home link
+    e.preventDefault();
+    start();
+  });
+  window.addEventListener('resize', function () { if (layer) stop(); });
+  function auto() {
+    if (seen() || reduced()) return;
+    markSeen();
+    setTimeout(start, 600);
+  }
+  if (document.readyState === 'complete') auto(); else window.addEventListener('load', auto);
+})();
