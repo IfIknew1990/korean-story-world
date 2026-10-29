@@ -122,6 +122,7 @@ var VIDEOS = [
     { title: "민수가 수영을 할 수 있어요", youtube: "https://youtu.be/APyeZiKEfaM", date: "2026-10-27" },
     { title: "민수가 바벨을 10kg에서 100kg으로 바꿨어요", youtube: "https://youtu.be/4XkidYDgFxQ", date: "2026-10-27" },
     { title: "제리가 보통 안경을 끼고 학교에 가요", youtube: "https://youtu.be/1EX2R9IzAjM", date: "2026-10-27" },
+    { title: "민수가 그 킬러를 죽이려고 킬러가 됐어요.", youtube: "https://youtu.be/J7RrbkxQkuo", date: "2026-10-29" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Beginner 3", ko: "초급 3", videos: [
     { title: "토니가 배고프다고 빵집에 가자는 거야", youtube: "https://youtu.be/tPYKTtj2vcM" },

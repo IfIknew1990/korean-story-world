@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-10-28 14:42 KST",
+ "updated": "2026-10-29 22:00 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -586,6 +586,13 @@
    "letters": [
     "ㅎ"
    ]
+  },
+  "auto_82": {
+   "en": "in order to ~",
+   "ko": "~(으)러 / ~(으)려고",
+   "letters": [
+    "ㄹ"
+   ]
   }
  },
  "pattern_order": [
@@ -669,7 +676,8 @@
   "insa",
   "banmal",
   "buteo",
-  "hante"
+  "hante",
+  "auto_82"
  ],
  "pattern_tabs": [],
  "videos": [
@@ -2698,6 +2706,35 @@
    "pattern_en": "to go to",
    "pattern_ko": "-에 가요",
    "added": "2026-10-27"
+  },
+  {
+   "id": "J7RrbkxQkuo",
+   "url": "https://youtu.be/J7RrbkxQkuo",
+   "title": "민수가 그 킬러를 죽이려고 킬러가 됐어요.",
+   "section": "Shadowing",
+   "tab": "Beginner 2",
+   "playlist": "Korean Shadowing | Beginner 2",
+   "sentences": [
+    "민수가 그 킬러를 죽이려고 킬러가 됐어요.",
+    "민수의 부모님이 킬러한테 죽었어요.",
+    "그래서 민수가 그 킬러를 죽이려고 킬러가 됐어요.",
+    "어느 날 보스한테 문자가 왔어요. \"이 남자를 죽이러 가라.\"",
+    "민수의 부모님을 죽인 그 남자가 타겟이었어요.",
+    "민수가 그 남자를 죽이러 부산에 갔어요.",
+    "들키지 않으려고 모자하고 선글라스를 썼어요.",
+    "밤 10시에 그 남자 집 앞에 도착했어요. 그리고 밤 11시에 그 남자가 일을 끝내고 집에 왔어요.",
+    "민수가 총을 꺼내려고 가방을 열었는데 그 남자가 민수를 보고 도망갔어요.",
+    "민수가 그 남자를 죽이러 쫓아갔어요.",
+    "그리고 그 남자를 죽였어요.",
+    "민수가 보스한테 그 남자를 죽였다고 말하려고 전화기를 꺼냈어요."
+   ],
+   "patterns": [
+    "auto_82"
+   ],
+   "pattern": "auto_82",
+   "pattern_en": "in order to ~",
+   "pattern_ko": "~(으)러 / ~(으)려고",
+   "added": "2026-10-29"
   },
   {
    "id": "tPYKTtj2vcM",
