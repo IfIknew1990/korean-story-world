@@ -154,6 +154,7 @@ var VIDEOS = [
     { title: "비가 와서 그런지 파전이 더 맛있었어요", youtube: "https://youtu.be/My0sj9RZ5g4", date: "2026-10-20" },
     { title: "이 집 파전은 좀 비싸기는 한데 맛있어.", youtube: "https://youtu.be/y1BBV_Y5ZUY", date: "2026-10-20" },
     { title: "아니거든, 바삭하거든!", youtube: "https://youtu.be/qIqn167HrEs", date: "2026-10-26" },
+    { title: "토를 하고 나니까 속이 좀 시원해졌어요", youtube: "https://youtu.be/oHG9oL6wS6g", date: "2026-10-31" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Intermediate", ko: "중급", videos: [
     { title: "너 요즘에 소개팅녀랑 잘 되가냐?", youtube: "https://youtu.be/momhd8AzhW0" },

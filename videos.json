@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-10-29 22:00 KST",
+ "updated": "2026-10-31 22:00 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -593,6 +593,13 @@
    "letters": [
     "ㄹ"
    ]
+  },
+  "auto_83": {
+   "en": "after doing ~, ...",
+   "ko": "-고 나니까",
+   "letters": [
+    "ㄱ"
+   ]
   }
  },
  "pattern_order": [
@@ -677,7 +684,8 @@
   "banmal",
   "buteo",
   "hante",
-  "auto_82"
+  "auto_82",
+  "auto_83"
  ],
  "pattern_tabs": [],
  "videos": [
@@ -3512,6 +3520,32 @@
    "pattern_en": "started to",
    "pattern_ko": "-기 시작했어요",
    "added": "2026-10-26"
+  },
+  {
+   "id": "oHG9oL6wS6g",
+   "url": "https://youtu.be/oHG9oL6wS6g",
+   "title": "토를 하고 나니까 속이 좀 시원해졌어요",
+   "section": "Shadowing",
+   "tab": "Beginner 3",
+   "playlist": "Korean Shadowing | Beginner 3",
+   "sentences": [
+    "토를 하고 나니까 속이 좀 시원해졌어요",
+    "민수가 토를 하고 나니까 속이 좀 시원해진 것 같았어요.",
+    "울고 나니까 마음이 편해졌어요.",
+    "청소하고 나니까 방이 더 커 보여요.",
+    "운동하고 나니까 기분이 좋아요.",
+    "민수가 운동을 하고 나니까 기분이 좋아 보였어요.",
+    "이사하고 나니까 회사가 가까워졌어요.",
+    "말을 하고 나니까 속이 시원해졌어요.",
+    "숙제를 끝내고 나니까 밤 열 시였어요."
+   ],
+   "patterns": [
+    "auto_83"
+   ],
+   "pattern": "auto_83",
+   "pattern_en": "after doing ~, ...",
+   "pattern_ko": "-고 나니까",
+   "added": "2026-10-31"
   },
   {
    "id": "momhd8AzhW0",
