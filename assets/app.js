@@ -448,7 +448,8 @@
         '<span class="home-card-text"><span class="home-card-title">' + twoLine('Grammar Index', '문형 찾기') + '</span>' +
         '<span class="home-card-desc">Find videos by grammar pattern (ㄱ ㄴ ㄷ …)</span></span>' +
         '<img class="home-card-char" src="brand/char-peter.png" alt=""></a>' : '') +
-      '</nav>' + newRail() + '</div>';
+      '</nav>' + newRail() + '</div>' +
+      '<p class="privacy-link"><a href="privacy.html">Privacy</a></p>';
   }
 
   function heading(section) {
