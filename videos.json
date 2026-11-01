@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-10-31 22:00 KST",
+ "updated": "2026-11-01 23:25 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -2743,6 +2743,29 @@
    "pattern_en": "in order to ~",
    "pattern_ko": "~(으)러 / ~(으)려고",
    "added": "2026-10-29"
+  },
+  {
+   "id": "qo-JE7awjIY",
+   "url": "https://youtu.be/qo-JE7awjIY",
+   "title": "미나가 너무 당황했어요. 그렇지만 재빨리 \"죄송합니다\"라고 했어요",
+   "section": "Shadowing",
+   "tab": "Beginner 2",
+   "playlist": "Korean Shadowing | Beginner 2",
+   "sentences": [
+    "미나가 너무 당황했어요. 그렇지만 재빨리 \"죄송합니다\"라고 했어요",
+    "미나가 요즘에 돈이 별로 없어요. 그렇지만 새 핸드폰을 사고 싶어 해요. 그래서 카페에서 알바를 시작했어요.",
+    "첫날이었어요. 미나가 열심히 일을 했어요. 그런데 실수로 커피를 손님 옷에 쏟았어요.",
+    "손님이 처음에는 화를 냈어요. 그렇지만 미나가 너무 열심히 사과를 해서 그냥 웃으면서 괜찮다고 했어요.",
+    "퇴근할 시간이 됐어요. 그런데 사장님이 (미나한테) 오늘 야근을 해달라고 했어요.",
+    "미나가 피곤했어요. 그렇지만 돈이 필요해서 그러겠다고 했어요."
+   ],
+   "patterns": [
+    "geunde"
+   ],
+   "pattern": "geunde",
+   "pattern_en": "but / however",
+   "pattern_ko": "그렇지만 / 그런데",
+   "added": "2026-11-01"
   },
   {
    "id": "tPYKTtj2vcM",
