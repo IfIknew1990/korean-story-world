@@ -617,6 +617,9 @@
       '<p class="target-title"><strong>Target structure:</strong> <span lang="ko">' + esc(t.title) + '</span></p>' +
       (t.casual ? '<p class="target-casual">(casual: <span lang="ko">' + esc(t.casual) + '</span>)</p>' : '') +
       (t.note ? '<p class="target-note">' + esc(t.note) + '</p>' : '') +
+      ((t.verbs || []).length ? '<p class="target-verbs">' + t.verbs.map(function (v) {
+        return '<span>' + esc(v) + '</span>';
+      }).join(' · ') + '</p>' : '') +
       ((t.examples || []).length ? '<ul class="target-examples">' + t.examples.map(function (x) {
         return '<li><span lang="ko">' + esc(x[0]) + '</span> <span class="target-en">→ ' + esc(x[1]) + '</span></li>';
       }).join('') + '</ul>' : '') +

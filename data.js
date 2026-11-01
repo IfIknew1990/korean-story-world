@@ -42,6 +42,7 @@
          title: "문형",
          casual: "반말 문형",
          note: "영어 설명 한두 문장",
+         verbs: ["가요 / 갔어요 (go / went)"],   // 동사 짝이 필요할 때만
          examples: [["본문 문장", "영어 뜻"], ["본문 문장", "영어 뜻"]],
        },
 
@@ -203,6 +204,22 @@ var EPISODES = [
     date: "2026-09-07",
     images: ["tina-1.png"],
     audio: "https://drive.google.com/file/d/1MNvgjT1EupnOzarGHiNsj5AQRl6KRkpI/view?usp=drive_link",
+    target: {
+      title: "everyday verbs — present -아/어요 and past -았/었어요",
+      note: "Common verbs you will hear in this story, in the present and the past.",
+      verbs: [
+        "가요 / 갔어요 (go / went)",
+        "아파요 / 아팠어요 (hurts / hurt (past))",
+        "좋아해요 / 좋아했어요 (like / liked)",
+        "마셔요 / 마셨어요 (drink / drank)",
+        "먹어요 / 먹었어요 (eat / ate)",
+        "살아요 / 살았어요 (live / lived)",
+      ],
+      examples: [
+        ["매주 일요일에 서울에 가요.", "She goes to Seoul every Sunday."],
+        ["제로 콜라를 다섯 캔 마셨어요.", "She drank five cans of Coke Zero."],
+      ],
+    },
     text: `
 티나가 미국 사람이에요. 그런데 지금 미국에 안 살아요. 한국에 살아요. 아빠하고 엄마는 지금 미국에 있어요.
 

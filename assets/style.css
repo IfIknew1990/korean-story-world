@@ -376,6 +376,8 @@ button { font: inherit; color: inherit; }
 .target p { margin: 0; }
 .target-casual { color: var(--ink-soft); }
 .target-note { margin-top: 6px !important; }
+.target-verbs { margin-top: 6px !important; }
+.target-verbs span { white-space: nowrap; }
 .target-examples { list-style: none; margin: 6px 0 0; padding: 0; }
 .target-examples li { margin-top: 4px; word-break: keep-all; overflow-wrap: anywhere; }
 .target-en { color: var(--ink-soft); }
