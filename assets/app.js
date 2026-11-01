@@ -192,6 +192,7 @@
       title: String(e.title || '').trim(),
       text: String(e.text || ''),
       images: (e.images || []).filter(Boolean).slice(0, 2),
+      target: e.target || null,
       date: e.date,
       audio: null
     };
@@ -604,9 +605,22 @@
       '<article class="story" id="story">' +
       '<div class="hidden-note" role="status">' + icon('headphones') + '<span>Text is hidden.</span>' +
       '<button type="button" class="show-text">' + icon('text') + ' Show text</button></div>' +
-      fig(0, 'top') +
+      fig(0, 'top') + targetBox(ep.target) +
       '<div class="story-text" lang="ko">' + body + '</div>' +
       '</article>' + nav;
+  }
+
+  // Small "Target structure" box above the story text; comes from `target` on the episode in data.js.
+  function targetBox(t) {
+    if (!t || !t.title) return '';
+    return '<aside class="target" aria-label="Target structure">' +
+      '<p class="target-title"><strong>Target structure:</strong> <span lang="ko">' + esc(t.title) + '</span></p>' +
+      (t.casual ? '<p class="target-casual">(casual: <span lang="ko">' + esc(t.casual) + '</span>)</p>' : '') +
+      (t.note ? '<p class="target-note">' + esc(t.note) + '</p>' : '') +
+      ((t.examples || []).length ? '<ul class="target-examples">' + t.examples.map(function (x) {
+        return '<li><span lang="ko">' + esc(x[0]) + '</span> <span class="target-en">→ ' + esc(x[1]) + '</span></li>';
+      }).join('') + '</ul>' : '') +
+      '</aside>';
   }
 
   function setMode(mode) {
