@@ -37,10 +37,10 @@
      - 오디오가 없으면 audio 줄을 지워요. 그러면 재생 창과 모드 버튼이 숨겨져요.
      - 글 안에 ` (백틱) 글자는 쓰지 마세요.
      - 본문 위 "Target structure" 안내 상자를 넣으려면 text 위에 아래 덩어리를 붙여요(없으면 상자가 안 나와요).
-       casual은 없어도 되고, 예문은 본문에 있는 문장 그대로 적어요.
+       banmal은 없어도 되고, 예문은 본문에 있는 문장 그대로 적어요.
        target: {
          title: "문형",
-         casual: "반말 문형",
+         banmal: "반말 문형",
          note: "영어 설명 한두 문장",
          verbs: ["가요 / 갔어요 (go / went)"],   // 동사 짝이 필요할 때만
          examples: [["본문 문장", "영어 뜻"], ["본문 문장", "영어 뜻"]],
@@ -238,7 +238,7 @@ var EPISODES = [
     audio: "https://drive.google.com/file/d/14kY8WI1GHgnZHgw9-SSZ0OVvP7bi44eo/view",
     target: {
       title: "-(으)ㄹ 거예요 / -았/었을 거예요",
-      casual: "-(으)ㄹ 거야 / -았/었을 거야",
+      banmal: "-(으)ㄹ 거야 / -았/었을 거야",
       note: "Here, this is not the future. It means \"probably\" or \"I guess.\" The speaker can't see it, so they are guessing.",
       examples: [
         ["돈이 다 가게 금고에 있을 거야.", "The money is probably all in the store's safe."],

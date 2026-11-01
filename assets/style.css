@@ -374,10 +374,14 @@ button { font: inherit; color: inherit; }
   font-size: 0.92rem; line-height: 1.55; color: var(--ink);
 }
 .target p { margin: 0; }
-.target-casual { color: var(--ink-soft); }
+.target-banmal { color: var(--ink-soft); }
+.target-keep { white-space: nowrap; }
 .target-note { margin-top: 6px !important; }
-.target-verbs { margin-top: 6px !important; }
-.target-verbs span { white-space: nowrap; }
+/* dots sit in front of each pair; the one at the start of a line is clipped, so no line ends with a dot */
+.target-verbs { margin-top: 6px; overflow: hidden; }
+.target-verbs > div { display: flex; flex-wrap: wrap; margin-left: -1em; }
+.target-verbs span { position: relative; padding-left: 1em; white-space: nowrap; }
+.target-verbs span::before { content: "·"; position: absolute; left: 0.4em; }
 .target-examples { list-style: none; margin: 6px 0 0; padding: 0; }
 .target-examples li { margin-top: 4px; word-break: keep-all; overflow-wrap: anywhere; }
 .target-en { color: var(--ink-soft); }

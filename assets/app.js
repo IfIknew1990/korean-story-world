@@ -557,8 +557,7 @@
 
   function audioPlayer(a) {
     if (a.kind === 'drive') {
-      return '<iframe class="drive" src="https://drive.google.com/file/d/' + a.id + '/preview" title="Story audio" allow="autoplay" loading="lazy"></iframe>' +
-        '<a class="open-link" href="https://drive.google.com/file/d/' + a.id + '/view" target="_blank" rel="noopener">' + icon('external') + 'Open in Google Drive</a>';
+      return '<iframe class="drive" src="https://drive.google.com/file/d/' + a.id + '/preview" title="Story audio" allow="autoplay" loading="lazy"></iframe>';
     }
     var t = a.start || 0;
     return '<iframe class="yt" src="https://www.youtube-nocookie.com/embed/' + a.id + '?rel=0&start=' + t + '" title="Story audio" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>' +
@@ -613,13 +612,15 @@
   // Small "Target structure" box above the story text; comes from `target` on the episode in data.js.
   function targetBox(t) {
     if (!t || !t.title) return '';
+    // keep each pattern ("-았/었을 거예요") in one piece; lines may break only between patterns
+    function keep(s) { return esc(s).replace(/-[^\s]+(?:\s[가-힣]+)*/g, '<span class="target-keep">$&</span>'); }
     return '<aside class="target" aria-label="Target structure">' +
-      '<p class="target-title"><strong>Target structure:</strong> <span lang="ko">' + esc(t.title) + '</span></p>' +
-      (t.casual ? '<p class="target-casual">(casual: <span lang="ko">' + esc(t.casual) + '</span>)</p>' : '') +
+      '<p class="target-title"><strong>Target structure:</strong> <span lang="ko">' + keep(t.title) + '</span></p>' +
+      (t.banmal ? '<p class="target-banmal" lang="ko">(반말: ' + keep(t.banmal) + ')</p>' : '') +
       (t.note ? '<p class="target-note">' + esc(t.note) + '</p>' : '') +
-      ((t.verbs || []).length ? '<p class="target-verbs">' + t.verbs.map(function (v) {
+      ((t.verbs || []).length ? '<div class="target-verbs"><div>' + t.verbs.map(function (v) {
         return '<span>' + esc(v) + '</span>';
-      }).join(' · ') + '</p>' : '') +
+      }).join('') + '</div></div>' : '') +
       ((t.examples || []).length ? '<ul class="target-examples">' + t.examples.map(function (x) {
         return '<li><span lang="ko">' + esc(x[0]) + '</span> <span class="target-en">→ ' + esc(x[1]) + '</span></li>';
       }).join('') + '</ul>' : '') +
