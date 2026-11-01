@@ -704,10 +704,9 @@
   render();
 })();
 
-/* ---------- Arcade demo in the header: a reaper comes for Peter (once per visit; click Peter to watch again) ---------- */
+/* ---------- Arcade demo in the header: a reaper comes for Peter (every time the home page opens; click Peter to watch again) ---------- */
 (function () {
   'use strict';
-  var KEY = 'ks-arcade-seen';
   var FRAMES = ['1-stand', '2-walk', '3-punch', '4-hit'].map(function (n) { return 'brand/reaper-' + n + '.png'; });
   var STAND_H = 170;                     // height of the standing frame in the files
   var head = document.querySelector('.masthead');
@@ -718,8 +717,7 @@
   var imgs = null, timers = [], layer = null;
 
   function reduced() { return !!(calm && calm.matches); }
-  function seen() { try { return sessionStorage.getItem(KEY) === '1'; } catch (e) { return false; } }
-  function markSeen() { try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* private mode: plays again next load */ } }
+  function atHome() { return ['', '#', '#/'].indexOf(location.hash) >= 0; }
   function el(tag, cls, parent) { var e = document.createElement(tag); e.className = cls; parent.appendChild(e); return e; }
   function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
 
@@ -837,9 +835,8 @@
   });
   window.addEventListener('resize', function () { if (layer) stop(); });
   function auto() {
-    if (seen() || reduced()) return;
-    markSeen();
-    setTimeout(start, 600);
+    if (atHome()) setTimeout(function () { if (atHome()) start(); }, 600);
   }
+  window.addEventListener('hashchange', auto);
   if (document.readyState === 'complete') auto(); else window.addEventListener('load', auto);
 })();
