@@ -505,11 +505,20 @@
   function bookHref(b) { return '#/books/' + slug(b.level) + '/' + encodeURIComponent(b.name); }
   function epLabel(ep) { return 'Episode ' + ep.num; }
 
+  function howToRead() {
+    var steps = [['Read it once', "Don't stop. Just keep going."], ['Read it again', 'Look up only the words that stop you.'],
+      ['Listen', 'Always. At least once.'], ['Get the big picture', "Some parts fuzzy? Fine. Don't stop."],
+      ['Listen again', 'And again. It gets clearer every time.']];
+    return '<details class="fold how-read"><summary>How to read a story</summary><ol>' + steps.map(function (x) {
+      return '<li><strong>' + x[0] + '</strong> ' + x[1] + '</li>';
+    }).join('') + '</ol></details>';
+  }
+
   function viewBooks(levelSlug) {
     var tab = pickTab('books', levelSlug);
     if (!tab) return null;
     var list = bookOrder.map(function (n) { return books[n]; }).filter(function (b) { return b.level === tab.label; });
-    return backLink('#/') + heading('books') + tabBar('books', tab) +
+    return backLink('#/') + heading('books') + howToRead() + tabBar('books', tab) +
       '<div class="grid">' + list.map(function (b) {
         var cover = b.episodes[0].images[0];
         var n = b.episodes.length;
@@ -572,6 +581,15 @@
     if (idx < 0) return null;
     var ep = b.episodes[idx];
     var p = paragraphs(ep.text);
+    if (!window.READING && !readingAsked) {       // word lists and translations load only on story pages
+      readingAsked = true;
+      var rs = document.createElement('script');
+      rs.src = 'reading.js';
+      rs.onload = render;
+      document.head.appendChild(rs);
+    }
+    var extra = (window.READING || {})[b.name + ' ' + ep.num] || null;
+    var mark = sentenceMarker(extra);
     var fig = function (n, cls) {
       return ep.images[n] ? '<figure class="story-figure ' + cls + '"><img src="' + imgSrc(ep.images[n]) + '" alt="Illustration ' + (n + 1) + '"></figure>' : '';
     };
@@ -579,7 +597,7 @@
     var body = '';
     p.list.forEach(function (para, i) {
       if (i === mid) body += '</div>' + fig(1, 'mid') + '<div class="story-text" lang="ko">';
-      body += '<p>' + esc(para).replace(/\n/g, '<br>') + '</p>';
+      body += '<p>' + mark(para) + '</p>';
     });
     if (mid >= p.list.length) body += '</div>' + fig(1, 'mid') + '<div class="story-text" lang="ko">';
 
@@ -606,14 +624,61 @@
       '<button type="button" class="show-text">' + icon('text') + ' Show text</button></div>' +
       fig(0, 'top') + targetBox(ep.target) +
       '<div class="story-text" lang="ko">' + body + '</div>' +
+      storyExtras(extra) +
       '</article>' + nav;
+  }
+
+  // keep each pattern ("-았/었을 거예요") in one piece; lines may break only between patterns
+  function keep(s) { return esc(s).replace(/-[^\s]+(?:\s[가-힣]+)*/g, '<span class="target-keep">$&</span>'); }
+
+  // Walks the story text and puts a small number (shown only while the translation is open) where each sentence starts.
+  var readingAsked = false;
+  function sentenceMarker(extra) {
+    var plain = function (para) { return esc(para).replace(/\n/g, '<br>'); };
+    if (!extra) return plain;
+    var want = extra.s.map(function (x) { return x[0].replace(/\s+/g, ''); }), si = 0, sj = 0;
+    return function (para) {
+      return para.split('').map(function (ch) {
+        if (ch === '\n') return '<br>';
+        var out = esc(ch);
+        if (/\s/.test(ch) || si >= want.length) return out;
+        if (ch === want[si][sj]) {
+          if (sj === 0) out = '<sup class="sent-no" aria-hidden="true">' + (si + 1) + '</sup>' + out;
+          sj++;
+          if (sj === want[si].length) { si++; sj = 0; }
+        }
+        return out;
+      }).join('');
+    };
+  }
+
+  // Key expressions with practice videos, then the word list and translation, both folded.
+  function storyExtras(x) {
+    if (!x) return '';
+    var keys = (x.p || []).map(function (k) {
+      return '<li><p class="key-expr" lang="ko">' + keep(k.e) + '</p><p class="key-sent" lang="ko">' + esc(k.s) + '</p>' +
+        (k.v ? '<a class="key-video" href="https://www.youtube.com/watch?v=' + k.v + '" target="_blank" rel="noopener">▶ Practice video' +
+          '<span lang="ko">' + esc(shortTitle(k.t).text) + '</span></a>'
+          : '<p class="key-empty">Practice video · coming soon</p>') + '</li>';
+    }).join('');
+    var trans = x.s.map(function (r, i) {
+      return '<li><span class="trans-no">' + (i + 1) + '</span>' +
+        (r[2] ? '<span class="tl">' + esc(r[2]) + '</span><span class="tn">' + esc(r[1]) + '</span>' : '<span>' + esc(r[1]) + '</span>') + '</li>';
+    }).join('');
+    return (keys ? '<section class="keys"><h2>Key expressions</h2><ul>' + keys + '</ul></section>' : '') +
+      '<details class="fold"><summary>Word list <span>Only if lost</span></summary><ul class="words">' + x.w.map(function (w) {
+        return '<li><span lang="ko">' + esc(w[0]) + '</span><span>' + esc(w[1]) + '</span></li>';
+      }).join('') + '</ul></details>' +
+      '<details class="fold fold-trans"><summary>English translation <span>Only if lost</span></summary>' +
+      '<div class="trans-switch" role="group" aria-label="Translation style">' +
+      '<button type="button" data-trans="l" aria-pressed="true">Literal</button>' +
+      '<button type="button" data-trans="n" aria-pressed="false">Natural</button></div>' +
+      '<ol class="trans show-l">' + trans + '</ol></details>';
   }
 
   // Small "Target structure" box above the story text; comes from `target` on the episode in data.js.
   function targetBox(t) {
     if (!t || !t.title) return '';
-    // keep each pattern ("-았/었을 거예요") in one piece; lines may break only between patterns
-    function keep(s) { return esc(s).replace(/-[^\s]+(?:\s[가-힣]+)*/g, '<span class="target-keep">$&</span>'); }
     return '<aside class="target" aria-label="Target structure">' +
       '<p class="target-title"><strong>Target structure:</strong> <span lang="ko">' + keep(t.title) + '</span></p>' +
       (t.banmal ? '<p class="target-banmal" lang="ko">(반말: ' + keep(t.banmal) + ')</p>' : '') +
@@ -690,8 +755,15 @@
       pickBar();
       return;
     }
-    var t = ev.target.closest ? ev.target.closest('[data-mode], .show-text, [data-replace], [data-rail]') : null;
+    var t = ev.target.closest ? ev.target.closest('[data-trans], [data-mode], .show-text, [data-replace], [data-rail]') : null;
     if (!t) return;
+    if (t.hasAttribute('data-trans')) {
+      var lit = t.getAttribute('data-trans') === 'l';
+      var fold = t.closest('.fold-trans');
+      fold.querySelector('.trans').className = 'trans ' + (lit ? 'show-l' : 'show-n');
+      Array.prototype.forEach.call(fold.querySelectorAll('[data-trans]'), function (b) { b.setAttribute('aria-pressed', String(b === t)); });
+      return;
+    }
     if (t.hasAttribute('data-rail')) { railMove(+t.getAttribute('data-rail')); return; }
     if (t.hasAttribute('data-replace')) {          // tabs: don't pile up history
       ev.preventDefault();
@@ -701,6 +773,12 @@
     if (t.classList.contains('show-text')) setMode('both');
     else setMode(t.getAttribute('data-mode'));
   });
+
+  app.addEventListener('toggle', function (ev) {     // sentence numbers show only while the translation is open
+    if (!ev.target.classList || !ev.target.classList.contains('fold-trans')) return;
+    var story = document.getElementById('story');
+    if (story) story.classList.toggle('show-numbers', ev.target.open);
+  }, true);
 
   document.body.insertAdjacentHTML('beforeend',
     '<div class="pickbar" id="pickbar" hidden><span class="pick-count"></span>' +
