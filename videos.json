@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-11-01 23:25 KST",
+ "updated": "2026-11-03 22:00 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -600,6 +600,20 @@
    "letters": [
     "ㄱ"
    ]
+  },
+  "auto_84": {
+   "en": "it seems like ~ / I think ~",
+   "ko": "~인/ㄴ/는 것 같아요",
+   "letters": [
+    "ㅇ"
+   ]
+  },
+  "auto_85": {
+   "en": "it seems like ~ / I think ~",
+   "ko": "~는 것 같아요",
+   "letters": [
+    "ㄴ"
+   ]
   }
  },
  "pattern_order": [
@@ -685,7 +699,9 @@
   "buteo",
   "hante",
   "auto_82",
-  "auto_83"
+  "auto_83",
+  "auto_84",
+  "auto_85"
  ],
  "pattern_tabs": [],
  "videos": [
@@ -2766,6 +2782,58 @@
    "pattern_en": "but / however",
    "pattern_ko": "그렇지만 / 그런데",
    "added": "2026-11-01"
+  },
+  {
+   "id": "2Srsg75XAbQ",
+   "url": "https://youtu.be/2Srsg75XAbQ",
+   "title": "이 옷이 저한테 안 맞는 것 같아요",
+   "section": "Shadowing",
+   "tab": "Beginner 2",
+   "playlist": "Korean Shadowing | Beginner 2",
+   "sentences": [
+    "이 옷이 저한테 안 맞는 것 같아요",
+    "이 여자가 지금 뭐 하는 것(거) 같아요?",
+    "여자가 지금 사진을 찍는 것(거) 같아요.",
+    "남자가 지금 바지를 입는 것(거) 같아요.",
+    "제리가 라면을 좋아해요? 아니요. 안 좋아하는 것(거) 같아요.",
+    "엄마: 제리야, 엘리스(가) 어디(에) 있어? 제리: 방에 있는 것(거) 같아요.",
+    "엄마: (엘리스가) 방에서 뭐 해? 제리: 넷플릭스 보는 것(거) 같아요.",
+    "김치가 제임스 입에 맞는 것(거) 같아요.",
+    "김치가 제 입에 맞는 것(거) 같아요.",
+    "이 옷이 저한테 안 맞는 것(거) 같아요."
+   ],
+   "patterns": [
+    "auto_85"
+   ],
+   "pattern": "auto_85",
+   "pattern_en": "it seems like ~ / I think ~",
+   "pattern_ko": "~는 것 같아요",
+   "added": "2026-11-03"
+  },
+  {
+   "id": "HEeWDDJFCp8",
+   "url": "https://youtu.be/HEeWDDJFCp8",
+   "title": "이 사람이 남자인 것 같아요",
+   "section": "Shadowing",
+   "tab": "Beginner 2",
+   "playlist": "Korean Shadowing | Beginner 2",
+   "sentences": [
+    "이 사람이 남자인 것 같아요",
+    "이 사람이 남자인 것(거) 같아요? 여자인 것(거) 같아요?",
+    "이거 고양이인 것(거) 같아요? 강아지인 것(거) 같아요?",
+    "이 사람들이 학생인 것(거) 같아요?",
+    "아니요. 학생이 아닌 것(거) 같아요.",
+    "이 옷 어때요? 좀 작은 것(거) 같아요.",
+    "예쁜데 좀 큰 것(거) 같아요.",
+    "야, 나가자. 여기 너무 비싼 것(거) 같아."
+   ],
+   "patterns": [
+    "auto_84"
+   ],
+   "pattern": "auto_84",
+   "pattern_en": "it seems like ~ / I think ~",
+   "pattern_ko": "~인/ㄴ/는 것 같아요",
+   "added": "2026-11-03"
   },
   {
    "id": "tPYKTtj2vcM",
