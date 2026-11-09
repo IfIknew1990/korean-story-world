@@ -138,6 +138,7 @@ var VIDEOS = [
     { title: "미나가 너무 당황했어요. 그렇지만 재빨리 \"죄송합니다\"라고 했어요", youtube: "https://youtu.be/qo-JE7awjIY", date: "2026-11-01" },
     { title: "이 옷이 저한테 안 맞는 것 같아요", youtube: "https://youtu.be/2Srsg75XAbQ", date: "2026-11-03" },
     { title: "이 사람이 남자인 것 같아요", youtube: "https://youtu.be/HEeWDDJFCp8", date: "2026-11-03" },
+    { title: "민지가 여동생을 매일 학교에 데려다 줘요.", youtube: "https://youtu.be/x2JCPYQIu1M", date: "2026-11-09" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Beginner 3", ko: "초급 3", videos: [
     { title: "토니가 배고프다고 빵집에 가자는 거야", youtube: "https://youtu.be/tPYKTtj2vcM" },

@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-11-03 22:00 KST",
+ "updated": "2026-11-09 22:00 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -614,6 +614,13 @@
    "letters": [
     "ㄴ"
    ]
+  },
+  "auto_87": {
+   "en": "go to do ~",
+   "ko": "~(을/를) 데려다 주다 / ~(을/를) 데리러 가다 (take ~ to a place / go to pick ~ up) / ~(으)러",
+   "letters": [
+    "ㄷ"
+   ]
   }
  },
  "pattern_order": [
@@ -701,7 +708,8 @@
   "auto_82",
   "auto_83",
   "auto_84",
-  "auto_85"
+  "auto_85",
+  "auto_87"
  ],
  "pattern_tabs": [],
  "videos": [
@@ -2834,6 +2842,35 @@
    "pattern_en": "it seems like ~ / I think ~",
    "pattern_ko": "~인/ㄴ/는 것 같아요",
    "added": "2026-11-03"
+  },
+  {
+   "id": "x2JCPYQIu1M",
+   "url": "https://youtu.be/x2JCPYQIu1M",
+   "title": "민지가 여동생을 매일 학교에 데려다 줘요.",
+   "section": "Shadowing",
+   "tab": "Beginner 2",
+   "playlist": "Korean Shadowing | Beginner 2",
+   "sentences": [
+    "민지가 여동생을 매일 학교에 데려다 줘요.",
+    "민지 여동생이 다섯 살 이에요. 어려요.",
+    "그래서 민지가 (여동생을) 매일 학교에 데려다 줘요.",
+    "오늘 아침에 비가 안 와서 민지가 우산을 안 가지고 (집에서) 나갔어요.",
+    "두 사람이 학교에 가고 있는데 갑자기 비가 오기 시작했어요.",
+    "그래서 우산을 가지러 집에 돌아갔어요.",
+    "이번에는 (집에서) 우산을 두 개 가지고 나왔어요.",
+    "그리고 민지가 동생을 (동생) 학교에 데려다 주고 (자기) 학교에 갔어요.",
+    "오후 3시가 됐어요. 어머니가 매일 엘리스를 데리러 학교에 가요.",
+    "밖에 아직(도) 비가 오고 있었어요. 그래서 어머니가 우산을 두 개 가지고 나갔어요.",
+    "3시 15분에 학교에 도착하니까 엘리스가 학교 현관에서 어머니를 기다리고 있었어요.",
+    "어머니가 (학교에서) 엘리스를 집에 데리고 왔어요."
+   ],
+   "patterns": [
+    "auto_87"
+   ],
+   "pattern": "auto_87",
+   "pattern_en": "go to do ~",
+   "pattern_ko": "~(을/를) 데려다 주다 / ~(을/를) 데리러 가다 (take ~ to a place / go to pick ~ up) / ~(으)러",
+   "added": "2026-11-09"
   },
   {
    "id": "tPYKTtj2vcM",
