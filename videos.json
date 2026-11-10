@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-11-09 22:00 KST",
+ "updated": "2026-11-11 00:18 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -615,11 +615,32 @@
     "ㄴ"
    ]
   },
+  "auto_86": {
+   "en": "because ~",
+   "ko": "~(을/를) 타다 · ~타고 (take/ride ~ · go by ~) / ~아/어서",
+   "letters": [
+    "ㅌ"
+   ]
+  },
   "auto_87": {
    "en": "go to do ~",
    "ko": "~(을/를) 데려다 주다 / ~(을/를) 데리러 가다 (take ~ to a place / go to pick ~ up) / ~(으)러",
    "letters": [
     "ㄷ"
+   ]
+  },
+  "auto_88": {
+   "en": "~ or ~, whichever",
+   "ko": "~(으)냐고 물었어요 (asked if/why ~) / ~긴 해 (it is ~, though) / ~(이)든지 ~(이)든지",
+   "letters": [
+    "ㄴ"
+   ]
+  },
+  "auto_89": {
+   "en": "will / going to ~",
+   "ko": "~(으)ㄹ 거예요 / ~(으)ㄹ 거야",
+   "letters": [
+    "ㄹ"
    ]
   }
  },
@@ -709,7 +730,10 @@
   "auto_83",
   "auto_84",
   "auto_85",
-  "auto_87"
+  "auto_86",
+  "auto_87",
+  "auto_88",
+  "auto_89"
  ],
  "pattern_tabs": [],
  "videos": [
@@ -1553,6 +1577,88 @@
    "pattern_en": "past tense (did)",
    "pattern_ko": "-았어요/었어요",
    "added": null
+  },
+  {
+   "id": "rztKRwsQdZw",
+   "url": "https://youtu.be/rztKRwsQdZw",
+   "title": "제리가 주로 8시에 학교에 가요",
+   "section": "Shadowing",
+   "tab": "Beginner 1 (old)",
+   "playlist": "Korean Shadowing | Beginner 1 (old)",
+   "sentences": [
+    "제리가 주로 8시에 학교에 가요",
+    "제리가 주로 여덟(8) 시에 학교에 가요.",
+    "주로 버스(를) 타고 학교에 가요.",
+    "그리고 보통 8시 반에 학교에 도착해요.",
+    "그런데 오늘 아침에 배가 아팠어요.",
+    "배가 아파서 화장실에 네 번 갔어요.",
+    "시간이 없어서 택시를 탔어요.",
+    "8시 50분에 택시를 탔어요.",
+    "9시 5분에 학교에 도착했어요."
+   ],
+   "patterns": [
+    "auto_86"
+   ],
+   "pattern": "auto_86",
+   "pattern_en": "because ~",
+   "pattern_ko": "~(을/를) 타다 · ~타고 (take/ride ~ · go by ~) / ~아/어서",
+   "added": "2026-11-11"
+  },
+  {
+   "id": "dOnlq7ucbQQ",
+   "url": "https://youtu.be/dOnlq7ucbQQ",
+   "title": "제리가 온라인으로 한국어를 공부해요.",
+   "section": "Shadowing",
+   "tab": "Beginner 1 (old)",
+   "playlist": "Korean Shadowing | Beginner 1 (old)",
+   "sentences": [
+    "제리가 온라인으로 한국어를 공부해요.",
+    "제리가 온라인으로[올라이느로] 한국어를 공부해요.",
+    "요코는 책으로 한국어를 공부해요.",
+    "제리가 매일 집에서 동생이랑 온라인으로 한국어를 공부해요.",
+    "요코는 매일 집에서 혼자 책으로 한국어를 공부해요.",
+    "제리가 매일 아마존으로 쇼핑해요.",
+    "요코는 아마존으로 쇼핑 안 해요. 요코는 쿠팡으로 쇼핑해요.",
+    "제리가 오늘 줌으로 한쌤하고 한국어를 공부했어요.",
+    "제리가 요즘에 자주 핸드폰으로 게임해요."
+   ],
+   "patterns": [
+    "euro"
+   ],
+   "pattern": "euro",
+   "pattern_en": "by (bus, car) / to (a direction)",
+   "pattern_ko": "-(으)로",
+   "added": "2026-11-11"
+  },
+  {
+   "id": "UvmqrS3ApRs",
+   "url": "https://youtu.be/UvmqrS3ApRs",
+   "title": "너 오늘도 게임할 거야?",
+   "section": "Shadowing",
+   "tab": "Beginner 1 (old)",
+   "playlist": "Korean Shadowing | Beginner 1 (old)",
+   "sentences": [
+    "너 오늘도 게임할 거야?",
+    "\"아니요. 오늘은 게임 안 할 거예요[거에요].\"",
+    "\"오늘 뭐 할 거야?\"",
+    "\"이따가 10시에 민수 집에 갈 거예요[거에요].\"",
+    "\"민수 집에서 뭐 할 거야?\"",
+    "\"공부할 거예요[거에요].\"",
+    "\"몇 시에 집에 올 거야?\"",
+    "“4시에 집에 올 거예요[거에요].”",
+    "\"그래? 우리는 오늘 등산 갈 거야.\"",
+    "\"진짜요? 오늘 진짜 등산 갈 거예요[거에요]?\"",
+    "\"어. 갈 거야.\"",
+    "\"오늘 진짜 추워요.\"",
+    "\"괜찮아. 내복 입을 거야.\""
+   ],
+   "patterns": [
+    "auto_89"
+   ],
+   "pattern": "auto_89",
+   "pattern_en": "will / going to ~",
+   "pattern_ko": "~(으)ㄹ 거예요 / ~(으)ㄹ 거야",
+   "added": "2026-11-11"
   },
   {
    "id": "Y9QlQyF8bWg",
@@ -3674,6 +3780,33 @@
    "pattern_en": "after doing ~, ...",
    "pattern_ko": "-고 나니까",
    "added": "2026-10-31"
+  },
+  {
+   "id": "FlwgbeQA-Eg",
+   "url": "https://youtu.be/FlwgbeQA-Eg",
+   "title": "맞아, 그래도 여기가 맛있긴 해",
+   "section": "Shadowing",
+   "tab": "Beginner 3",
+   "playlist": "Korean Shadowing | Beginner 3",
+   "sentences": [
+    "맞아, 그래도 여기가 맛있긴 해",
+    "총 8만 7천원(이) 나왔는데 오늘은 제리 생일이라서 제리는 안 내고 토니하고 민수, 그리고 희철이가 한 명당 2만 9천원씩 냈어요.",
+    "희철이가 귓속말로 토니한테 말했어요. “야, 왜 이렇게 많이 나왔어? 파전 한 장당 얼만데?(= 얼마인데)”",
+    "희철이가 토니한테 왜 이렇게 많이 나왔냐고,(pause) 파전 한 장당 얼마냐고 물었어요.",
+    "희철이가 토니한테 왜 이렇게 많이 나왔냐고 하면서 파전 한 장당 얼마냐고 물었어요.",
+    "희철이가 토니한테 파전 한장당 얼마인데 이렇게 많이 나왔냐고 물었어요.",
+    "토니도 귓속말로 대답했어요. “파전은 한 장당 2만 5천원이고, 막걸리는 한 병당 6천원이야.”",
+    "“엄청 비싸네” “맞아, 그래도 여기가 맛있긴 해”",
+    "“아이씨… 이번 주 용돈 다 썼네.",
+    "편의점이든지 카페든지 빨리 알바 시작해야겠다.”"
+   ],
+   "patterns": [
+    "auto_88"
+   ],
+   "pattern": "auto_88",
+   "pattern_en": "~ or ~, whichever",
+   "pattern_ko": "~(으)냐고 물었어요 (asked if/why ~) / ~긴 해 (it is ~, though) / ~(이)든지 ~(이)든지",
+   "added": "2026-11-11"
   },
   {
    "id": "momhd8AzhW0",

@@ -91,6 +91,9 @@ var VIDEOS = [
     { title: "요코가 오늘 아침에 스터디 카페에 시험을 준비하러 갔어요.", youtube: "https://youtu.be/QnVll_ZWJwM" },
     { title: "티나가 몇 시에 일어났어요", youtube: "https://youtu.be/2XZJMZI9C2M" },
     { title: "아, 배 아파", youtube: "https://youtu.be/jede514O3Yg" },
+    { title: "제리가 주로 8시에 학교에 가요", youtube: "https://youtu.be/rztKRwsQdZw", date: "2026-11-11" },
+    { title: "제리가 온라인으로 한국어를 공부해요.", youtube: "https://youtu.be/dOnlq7ucbQQ", date: "2026-11-11" },
+    { title: "너 오늘도 게임할 거야?", youtube: "https://youtu.be/UvmqrS3ApRs", date: "2026-11-11" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Beginner 2", ko: "초급 2", videos: [
     { title: "S018-1 제리는 미국 사람이고 토니는 영국사람이에요", youtube: "https://youtu.be/Y9QlQyF8bWg" },
@@ -171,6 +174,7 @@ var VIDEOS = [
     { title: "이 집 파전은 좀 비싸기는 한데 맛있어.", youtube: "https://youtu.be/y1BBV_Y5ZUY", date: "2026-10-20" },
     { title: "아니거든, 바삭하거든!", youtube: "https://youtu.be/qIqn167HrEs", date: "2026-10-26" },
     { title: "토를 하고 나니까 속이 좀 시원해졌어요", youtube: "https://youtu.be/oHG9oL6wS6g", date: "2026-10-31" },
+    { title: "맞아, 그래도 여기가 맛있긴 해", youtube: "https://youtu.be/FlwgbeQA-Eg", date: "2026-11-11" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Intermediate", ko: "중급", videos: [
     { title: "너 요즘에 소개팅녀랑 잘 되가냐?", youtube: "https://youtu.be/momhd8AzhW0" },
