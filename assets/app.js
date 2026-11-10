@@ -834,6 +834,7 @@
     timers = [];
     if (layer) layer.remove();
     layer = null;
+    document.documentElement.classList.remove('arcade-on');   // home cards may move again
     if (peter.getAnimations) peter.getAnimations().forEach(function (a) { a.cancel(); });
   }
 
@@ -849,6 +850,7 @@
 
     layer = el('div', 'arcade', head);
     layer.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.add('arcade-on');      // home cards stay still while the scene plays
     var stage = el('div', 'arcade-stage', layer);
     stage.style.left = stageL + 'px';
     stage.style.width = stageW + 'px';
@@ -865,10 +867,19 @@
       guy.animate([{ transform: 'translateX(' + x + 'px)' }, { transform: 'translateX(' + nx + 'px)' }], { duration: ms, fill: 'forwards' });
       x = nx;
     }
-    function say(words, centerX, until) {           // speech bubble on the floor, tail pointing up at the speaker
+    function say(words, centerX, until, typeMs) {   // speech bubble on the floor, tail pointing up at the speaker
       var b = el('div', 'arcade-bubble', layer);
       b.textContent = words;
       var bw = b.offsetWidth;
+      if (typeMs) {                                 // game dialog box: letters appear one by one, the box keeps its full size
+        b.textContent = '';
+        words.split('').forEach(function (ch, i) {
+          var s = el('span', '', b);
+          s.textContent = ch;
+          s.style.visibility = 'hidden';
+          at(i * typeMs, function () { s.style.visibility = ''; });
+        });
+      }
       var left = Math.max(8, Math.min(hb.width - bw - 8, centerX - bw * 0.7));
       b.style.left = Math.round(left) + 'px';
       b.style.top = (ground + 4) + 'px';
@@ -892,7 +903,7 @@
     moveTo(standX, 2000);
     for (var t = 0; t < 2000; t += 250) at(t, (function (n) { return function () { frame(n % 2 ? 0 : 1); }; })(t / 250));
     // 2-3. the talk
-    at(2000, function () { frame(0); say('고릴라 씨, 같이 가실 시간이에요.', stageL + standX + w(0) / 2, 2200); });
+    at(2000, function () { frame(0); say('고릴라 씨, 같이 가실 시간이에요.', stageL + standX + w(0) / 2, 2200, 45); });
     at(4300, function () { say('나 지금 바나나 먹는 중인데?', stageL + peterX + pb.width / 2, 2000); });
     // 4. runs in and punches: Peter shakes, 탁!
     at(6400, function () { frame(1); moveTo(peterX - w(2) + 6, 220); });
@@ -922,7 +933,7 @@
     at(10500, stop);
   }
 
-  function start() { if (!reduced()) preload(play); }
+  function start() { if (!reduced() && !layer) preload(play); }   // already playing: let it finish, no second scene
   head.classList.add('arcade-ready');
   peter.addEventListener('click', function (e) {
     if (reduced()) return;                 // then it stays a plain home link
@@ -935,4 +946,98 @@
   }
   window.addEventListener('hashchange', auto);
   if (document.readyState === 'complete') auto(); else window.addEventListener('load', auto);
+})();
+
+/* ---------- Home cards: the character does one short pixel-step move on mouse-over / touch ----------
+   Still when nothing happens, never while the header scene plays, never with "reduce motion".
+   Alien and guard: only the arm piece (cut out of the same picture) turns; the rest stays put. */
+(function () {
+  'use strict';
+  var app = document.getElementById('app');
+  if (!app || !Element.prototype.animate) return;
+  var calm = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var F = 80;                                        // one frame, ms (pixel-game choppy)
+  function hold(list) { return list.map(function (k) { k.easing = 'steps(1, end)'; return k; }); }
+  function tf(list) { return hold(list.map(function (t) { return { transform: t }; })); }
+  var MOVES = {
+    // gorilla: chest beat — squat, hop up leaning left, squat, hop up leaning right (쿵쿵)
+    'peter-fixed': { origin: '50% 100%', keys: tf(['none', 'scale(1.12,.86)', 'translateY(-14px) rotate(-8deg)', 'scale(1.12,.86)',
+      'translateY(-14px) rotate(8deg)', 'scale(1.12,.86)', 'translateY(-8px) rotate(-4deg)', 'scale(1.06,.93)', 'none']) },
+    // alien: waves the raised hand (turns at the elbow)
+    alien: { part: 'polygon(77.7% 42.1%, 100% 42.1%, 100% 63%, 67.6% 63%, 67.6% 55.3%, 71.9% 55.3%, 71.9% 48.1%, 77.7% 48.1%)',
+      rest: 'polygon(0 0, 100% 0, 100% 42.1%, 77.7% 42.1%, 77.7% 48.1%, 71.9% 48.1%, 71.9% 55.3%, 67.6% 55.3%, 67.6% 63%, 100% 63%, 100% 100%, 0 100%)',
+      origin: '71.9% 62.1%', keys: tf(['none', 'rotate(-16deg)', 'rotate(8deg)', 'rotate(-16deg)', 'rotate(8deg)', 'rotate(-16deg)', 'rotate(4deg)', 'none']) },
+    // ghost: floats up and down
+    ghost: { origin: '50% 100%', keys: tf(['none', 'translate(2px,-8px)', 'translate(3px,-16px)', 'translate(1px,-24px)', 'translate(-2px,-18px)',
+      'translate(-3px,-10px)', 'translate(-1px,-18px)', 'translate(2px,-8px)', 'none']) },
+    // guard: raises the sword, swings it down, back to rest (turns at the hand)
+    knight: { part: 'polygon(68% 0, 100% 0, 100% 71.6%, 60.8% 71.6%, 60.8% 62.5%, 66% 62.5%, 66% 49.1%, 68% 49.1%)',
+      rest: 'polygon(0 0, 68% 0, 68% 49.1%, 66% 49.1%, 66% 62.5%, 60.8% 62.5%, 60.8% 71.6%, 100% 71.6%, 100% 100%, 0 100%)',
+      origin: '74.7% 57.9%', keys: tf(['none', 'rotate(-14deg)', 'rotate(-24deg)', 'rotate(10deg)', 'rotate(32deg)', 'rotate(32deg)', 'rotate(14deg)', 'none']) }
+  };
+
+  function still() { return (calm && calm.matches) || document.documentElement.classList.contains('arcade-on'); }
+  function charOf(card) {
+    var img = card.querySelector('img.home-card-char');
+    var m = img && /char-([a-z-]+)\.png$/.exec(img.getAttribute('src') || '');
+    return m && MOVES[m[1]] ? { img: img, move: MOVES[m[1]] } : null;
+  }
+
+  // plays once; returns how long it lasts (0 = not played)
+  function act(card) {
+    if (card._acting || still()) return 0;
+    var c = charOf(card);
+    if (!c) return 0;
+    var mv = c.move, ms = (mv.keys.length - 1) * F, piece = null, target = c.img;
+    if (mv.part) {                                   // copy of the picture showing only the arm, laid exactly on top
+      piece = c.img.cloneNode(false);
+      piece.className = 'home-card-char char-piece';
+      piece.style.left = c.img.offsetLeft + 'px';
+      piece.style.top = c.img.offsetTop + 'px';
+      piece.style.width = c.img.offsetWidth + 'px';
+      piece.style.height = c.img.offsetHeight + 'px';
+      piece.style.clipPath = mv.part;
+      card.appendChild(piece);
+      c.img.style.clipPath = mv.rest;                // the arm is hidden in the picture underneath meanwhile
+      target = piece;
+    }
+    target.style.transformOrigin = mv.origin;
+    card._acting = true;
+    var a = target.animate(mv.keys, { duration: ms });
+    function done() {
+      card._acting = false;
+      target.style.transformOrigin = '';
+      if (piece) { piece.remove(); c.img.style.clipPath = ''; }
+    }
+    a.onfinish = done;
+    a.oncancel = done;
+    return ms;
+  }
+
+  function cardAt(t) { return t && t.closest ? t.closest('.home-card') : null; }
+  // mouse: when the pointer comes onto a card
+  app.addEventListener('pointerover', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    var card = cardAt(e.target);
+    if (card && !card.contains(e.relatedTarget)) act(card);
+  });
+  // phone: the touch plays the move, and the page opens when the move ends (under 0.7 s)
+  var pending = null;
+  app.addEventListener('pointerdown', function (e) {
+    if (e.pointerType === 'mouse') return;
+    var card = cardAt(e.target);
+    if (!card) return;
+    var ms = act(card);
+    pending = ms ? { card: card, until: Date.now() + ms } : null;
+  });
+  app.addEventListener('click', function (e) {
+    var card = cardAt(e.target);
+    if (!card || !pending || pending.card !== card) return;
+    var wait = pending.until - Date.now();
+    pending = null;
+    if (wait <= 0 || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    e.preventDefault();
+    var href = card.getAttribute('href');
+    setTimeout(function () { location.hash = href.replace(/^#/, ''); }, wait);
+  }, true);
 })();
