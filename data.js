@@ -142,6 +142,7 @@ var VIDEOS = [
     { title: "이 옷이 저한테 안 맞는 것 같아요", youtube: "https://youtu.be/2Srsg75XAbQ", date: "2026-11-03" },
     { title: "이 사람이 남자인 것 같아요", youtube: "https://youtu.be/HEeWDDJFCp8", date: "2026-11-03" },
     { title: "민지가 여동생을 매일 학교에 데려다 줘요.", youtube: "https://youtu.be/x2JCPYQIu1M", date: "2026-11-09" },
+    { title: "아기가 배가 고픈 것 같아요", youtube: "https://youtu.be/trw1cgzgOP0", date: "2026-11-12" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Beginner 3", ko: "초급 3", videos: [
     { title: "토니가 배고프다고 빵집에 가자는 거야", youtube: "https://youtu.be/tPYKTtj2vcM" },

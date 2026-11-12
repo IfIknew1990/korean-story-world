@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-11-11 00:18 KST",
+ "updated": "2026-11-12 22:00 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -642,6 +642,13 @@
    "letters": [
     "ㄹ"
    ]
+  },
+  "auto_92": {
+   "en": "it seems ~ / I think ~",
+   "ko": "~(으)ㄴ 것 같아요",
+   "letters": [
+    "ㄴ"
+   ]
   }
  },
  "pattern_order": [
@@ -733,7 +740,8 @@
   "auto_86",
   "auto_87",
   "auto_88",
-  "auto_89"
+  "auto_89",
+  "auto_92"
  ],
  "pattern_tabs": [],
  "videos": [
@@ -2977,6 +2985,36 @@
    "pattern_en": "go to do ~",
    "pattern_ko": "~(을/를) 데려다 주다 / ~(을/를) 데리러 가다 (take ~ to a place / go to pick ~ up) / ~(으)러",
    "added": "2026-11-09"
+  },
+  {
+   "id": "trw1cgzgOP0",
+   "url": "https://youtu.be/trw1cgzgOP0",
+   "title": "아기가 배가 고픈 것 같아요",
+   "section": "Shadowing",
+   "tab": "Beginner 2",
+   "playlist": "Korean Shadowing | Beginner 2",
+   "sentences": [
+    "아기가 배가 고픈 것 같아요",
+    "그래서 엄마가 아기한테 분유를 먹였어요.",
+    "이제 아기가 안 울어요.",
+    "그런데 아기가 다시 울어요.",
+    "아기가 똥을 싼 것 같아요.",
+    "그래서 엄마가 아기 기저귀를 갈았어요.",
+    "이제 아기가 기분이 좋은 것 같아요.",
+    "바지가 큰 것 같아요.",
+    "넥타이가 작은 것 같아요.",
+    "치마가 너무 비싼 것 같아요.",
+    "국이 좀 짠 것 같아요.",
+    "바지가 짧은 것 같아요.",
+    "의자가 좀 낮은 것 같아요."
+   ],
+   "patterns": [
+    "auto_92"
+   ],
+   "pattern": "auto_92",
+   "pattern_en": "it seems ~ / I think ~",
+   "pattern_ko": "~(으)ㄴ 것 같아요",
+   "added": "2026-11-12"
   },
   {
    "id": "tPYKTtj2vcM",
