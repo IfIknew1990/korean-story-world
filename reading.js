@@ -2681,5 +2681,105 @@ var READING = {
 "s": "알면서도 지수 옆에 있고 싶었다."
 }
 ]
+},
+"시어머니와 주방 청소 1": {
+"s": [
+["어머니: 민지야, 식초 냄새(가) 나네.", "Minji, it smells like vinegar.", "Minji, a vinegar smell is coming out."],
+["민지: 네, 어머니. 지금 청소하고 있어요.", "Yes, Mother. I'm cleaning right now."],
+["어머니: 어, 물 끓였네. 나 커피 한 잔 마셔야겠다.", "Oh, you boiled some water. I think I'll have a cup of coffee.", "Oh, you boiled water. I must drink one cup of coffee."],
+["민지: 어머니, 마시지 마세요! 그거 식초물이에요.", "Mother, please don't drink it! That's vinegar water."],
+["어머니: 아이고, 식초(를) 마실 뻔했네. 포트에 식초는 왜 넣었어?", "Oh my, I almost drank vinegar. Why did you put vinegar in the kettle?"],
+["민지: 식초(를) 넣고 끓여야 포트가 깨끗해져요.", "The kettle only gets clean if you boil it with vinegar.", "Only if you put in vinegar and boil it does the kettle become clean."],
+["어머니: 그래? 그럼 이 물(은) 버려야겠다.", "Really? Then I'd better throw this water out."],
+["민지: 버리지 마세요! 여기 큰 그릇에 부으면 돼요.", "Please don't throw it out! Just pour it into this big bowl.", "Don't throw it out! If you pour it into the big bowl here, it's fine."],
+["어머니: 이걸로 뭐 하려고?", "What are you going to do with this?"],
+["민지: 식으면 싱크대 위쪽 문(을) 닦으려고요.", "When it cools down, I'm going to wipe the upper cabinet doors."],
+["어머니: 그 높은 데까지? 내가 할게.", "All the way up there? I'll do it."],
+["민지: 아니에요, 앉아 계세요. 금방 끝나요.", "No, no, please stay seated. It'll be done in no time."]
+],
+"w": [
+["식초", "vinegar"],
+["냄새(가) 나다", "to smell (of)"],
+["청소하다", "to clean"],
+["끓이다", "to boil"],
+["포트", "electric kettle"],
+["식초물", "vinegar water"],
+["마시다", "to drink"],
+["-(으)ㄹ 뻔했다", "almost did"],
+["깨끗해지다", "to get clean"],
+["버리다", "to throw away"],
+["그릇", "bowl, dish"],
+["붓다", "to pour"],
+["식다", "to cool down"],
+["싱크대", "sink, kitchen counter"],
+["위쪽 문", "upper door (cabinet)"],
+["닦다", "to wipe"],
+["높은 데", "a high place"],
+["앉아 계세요", "please stay seated (honorific)"],
+["금방", "in a moment, right away"],
+["끝나다", "to be finished"]
+],
+"p": [
+{
+"e": "-지 마세요 / -지 마 (don't)",
+"s": "어머니, 마시지 마세요!"
+},
+{
+"e": "-(으)ㄹ 뻔했다 / -(으)ㄹ 뻔했어 (almost)",
+"s": "아이고, 식초(를) 마실 뻔했네."
+}
+]
+},
+"시어머니와 주방 청소 2": {
+"s": [
+["어머니: 이거 시금치 데친 물이지? 내가 버릴게.", "This is the water from blanching spinach, right? I'll throw it out."],
+["민지: 어머니, 버리지 마세요! 그 물(로) 후드(를) 닦으려고요.", "Mother, please don't throw it out! I'm going to wipe the hood with that water."],
+["어머니: 시금치 물로? 후드는 세제로 닦아야지. 기름때가 얼마나 심한데.", "With spinach water? You should clean a hood with detergent. The grease is so bad!", "With spinach water? A hood, you must wipe with detergent. How serious the grease is!"],
+["민지: 세제 안 써도 돼요. 이 물에 베이킹소다(를) 한 스푼 넣으면 돼요.", "You don't need detergent. Just add a spoonful of baking soda to this water.", "Even if I don't use detergent, it's fine. If you put one spoon of baking soda in this water, it's fine."],
+["어머니: 그걸로 기름때가 닦여? 이리 줘. 내가 해 볼게.", "The grease comes off with that? Give it here. Let me try."],
+["어머니: 어머, 진짜 깨끗해졌네!", "Oh my, it's really clean now!"],
+["민지: 네, 진짜 잘 닦여요.", "Yes, it really wipes off well."],
+["어머니: 다음엔 나도 시금치 데친 물(은) 안 버려야겠다.", "Next time I'd better not throw out the spinach water either.", "Next time, I too must not throw away the blanched spinach water."],
+["어머니: 어, 근데 이 행주(에서) 식초 냄새가 나네.", "Oh, but this dishcloth smells like vinegar.", "Oh, but a vinegar smell is coming from this dishcloth."],
+["민지: 베란다 건조대에 널려고요. 햇빛에 말려야 냄새가 안 나요.", "I'm going to hang it on the drying rack on the balcony. It only stops smelling once it dries in the sun.", "I'm going to hang it on the balcony drying rack. Only if I dry it in sunlight does the smell not come out."],
+["어머니: 이제 청소 다 끝났지? 그럼 나 커피 마셔도 돼?", "The cleaning is all done now, right? Then can I have my coffee?"],
+["민지: 아, 맞다! 잠깐만요, 새 물(로) 금방 끓일게요.", "Oh, right! Just a moment, I'll boil fresh water right away."]
+],
+"w": [
+["시금치", "spinach"],
+["데치다", "to blanch"],
+["버리다", "to throw away"],
+["후드", "range hood"],
+["닦다 / 닦이다", "to wipe / to come off by wiping"],
+["세제", "detergent"],
+["기름때", "grease stains"],
+["심하다", "to be severe, bad"],
+["베이킹소다", "baking soda"],
+["한 스푼", "one spoonful"],
+["넣다", "to put in"],
+["이리 줘", "give it here"],
+["-아/어 보다", "to try ~ing"],
+["깨끗해지다", "to get clean"],
+["행주", "dishcloth"],
+["식초 냄새가 나다", "to smell of vinegar"],
+["베란다", "balcony"],
+["건조대", "drying rack"],
+["널다", "to hang out (to dry)"],
+["햇빛", "sunlight"],
+["말리다", "to dry"],
+["끝나다", "to be finished"],
+["새 물", "fresh water"],
+["끓이다", "to boil"]
+],
+"p": [
+{
+"e": "-지 마세요 / -지 마 (don't)",
+"s": "어머니, 버리지 마세요!"
+},
+{
+"e": "-(으)려고요 / -(으)려고 (I'm going to)",
+"s": "그 물(로) 후드(를) 닦으려고요."
+}
+]
 }
 };
