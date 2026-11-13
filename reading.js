@@ -2781,5 +2781,741 @@ var READING = {
 "s": "그 물(로) 후드(를) 닦으려고요."
 }
 ]
+},
+"순두부 식당에서 1": {
+"s": [
+[
+"안녕하세요. 예약하셨어요?",
+"Host: Hello. Did you make a reservation?"
+],
+[
+"아니요, 예약은 안 했어요.",
+"James: No, I didn't make a reservation."
+],
+[
+"몇 분이세요?",
+"Host: How many in your party?"
+],
+[
+"두 명이요.",
+"James: Two people."
+],
+[
+"지금 자리가 다 차서 10분 정도 기다리셔야 해요. 괜찮으세요?",
+"Host: We're full right now, so you'll have to wait about 10 minutes. Is that okay?"
+],
+[
+"네, 괜찮아요.",
+"James: Sure, that's fine."
+],
+[
+"성함이 어떻게 되세요?",
+"Host: May I have your name?"
+],
+[
+"제임스요.",
+"James: It's James."
+],
+[
+"자리 나면 불러 드릴게요.",
+"Host: I'll call you when a table opens up."
+],
+[
+"네, 감사합니다.",
+"James: Okay, thank you."
+],
+[
+"안녕하세요. 음료는 뭘로 드릴까요?",
+"Waiter: Hello. What can I get you to drink?"
+],
+[
+"저는 물 주세요. 얼음은 빼고 주세요.",
+"James: Water for me, please. No ice."
+],
+[
+"저는 따뜻한 보리차 주세요.",
+"Friend: I'll have a warm barley tea, please."
+],
+[
+"네, 금방 가져다 드릴게요. 메뉴 천천히 보세요.",
+"Waiter: Sure, I'll bring them right out. Take your time with the menu."
+],
+[
+"결정했어?",
+"James: Did you decide?"
+],
+[
+"응, 난 순두부 콤보로 할래. 너는?",
+"Friend: Yeah, I'm getting the sundubu combo. What about you?"
+],
+[
+"나도 순두부 콤보 할게. 그럼 주문할까?",
+"James: Same here, the sundubu combo. Shall we order then?"
+],
+[
+"응, 주문하자.",
+"Friend: Yeah, let's order."
+],
+[
+"주문하시겠어요?",
+"Waiter: Are you ready to order?"
+],
+[
+"순두부 콤보 두 개 주세요.",
+"James: Two sundubu combos, please."
+],
+[
+"순두부는 해물, 김치, 소고기, 야채 중에 어떤 걸로 하시겠어요?",
+"Waiter: For the sundubu, which would you like: seafood, kimchi, beef, or vegetable?"
+],
+[
+"저는 해물로 할게요.",
+"James: I'll have the seafood."
+],
+[
+"저는 김치로 할게요.",
+"Friend: I'll have the kimchi."
+],
+[
+"콤보에는 고기가 같이 나와요. 돼지 불고기, 제육볶음, 소불고기, 보쌈 중에 고르실 수 있어요.",
+"Waiter: The combo comes with meat. You can choose pork bulgogi, spicy stir-fried pork, beef bulgogi, or bossam."
+],
+[
+"저는 소불고기요.",
+"James: Beef bulgogi for me."
+],
+[
+"저는 보쌈으로 할게요.",
+"Friend: I'll have the bossam."
+],
+[
+"밥은 백미로 드릴까요, 잡곡밥으로 드릴까요?",
+"Waiter: Would you like white rice or multigrain rice?"
+],
+[
+"저는 백미요. 흰쌀밥이요.",
+"James: White rice for me. Plain white rice."
+],
+[
+"저는 잡곡밥으로 주세요.",
+"Friend: Multigrain rice for me, please."
+],
+[
+"맵기는 순한 맛, 보통 맛, 조금 매운 맛, 아주 매운 맛이 있어요.",
+"Waiter: For spice level, we have mild, medium, a little spicy, and very spicy."
+],
+[
+"저는 보통으로 해 주세요.",
+"James: Medium for me, please."
+],
+[
+"저는 조금 맵게 해 주세요.",
+"Friend: For me, make it a little spicy, please."
+]
+],
+"w": [
+[
+"예약하다",
+"to make a reservation"
+],
+[
+"예약은 안 했어요",
+"I didn't make one"
+],
+[
+"분",
+"person (polite)"
+],
+[
+"명",
+"people (counting)"
+],
+[
+"자리",
+"seat, table"
+],
+[
+"다 차다",
+"to be all full"
+],
+[
+"-아/어서",
+"so, because"
+],
+[
+"10분 정도",
+"about 10 minutes"
+],
+[
+"기다리다",
+"to wait"
+],
+[
+"성함",
+"name (polite)"
+],
+[
+"이름",
+"name"
+],
+[
+"자리(가) 나다",
+"a table opens up"
+],
+[
+"-(으)면",
+"when, if"
+],
+[
+"부르다",
+"to call"
+],
+[
+"음료 [음뇨]",
+"drinks"
+],
+[
+"얼음",
+"ice"
+],
+[
+"빼다",
+"to leave out"
+],
+[
+"따뜻하다",
+"warm"
+],
+[
+"보리차",
+"barley tea"
+],
+[
+"금방",
+"soon, right away"
+],
+[
+"가져다 드리다",
+"to bring (polite)"
+],
+[
+"천천히",
+"slowly, take your time"
+],
+[
+"결정하다",
+"to decide"
+],
+[
+"N(으)로 할래",
+"I'll go with N"
+],
+[
+"나도",
+"me too"
+],
+[
+"-(으)ㄹ게",
+"I'll …"
+],
+[
+"-(으)ㄹ까?",
+"shall we…?"
+],
+[
+"-자",
+"let's …"
+],
+[
+"반말",
+"casual speech"
+],
+[
+"존댓말",
+"polite speech"
+],
+[
+"-(으)셨어요?",
+"did you…? (polite)"
+],
+[
+"주문하다",
+"to order"
+],
+[
+"-(으)시겠어요?",
+"would you…? (polite)"
+],
+[
+"콤보",
+"combo"
+],
+[
+"한 개 · 두 개",
+"one · two (items)"
+],
+[
+"해물",
+"seafood"
+],
+[
+"김치",
+"kimchi"
+],
+[
+"소고기",
+"beef"
+],
+[
+"야채",
+"vegetables"
+],
+[
+"A, B, C 중에",
+"among A, B, C"
+],
+[
+"어떤 거",
+"which one"
+],
+[
+"돼지 불고기",
+"pork bulgogi"
+],
+[
+"제육볶음",
+"spicy stir-fried pork"
+],
+[
+"소불고기",
+"beef bulgogi"
+],
+[
+"보쌈",
+"boiled pork slices"
+],
+[
+"고르다",
+"to choose"
+],
+[
+"같이 나오다",
+"to come with"
+],
+[
+"밥",
+"rice, meal"
+],
+[
+"백미",
+"white rice"
+],
+[
+"흰쌀밥",
+"white rice (everyday word)"
+],
+[
+"잡곡밥",
+"multigrain rice"
+],
+[
+"맵기",
+"spice level"
+],
+[
+"순한 맛",
+"mild"
+],
+[
+"보통 맛",
+"medium"
+],
+[
+"조금 매운 맛",
+"a little spicy"
+],
+[
+"아주 매운 맛",
+"very spicy"
+],
+[
+"순하다",
+"to be mild"
+],
+[
+"맵다",
+"to be spicy"
+],
+[
+"-게 해 주세요",
+"make it …, please"
+]
+],
+"p": [
+{
+"e": "-(으)시겠어요? (would you…? polite)",
+"s": "주문하시겠어요?",
+"v": "p5FfHK1JB-Y",
+"t": "상황별 미국 식당 1 순두부 식당",
+"ev": "주문하시겠어요?"
+},
+{
+"e": "N(으)로 할게요 (I'll have N)",
+"s": "저는 해물로 할게요.",
+"v": "p5FfHK1JB-Y",
+"t": "상황별 미국 식당 1 순두부 식당",
+"ev": "저는 해물로 할게요."
+},
+{
+"e": "N은/는 빼고 주세요 (without N, please)",
+"s": "얼음은 빼고 주세요.",
+"v": "p5FfHK1JB-Y",
+"t": "상황별 미국 식당 1 순두부 식당",
+"ev": "얼음은 빼고 주세요."
+},
+{
+"e": "-게 해 주세요 (make it …, please)",
+"s": "저는 조금 맵게 해 주세요.",
+"v": "p5FfHK1JB-Y",
+"t": "상황별 미국 식당 1 순두부 식당",
+"ev": "저는 조금 맵게 해 주세요."
+}
+]
+},
+"중국집에서 1": {
+"s": [
+[
+"안녕하세요. 예약하셨어요?",
+"Host: Hello. Did you make a reservation?"
+],
+[
+"네, 6시에 예약했어요. 제임스라는 이름으로요.",
+"James: Yes, I have a reservation at 6, under the name James."
+],
+[
+"확인했습니다. 두 분이시죠? 이쪽으로 오세요.",
+"Host: Got it. Two of you, right? This way, please."
+],
+[
+"안녕하세요. 음료는 뭘로 드릴까요?",
+"Waiter: Hello. What can I get you to drink?"
+],
+[
+"따뜻한 보리차 있어요?",
+"James: Do you have warm barley tea?"
+],
+[
+"죄송해요, 보리차는 없어요. 물이랑 콜라, 사이다는 있어요.",
+"Waiter: Sorry, we don't have barley tea. We have water, cola, and Sprite."
+],
+[
+"그럼 그냥 물 주세요.",
+"James: Then just water, please."
+],
+[
+"저는 콜라 주세요.",
+"Friend: I'll have a cola, please."
+],
+[
+"네, 금방 가져다 드릴게요. 메뉴 천천히 보세요.",
+"Waiter: Sure, I'll bring them right out. Take your time with the menu."
+],
+[
+"결정했어?",
+"James: Did you decide?"
+],
+[
+"응, 나는 짬뽕 먹을래. 너는?",
+"Friend: Yeah, I'm going to have jjamppong. What about you?"
+],
+[
+"나도 짬뽕. 탕수육도 하나 주문할까? 탕수육은 내가 낼게.",
+"James: Jjamppong for me too. Should we get a tangsuyuk too? I'll pay for the tangsuyuk."
+],
+[
+"좋아, 그러자. 고마워, 다음엔 내가 살게.",
+"Friend: Sounds good, let's do it. Thanks, next time it's on me."
+],
+[
+"주문하시겠어요?",
+"Waiter: Are you ready to order?"
+],
+[
+"짬뽕 두 개랑 탕수육 하나 주세요.",
+"James: Two jjamppong and one tangsuyuk, please."
+],
+[
+"짬뽕은 맵기를 1에서 5까지 고르실 수 있어요. 1이 제일 순하고 5가 제일 매워요.",
+"Waiter: For the jjamppong, you can choose a spice level from 1 to 5. 1 is the mildest, and 5 is the spiciest."
+],
+[
+"저는 1로 주세요.",
+"James: Level 1 for me, please."
+],
+[
+"저는 2로 주세요.",
+"Friend: Level 2 for me, please."
+],
+[
+"알겠습니다.",
+"Waiter: Got it."
+],
+[
+"저기요, 투고 박스 좀 주세요.",
+"James: Excuse me, could I get some to-go boxes?"
+],
+[
+"몇 개 드릴까요?",
+"Waiter: How many would you like?"
+],
+[
+"두 개 주세요.",
+"James: Two, please."
+],
+[
+"네, 알겠습니다.",
+"Waiter: Sure, got it."
+],
+[
+"저기요, 계산서 좀 주세요. 그리고 따로 계산해 주세요.",
+"James: Excuse me, could we get the check? And separate checks, please."
+],
+[
+"네, 어떻게 나눠 드릴까요?",
+"Waiter: Sure, how would you like to split it?"
+],
+[
+"각자 먹은 걸로 해 주세요. 저는 짬뽕이랑 탕수육이요.",
+"James: By what each of us ate, please. Mine is the jjamppong and the tangsuyuk."
+],
+[
+"저는 짬뽕이랑 콜라요.",
+"Friend: Mine is the jjamppong and the cola."
+],
+[
+"네, 알겠습니다.",
+"Waiter: Sure, got it."
+],
+[
+"여기 카드요.",
+"James: Here's my card."
+],
+[
+"네, 잠시만요.",
+"Waiter: Yes, just a moment."
+],
+[
+"여기 카드랑 영수증 있습니다. 여기에 사인해 주세요.",
+"Waiter: Here's your card and receipt. Please sign here."
+]
+],
+"w": [
+[
+"6시에",
+"at 6"
+],
+[
+"확인하다",
+"to check, confirm"
+],
+[
+"두 분",
+"two people (polite)"
+],
+[
+"-(이)시죠?",
+"…, right? (polite)"
+],
+[
+"이쪽",
+"this way"
+],
+[
+"죄송해요",
+"I'm sorry"
+],
+[
+"A(이)랑 B",
+"A and B"
+],
+[
+"콜라",
+"cola"
+],
+[
+"사이다",
+"lemon-lime soda (like Sprite)"
+],
+[
+"그럼",
+"then, in that case"
+],
+[
+"그냥",
+"just"
+],
+[
+"금방",
+"soon"
+],
+[
+"천천히",
+"slowly"
+],
+[
+"짬뽕",
+"spicy seafood noodle soup"
+],
+[
+"탕수육",
+"sweet and sour pork"
+],
+[
+"N도",
+"N too, also"
+],
+[
+"그러자",
+"let's do that"
+],
+[
+"A에서 B까지",
+"from A to B"
+],
+[
+"제일",
+"the most"
+],
+[
+"순하다",
+"to be mild"
+],
+[
+"맵다 → 매워요",
+"to be spicy"
+],
+[
+"1로 [일로]",
+"number 1"
+],
+[
+"2로 [이로]",
+"number 2"
+],
+[
+"알겠습니다",
+"understood (polite)"
+],
+[
+"받침",
+"final consonant"
+],
+[
+"1 [일] · 해물",
+"ㄹ받침 → 로"
+],
+[
+"to go 박스",
+"to-go box"
+],
+[
+"좀",
+"please (softener)"
+],
+[
+"몇 개",
+"how many (items)"
+],
+[
+"계산서",
+"the check, the bill"
+],
+[
+"계산하다",
+"to pay"
+],
+[
+"따로",
+"separately"
+],
+[
+"나누다",
+"to split, to divide"
+],
+[
+"어떻게",
+"how"
+],
+[
+"각자",
+"each person"
+],
+[
+"먹은 거",
+"what (I) ate"
+],
+[
+"N이랑 M",
+"N and M"
+],
+[
+"N이요 / N요",
+"(it's) N"
+],
+[
+"한 카드로",
+"on one card"
+],
+[
+"스플릿",
+"split (Konglish)"
+],
+[
+"카드",
+"card"
+],
+[
+"잠시만요",
+"one moment"
+],
+[
+"영수증",
+"receipt"
+],
+[
+"사인하다",
+"to sign"
+]
+],
+"p": [
+{
+"e": "N 있어요? (Do you have N?)",
+"s": "따뜻한 보리차 있어요?",
+"v": "gU-TRUjsuQQ",
+"t": "상황별 미국 식당 2 중국집",
+"ev": "따뜻한 보리차 있어요?"
+},
+{
+"e": "A랑 B 주세요 (A and B, please)",
+"s": "짬뽕 두 개랑 탕수육 하나 주세요.",
+"v": "gU-TRUjsuQQ",
+"t": "상황별 미국 식당 2 중국집",
+"ev": "짬뽕 두 개랑 탕수육 하나 주세요."
+},
+{
+"e": "따로 계산해 주세요 (separate checks, please)",
+"s": "그리고 따로 계산해 주세요.",
+"v": "gU-TRUjsuQQ",
+"t": "상황별 미국 식당 2 중국집",
+"ev": "그리고 따로 계산해 주세요."
+},
+{
+"e": "각자 먹은 걸로 해 주세요 (by what each of us ate)",
+"s": "각자 먹은 걸로 해 주세요.",
+"v": "gU-TRUjsuQQ",
+"t": "상황별 미국 식당 2 중국집",
+"ev": "각자 먹은 걸로 해 주세요."
+}
+]
 }
 };

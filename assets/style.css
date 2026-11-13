@@ -292,6 +292,8 @@ button { font: inherit; color: inherit; }
   overflow: hidden;
 }
 .tile-title.book-font { font-size: 1.05rem; }
+.tile-en { margin: 3px 0 0; font-size: 0.85rem; color: var(--text-soft); }
+.page-en { margin: -8px 0 16px; color: var(--text-soft); font-size: 0.95rem; }
 .tile-meta { margin: 4px 0 0; font-size: 0.85rem; color: var(--text-mute); }
 
 .badge-new {

@@ -2,11 +2,11 @@
 (function () {
   'use strict';
 
-  var LEVELS = ['Beginner 1', 'Beginner 2', 'Beginner 3', 'Intermediate 1', 'Intermediate 2'];
+  var LEVELS = ['Beginner 1', 'Beginner 2', 'Beginner 3', 'Intermediate 1', 'Intermediate 2', 'Real-Life Korean'];
   var NEW_DAYS = 14;        // books
   var VIDEO_NEW_DAYS = 7;   // video cards: NEW for 7 days after the day they were added to this site (date in data.js)
   var NEW_RAIL = 8;
-  var LEVELS_KO = { 'Beginner 1': '초급 1', 'Beginner 2': '초급 2', 'Beginner 3': '초급 3', 'Intermediate 1': '중급 1', 'Intermediate 2': '중급 2' };
+  var LEVELS_KO = { 'Beginner 1': '초급 1', 'Beginner 2': '초급 2', 'Beginner 3': '초급 3', 'Intermediate 1': '중급 1', 'Intermediate 2': '중급 2', 'Real-Life Korean': '상황별 한국어' };
   var SECTIONS = {
     story: { title: 'Story Videos', ko: '이야기 영상', desc: 'Watch a story in Korean', char: 'peter-fixed' },
     shadowing: { title: 'Shadowing', ko: '섀도잉', desc: 'Watch and repeat out loud', char: 'alien' },
@@ -190,6 +190,7 @@
     var ep = {
       num: parseInt(e.episode, 10) || 0,
       title: String(e.title || '').trim(),
+      en: String(e.en || '').trim(),
       text: String(e.text || ''),
       images: (e.images || []).filter(Boolean).slice(0, 6),
       target: e.target || null,
@@ -526,6 +527,7 @@
           '<div class="tile-media book">' + (cover ? '<img loading="lazy" src="' + imgSrc(cover) + '" alt="">' : '') + '</div>' +
           (bookIsNew(b) ? '<span class="badge-new">New</span>' : '') +
           '<div class="tile-body"><p class="tile-title book-font" lang="ko">' + esc(b.name) + '</p>' +
+          (b.episodes[0].en ? '<p class="tile-en">' + esc(b.episodes[0].en) + '</p>' : '') +
           '<p class="tile-meta">' + n + (n === 1 ? ' episode' : ' episodes') + '</p></div></a>';
       }).join('') + '</div>';
   }
@@ -536,6 +538,7 @@
     return backLink('#/books/' + slug(b.level)) +
       '<h1 class="page-title book-font" lang="ko">' + esc(b.name) + '</h1>' +
       '<p class="page-lead">' + b.level + ' · Choose an episode</p>' +
+      (b.episodes[0].en && b.episodes.length === 1 ? '<p class="page-en">' + esc(b.episodes[0].en) + '</p>' : '') +
       '<ol class="ep-list">' + b.episodes.map(function (ep) {
         var th = ep.images[0];
         return '<li><a class="ep-row lift" href="' + bookHref(b) + '/' + ep.num + '">' +
@@ -625,6 +628,7 @@
     return backLink(bookHref(b)) +
       '<h1 class="page-title book-font" lang="ko">' + esc(b.name) + '</h1>' +
       '<p class="page-lead">' + epLabel(ep) + (ep.title ? ' · <span class="book-font" lang="ko">' + esc(ep.title) + '</span>' : '') + '</p>' +
+      (ep.en ? '<p class="page-en">' + esc(ep.en) + '</p>' : '') +
       modes + player +
       '<article class="story" id="story">' +
       '<div class="hidden-note" role="status">' + icon('headphones') + '<span>Text is hidden.</span>' +
@@ -677,9 +681,9 @@
         return '<li><span lang="ko">' + esc(w[0]) + '</span><span>' + esc(w[1]) + '</span></li>';
       }).join('') + '</ul></details>' +
       '<details class="fold fold-trans"><summary>English translation <span>Only if lost</span></summary>' +
-      '<div class="trans-switch" role="group" aria-label="Translation style">' +
+      (x.s.some(function (r) { return r[2]; }) ? '<div class="trans-switch" role="group" aria-label="Translation style">' +
       '<button type="button" data-trans="l" aria-pressed="true">Literal</button>' +
-      '<button type="button" data-trans="n" aria-pressed="false">Natural</button></div>' +
+      '<button type="button" data-trans="n" aria-pressed="false">Natural</button></div>' : '') +
       '<ol class="trans show-l">' + trans + '</ol></details>';
   }
 

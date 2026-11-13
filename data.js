@@ -22,6 +22,7 @@
        book: "책 이름", level: "Beginner 1", episode: 2, title: "에피소드 제목(없어도 됨)",
        date: "2026-11-01",          // 올린 날짜. 14일 동안 "New" 표시가 붙고, 첫 화면 New 줄에도 나와요
        images: ["tina-2.png", "tina-3.png"],   // 1~2장. 첫째는 글 맨 위, 둘째는 이야기 중간
+       en: "영어 제목(없어도 됨. 책 목록과 이야기 맨 위에 작게 나와요)",
        audio: "https://drive.google.com/file/d/xxxx/view?usp=sharing",   // 드라이브 공유 링크
        text: `
      첫 번째 문단.
@@ -29,7 +30,7 @@
      두 번째 문단. 문단 사이는 빈 줄 하나로 나눠요.
      `,
      },
-     - 책 레벨: Beginner 1, Beginner 2, Beginner 3, Intermediate 1, Intermediate 2 중 하나
+     - 책 레벨: Beginner 1, Beginner 2, Beginner 3, Intermediate 1, Intermediate 2, Real-Life Korean 중 하나
      - 삽화: 그림 원본을 originals 폴더에 넣고 shrink-images.bat을 더블클릭하세요.
        images에는 원본 파일 이름을 그대로 적으면 돼요(예: "tina-2.png").
      - 둘째 그림을 원하는 곳(글 끝도 됨)에 넣고 싶으면 글 안에 [그림] 이라고 한 줄 적어요. 없으면 이야기 중간에 들어가요.
@@ -731,6 +732,146 @@ var EPISODES = [
 어머니: 이제 청소 다 끝났지? 그럼 나 커피 마셔도 돼?
 
 민지: 아, 맞다! 잠깐만요, 새 물(로) 금방 끓일게요.
+`,
+  },
+
+  {
+    book: "순두부 식당에서", level: "Real-Life Korean", episode: 1, title: "",
+    en: "At a Sundubu Restaurant (a Korean restaurant in the US)",
+    date: "2026-11-14",
+    images: ["sundubu-1.jpg", "sundubu-2.jpg", "sundubu-3.jpg", "sundubu-4.jpg"],
+    // audio: (구글 드라이브 링크를 받으면 여기에 넣기)
+    target: {
+      title: "ordering at a restaurant",
+      note: "Four phrases you will hear and use again and again when you order food in Korean.",
+      verbs: [
+        "-(으)시겠어요? (would you…? polite)",
+        "N(으)로 할게요 (I'll have N)",
+        "N은/는 빼고 주세요 (without N, please)",
+        "-게 해 주세요 (make it …, please)",
+      ],
+      examples: [
+        ["주문하시겠어요?", "Are you ready to order?"],
+        ["저는 해물로 할게요.", "I'll have the seafood."],
+        ["얼음은 빼고 주세요.", "No ice, please."],
+        ["저는 조금 맵게 해 주세요.", "Make mine a little spicy, please."],
+      ],
+    },
+    text: `
+호스트: 안녕하세요. 예약하셨어요?
+제임스: 아니요, 예약은 안 했어요.
+호스트: 몇 분이세요?
+제임스: 두 명이요.
+호스트: 지금 자리가 다 차서 10분 정도 기다리셔야 해요. 괜찮으세요?
+제임스: 네, 괜찮아요.
+호스트: 성함이 어떻게 되세요?
+제임스: 제임스요.
+호스트: 자리 나면 불러 드릴게요.
+제임스: 네, 감사합니다.
+
+[그림]
+
+웨이터: 안녕하세요. 음료는 뭘로 드릴까요?
+제임스: 저는 물 주세요. 얼음은 빼고 주세요.
+친구: 저는 따뜻한 보리차 주세요.
+웨이터: 네, 금방 가져다 드릴게요. 메뉴 천천히 보세요.
+
+[그림]
+
+제임스: 결정했어?
+친구: 응, 난 순두부 콤보로 할래. 너는?
+제임스: 나도 순두부 콤보 할게. 그럼 주문할까?
+친구: 응, 주문하자.
+
+[그림]
+
+웨이터: 주문하시겠어요?
+제임스: 순두부 콤보 두 개 주세요.
+웨이터: 순두부는 해물, 김치, 소고기, 야채 중에 어떤 걸로 하시겠어요?
+제임스: 저는 해물로 할게요.
+친구: 저는 김치로 할게요.
+웨이터: 콤보에는 고기가 같이 나와요. 돼지 불고기, 제육볶음, 소불고기, 보쌈 중에 고르실 수 있어요.
+제임스: 저는 소불고기요.
+친구: 저는 보쌈으로 할게요.
+웨이터: 밥은 백미로 드릴까요, 잡곡밥으로 드릴까요?
+제임스: 저는 백미요. 흰쌀밥이요.
+친구: 저는 잡곡밥으로 주세요.
+웨이터: 맵기는 순한 맛, 보통 맛, 조금 매운 맛, 아주 매운 맛이 있어요.
+제임스: 저는 보통으로 해 주세요.
+친구: 저는 조금 맵게 해 주세요.
+`,
+  },
+
+  {
+    book: "중국집에서", level: "Real-Life Korean", episode: 1, title: "",
+    en: "At a Korean-Chinese Restaurant (a Korean restaurant in the US)",
+    date: "2026-11-14",
+    images: ["chinese-1.jpg", "chinese-2.jpg", "chinese-3.jpg", "chinese-4.jpg", "chinese-5.jpg", "chinese-6.jpg"],
+    // audio: (구글 드라이브 링크를 받으면 여기에 넣기)
+    target: {
+      title: "at a Korean-Chinese restaurant",
+      note: "Four phrases for asking, ordering and paying at a restaurant.",
+      verbs: [
+        "N 있어요? (Do you have N?)",
+        "A랑 B 주세요 (A and B, please)",
+        "따로 계산해 주세요 (separate checks, please)",
+        "각자 먹은 걸로 해 주세요 (by what each of us ate)",
+      ],
+      examples: [
+        ["따뜻한 보리차 있어요?", "Do you have warm barley tea?"],
+        ["짬뽕 두 개랑 탕수육 하나 주세요.", "Two jjamppong and one tangsuyuk, please."],
+        ["그리고 따로 계산해 주세요.", "And separate checks, please."],
+        ["각자 먹은 걸로 해 주세요.", "By what each of us ate, please."],
+      ],
+    },
+    text: `
+호스트: 안녕하세요. 예약하셨어요?
+제임스: 네, 6시에 예약했어요. 제임스라는 이름으로요.
+호스트: 확인했습니다. 두 분이시죠? 이쪽으로 오세요.
+
+[그림]
+
+웨이터: 안녕하세요. 음료는 뭘로 드릴까요?
+제임스: 따뜻한 보리차 있어요?
+웨이터: 죄송해요, 보리차는 없어요. 물이랑 콜라, 사이다는 있어요.
+제임스: 그럼 그냥 물 주세요.
+친구: 저는 콜라 주세요.
+웨이터: 네, 금방 가져다 드릴게요. 메뉴 천천히 보세요.
+
+[그림]
+
+제임스: 결정했어?
+친구: 응, 나는 짬뽕 먹을래. 너는?
+제임스: 나도 짬뽕. 탕수육도 하나 주문할까? 탕수육은 내가 낼게.
+친구: 좋아, 그러자. 고마워, 다음엔 내가 살게.
+웨이터: 주문하시겠어요?
+제임스: 짬뽕 두 개랑 탕수육 하나 주세요.
+웨이터: 짬뽕은 맵기를 1에서 5까지 고르실 수 있어요. 1이 제일 순하고 5가 제일 매워요.
+제임스: 저는 1로 주세요.
+친구: 저는 2로 주세요.
+웨이터: 알겠습니다.
+
+[그림]
+
+제임스: 저기요, 투고 박스 좀 주세요.
+웨이터: 몇 개 드릴까요?
+제임스: 두 개 주세요.
+웨이터: 네, 알겠습니다.
+
+[그림]
+
+제임스: 저기요, 계산서 좀 주세요. 그리고 따로 계산해 주세요.
+웨이터: 네, 어떻게 나눠 드릴까요?
+제임스: 각자 먹은 걸로 해 주세요. 저는 짬뽕이랑 탕수육이요.
+친구: 저는 짬뽕이랑 콜라요.
+웨이터: 네, 알겠습니다.
+
+[그림]
+
+제임스: 여기 카드요.
+웨이터: 네, 잠시만요.
+
+웨이터: 여기 카드랑 영수증 있습니다. 여기에 사인해 주세요.
 `,
   },
 ];
