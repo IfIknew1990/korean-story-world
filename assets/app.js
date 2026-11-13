@@ -191,7 +191,7 @@
       num: parseInt(e.episode, 10) || 0,
       title: String(e.title || '').trim(),
       text: String(e.text || ''),
-      images: (e.images || []).filter(Boolean).slice(0, 2),
+      images: (e.images || []).filter(Boolean).slice(0, 6),
       target: e.target || null,
       date: e.date,
       audio: null
@@ -549,19 +549,20 @@
   function paragraphs(text) {
     var marker = /^\s*\[(?:그림|image|picture)\]\s*$/i;
     var blocks = text.replace(/\r\n?/g, '\n').split(/\n[ \t]*\n/);
-    var out = [], markerAt = -1;
+    var out = [], markerAt = -1, markers = [];
     blocks.forEach(function (blk) {
       var keep = [];
       blk.split('\n').forEach(function (ln) {
         if (marker.test(ln)) {
           if (keep.join('').trim()) { out.push(keep.join('\n').trim()); keep = []; }
+          markers.push(out.length);
           if (markerAt < 0) markerAt = out.length;
         } else keep.push(ln);
       });
       var p = keep.join('\n').trim();
       if (p) out.push(p);
     });
-    return { list: out, markerAt: markerAt };
+    return { list: out, markerAt: markerAt, markers: markers };
   }
 
   function audioPlayer(a) {
@@ -595,11 +596,17 @@
     };
     var mid = p.markerAt >= 0 ? p.markerAt : Math.ceil(p.list.length / 2);
     var body = '';
+    var many = ep.images.length > 2;     // 3+ pictures: picture n+1 goes at the n-th [그림] line
+    var gap = '</div>' + '%F%' + '<div class="story-text" lang="ko">';
     p.list.forEach(function (para, i) {
-      if (i === mid) body += '</div>' + fig(1, 'mid') + '<div class="story-text" lang="ko">';
+      if (many) {
+        p.markers.forEach(function (m, k) { if (m === i && ep.images[k + 1]) body += gap.replace('%F%', fig(k + 1, 'mid')); });
+      } else if (i === mid) body += gap.replace('%F%', fig(1, 'mid'));
       body += '<p>' + mark(para) + '</p>';
     });
-    if (mid >= p.list.length) body += '</div>' + fig(1, 'mid') + '<div class="story-text" lang="ko">';
+    if (many) {
+      p.markers.forEach(function (m, k) { if (m >= p.list.length && ep.images[k + 1]) body += gap.replace('%F%', fig(k + 1, 'mid')); });
+    } else if (mid >= p.list.length) body += gap.replace('%F%', fig(1, 'mid'));
 
     var modes = '', player = '';
     if (ep.audio) {

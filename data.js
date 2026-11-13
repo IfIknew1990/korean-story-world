@@ -639,6 +639,100 @@ var EPISODES = [
 잔을 내려놓았다. 11월의 밤은 너무 쓸쓸했다.
 `,
   },
+
+  {
+    book: "시어머니와 주방 청소", level: "Beginner 2", episode: 1, title: "식초물",
+    date: "2026-11-14",
+    images: ["mil-1.jpg", "mil-2.jpg", "mil-3.jpg", "mil-4.jpg"],   // 컷1 맨 위, 컷2~4는 [그림] 줄 자리
+    audio: "https://drive.google.com/file/d/14H6PnQ6e6iXqnitnPegWYBX01TDFHl2-/view?usp=drivesdk",
+    target: {
+      title: "-지 마세요 / -(으)ㄹ 뻔했다",
+      banmal: "-지 마 / -(으)ㄹ 뻔했어",
+      note: "-지 마세요 means \"please don't ~.\" -(으)ㄹ 뻔했다 means \"almost did ~\" (but it didn't happen).",
+      examples: [
+        ["어머니, 마시지 마세요!", "Mother, please don't drink it!"],
+        ["아이고, 식초(를) 마실 뻔했네.", "Oh my, I almost drank vinegar."],
+      ],
+    },
+    text: `
+어머니: 민지야, 식초 냄새(가) 나네.
+
+민지: 네, 어머니. 지금 청소하고 있어요.
+
+[그림]
+
+어머니: 어, 물 끓였네. 나 커피 한 잔 마셔야겠다.
+
+민지: 어머니, 마시지 마세요! 그거 식초물이에요.
+
+[그림]
+
+어머니: 아이고, 식초(를) 마실 뻔했네. 포트에 식초는 왜 넣었어?
+
+민지: 식초(를) 넣고 끓여야 포트가 깨끗해져요.
+
+어머니: 그래? 그럼 이 물(은) 버려야겠다.
+
+민지: 버리지 마세요! 여기 큰 그릇에 부으면 돼요.
+
+어머니: 이걸로 뭐 하려고?
+
+민지: 식으면 싱크대 위쪽 문(을) 닦으려고요.
+
+[그림]
+
+어머니: 그 높은 데까지? 내가 할게.
+
+민지: 아니에요, 앉아 계세요. 금방 끝나요.
+`,
+  },
+
+  {
+    book: "시어머니와 주방 청소", level: "Beginner 2", episode: 2, title: "시금치물",
+    date: "2026-11-14",
+    images: ["mil-5.jpg", "mil-6.jpg", "mil-7.jpg", "mil-8.jpg"],
+    audio: "https://drive.google.com/file/d/1aE7poF6jLEZtiNSBTgEyxUjdjwcm4zUu/view?usp=drivesdk",
+    target: {
+      title: "-지 마세요 / -(으)려고요",
+      banmal: "-지 마 / -(으)려고",
+      note: "-지 마세요 means \"please don't ~.\" -(으)려고요 tells your plan or reason: \"I'm going to ~.\"",
+      examples: [
+        ["어머니, 버리지 마세요!", "Mother, please don't throw it out!"],
+        ["그 물(로) 후드(를) 닦으려고요.", "I'm going to wipe the hood with that water."],
+      ],
+    },
+    text: `
+어머니: 이거 시금치 데친 물이지? 내가 버릴게.
+
+민지: 어머니, 버리지 마세요! 그 물(로) 후드(를) 닦으려고요.
+
+[그림]
+
+어머니: 시금치 물로? 후드는 세제로 닦아야지. 기름때가 얼마나 심한데.
+
+민지: 세제 안 써도 돼요. 이 물에 베이킹소다(를) 한 스푼 넣으면 돼요.
+
+어머니: 그걸로 기름때가 닦여? 이리 줘. 내가 해 볼게.
+
+[그림]
+
+어머니: 어머, 진짜 깨끗해졌네!
+
+민지: 네, 진짜 잘 닦여요.
+
+어머니: 다음엔 나도 시금치 데친 물(은) 안 버려야겠다.
+
+[그림]
+
+어머니: 어, 근데 이 행주(에서) 식초 냄새가 나네.
+
+민지: 베란다 건조대에 널려고요. 햇빛에 말려야 냄새가 안 나요.
+
+어머니: 이제 청소 다 끝났지? 그럼 나 커피 마셔도 돼?
+
+민지: 아, 맞다! 잠깐만요, 새 물(로) 금방 끓일게요.
+`,
+  },
 ];
 
 /* ---------- 화면에서 뺀 예전 자료 (지우지 않고 기록만 해 둠) ----------
