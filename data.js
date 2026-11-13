@@ -176,6 +176,8 @@ var VIDEOS = [
     { title: "아니거든, 바삭하거든!", youtube: "https://youtu.be/qIqn167HrEs", date: "2026-10-26" },
     { title: "토를 하고 나니까 속이 좀 시원해졌어요", youtube: "https://youtu.be/oHG9oL6wS6g", date: "2026-10-31" },
     { title: "맞아, 그래도 여기가 맛있긴 해", youtube: "https://youtu.be/FlwgbeQA-Eg", date: "2026-11-11" },
+    { title: "시어머니 대화 1 | 어머니, 마시지 마세요! 그거 식초물이에요", youtube: "https://youtu.be/DA0a0FYWOjI", date: "2026-11-13" },
+    { title: "시어머니 대화 2 | 어머니, 버리지 마세요! 그 물로 후드를 닦으려고요", youtube: "https://youtu.be/FZ2AjNGZjzc", date: "2026-11-13" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Intermediate", ko: "중급", videos: [
     { title: "너 요즘에 소개팅녀랑 잘 되가냐?", youtube: "https://youtu.be/momhd8AzhW0" },

@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-11-12 22:00 KST",
+ "updated": "2026-11-13 22:00 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -3845,6 +3845,60 @@
    "pattern_en": "~ or ~, whichever",
    "pattern_ko": "~(으)냐고 물었어요 (asked if/why ~) / ~긴 해 (it is ~, though) / ~(이)든지 ~(이)든지",
    "added": "2026-11-11"
+  },
+  {
+   "id": "DA0a0FYWOjI",
+   "url": "https://youtu.be/DA0a0FYWOjI",
+   "title": "시어머니 대화 1 | 어머니, 마시지 마세요! 그거 식초물이에요",
+   "section": "Shadowing",
+   "tab": "Beginner 3",
+   "playlist": "Korean Shadowing | Beginner 3",
+   "sentences": [
+    "민지야, 식초 냄새(가) 나네.",
+    "네, 어머니. 지금 청소하고 있어요.",
+    "어, 물 끓였네. 나 커피 한 잔 마셔야겠다.",
+    "어머니, 마시지 마세요! 그거 식초물이에요.",
+    "아이고, 식초(를) 마실 뻔했네. 포트에 식초는 왜 넣었어?",
+    "식초(를) 넣고 끓여야 포트가 깨끗해져요.",
+    "그래? 그럼 이 물(은) 버려야겠다.",
+    "버리지 마세요! 여기 큰 그릇에 부으면 돼요.",
+    "이걸로 뭐 하려고?",
+    "식으면 싱크대 위쪽 문(을) 닦으려고요.",
+    "그 높은 데까지? 내가 할게.",
+    "아니에요, 앉아 계세요. 금방 끝나요."
+   ],
+   "patterns": [],
+   "pattern": null,
+   "pattern_en": null,
+   "pattern_ko": null,
+   "added": "2026-11-13"
+  },
+  {
+   "id": "FZ2AjNGZjzc",
+   "url": "https://youtu.be/FZ2AjNGZjzc",
+   "title": "시어머니 대화 2 | 어머니, 버리지 마세요! 그 물로 후드를 닦으려고요",
+   "section": "Shadowing",
+   "tab": "Beginner 3",
+   "playlist": "Korean Shadowing | Beginner 3",
+   "sentences": [
+    "이거 시금치 데친 물이지? 내가 버릴게.",
+    "어머니, 버리지 마세요! 그 물(로) 후드(를) 닦으려고요.",
+    "시금치 물로? 후드는 세제로 닦아야지. 기름때가 얼마나 심한데.",
+    "세제 안 써도 돼요. 이 물에 베이킹소다(를) 한 스푼 넣으면 돼요.",
+    "그걸로 기름때가 닦여? 이리 줘. 내가 해 볼게.",
+    "어머, 진짜 깨끗해졌네!",
+    "네, 진짜 잘 닦여요.",
+    "다음엔 나도 시금치 데친 물(은) 안 버려야겠다.",
+    "어, 근데 이 행주(에서) 식초 냄새가 나네.",
+    "베란다 건조대에 널려고요. 햇빛에 말려야 냄새가 안 나요.",
+    "이제 청소 다 끝났지? 그럼 나 커피 마셔도 돼?",
+    "아, 맞다! 잠깐만요, 새 물(로) 금방 끓일게요."
+   ],
+   "patterns": [],
+   "pattern": null,
+   "pattern_en": null,
+   "pattern_ko": null,
+   "added": "2026-11-13"
   },
   {
    "id": "momhd8AzhW0",
