@@ -641,7 +641,7 @@ var EPISODES = [
   },
 
   {
-    book: "시어머니와 주방 청소", level: "Beginner 2", episode: 1, title: "식초물",
+    book: "시어머니와 주방 청소", level: "Beginner 3", episode: 1, title: "식초물",
     date: "2026-11-14",
     images: ["mil-1.jpg", "mil-2.jpg", "mil-3.jpg", "mil-4.jpg"],   // 컷1 맨 위, 컷2~4는 [그림] 줄 자리
     audio: "https://drive.google.com/file/d/14H6PnQ6e6iXqnitnPegWYBX01TDFHl2-/view?usp=drivesdk",
@@ -688,7 +688,7 @@ var EPISODES = [
   },
 
   {
-    book: "시어머니와 주방 청소", level: "Beginner 2", episode: 2, title: "시금치물",
+    book: "시어머니와 주방 청소", level: "Beginner 3", episode: 2, title: "시금치물",
     date: "2026-11-14",
     images: ["mil-5.jpg", "mil-6.jpg", "mil-7.jpg", "mil-8.jpg"],
     audio: "https://drive.google.com/file/d/1aE7poF6jLEZtiNSBTgEyxUjdjwcm4zUu/view?usp=drivesdk",
