@@ -740,7 +740,7 @@ var EPISODES = [
     en: "At a Sundubu Restaurant (a Korean restaurant in the US)",
     date: "2026-11-14",
     images: ["sundubu-1.jpg", "sundubu-2.jpg", "sundubu-3.jpg", "sundubu-4.jpg"],
-    // audio: (구글 드라이브 링크를 받으면 여기에 넣기)
+    audio: "https://drive.google.com/file/d/1ZzzannRkR6xsaQa5ZiiK4fej25STh0Pe/view?usp=drivesdk",
     target: {
       title: "ordering at a restaurant",
       note: "Four phrases you will hear and use again and again when you order food in Korean.",
@@ -807,7 +807,7 @@ var EPISODES = [
     en: "At a Korean-Chinese Restaurant (a Korean restaurant in the US)",
     date: "2026-11-14",
     images: ["chinese-1.jpg", "chinese-2.jpg", "chinese-3.jpg", "chinese-4.jpg", "chinese-5.jpg", "chinese-6.jpg"],
-    // audio: (구글 드라이브 링크를 받으면 여기에 넣기)
+    audio: "https://drive.google.com/file/d/1ck1GokflNVHEvrOqfwiMiCWjDIX1Yqxr/view?usp=drivesdk",
     target: {
       title: "at a Korean-Chinese restaurant",
       note: "Four phrases for asking, ordering and paying at a restaurant.",
