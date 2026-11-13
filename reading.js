@@ -2738,9 +2738,9 @@ var READING = {
 ["민지: 세제 안 써도 돼요. 이 물에 베이킹소다(를) 한 스푼 넣으면 돼요.", "You don't need detergent. Just add a spoonful of baking soda to this water.", "Even if I don't use detergent, it's fine. If you put one spoon of baking soda in this water, it's fine."],
 ["어머니: 그걸로 기름때가 닦여? 이리 줘. 내가 해 볼게.", "The grease comes off with that? Give it here. Let me try."],
 ["어머니: 어머, 진짜 깨끗해졌네!", "Oh my, it's really clean now!"],
-["민지: 네, 진짜 잘 닦여요.", "Yes, it really wipes off well."],
+["민지: 네, 진짜 잘 닦여요.", "Yes, the grease comes off really well."],
 ["어머니: 다음엔 나도 시금치 데친 물(은) 안 버려야겠다.", "Next time I'd better not throw out the spinach water either.", "Next time, I too must not throw away the blanched spinach water."],
-["어머니: 어, 근데 이 행주(에서) 식초 냄새가 나네.", "Oh, but this dishcloth smells like vinegar.", "Oh, but a vinegar smell is coming from this dishcloth."],
+["어머니: 어, 근데 이 행주(에서) 식초 냄새가 나네.", "Oh, by the way, this dishcloth smells like vinegar.", "Oh, but a vinegar smell is coming from this dishcloth."],
 ["민지: 베란다 건조대에 널려고요. 햇빛에 말려야 냄새가 안 나요.", "I'm going to hang it on the drying rack on the balcony. It only stops smelling once it dries in the sun.", "I'm going to hang it on the balcony drying rack. Only if I dry it in sunlight does the smell not come out."],
 ["어머니: 이제 청소 다 끝났지? 그럼 나 커피 마셔도 돼?", "The cleaning is all done now, right? Then can I have my coffee?"],
 ["민지: 아, 맞다! 잠깐만요, 새 물(로) 금방 끓일게요.", "Oh, right! Just a moment, I'll boil fresh water right away."]
