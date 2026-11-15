@@ -190,6 +190,7 @@ var VIDEOS = [
     { title: "서울에 맛집 좀 추천해 주세요.", youtube: "https://youtu.be/Mxh4MnC2mcU" },
     { title: "준호야 오랜만이야", youtube: "https://youtu.be/6JHuBziWL-k" },
     { title: "야, 햄버거가 당기는데땡기는데, 롯데리아 갈래", youtube: "https://youtu.be/WVjU24paufA" },
+    { title: "골목 국밥집 (The Alley Gukbap Place) 1 | 거기 보기보다 맛있더라고", youtube: "https://youtu.be/CECZnSE7H6U", date: "2026-11-15" },
   ]},
   { section: "shadowing", playlist: "Beginner Korean Shadowing | Series 1", ko: "시리즈 1", videos: [
     { title: "Beginner Korean Shadowing | Where Is Jerry? | S0001", youtube: "https://youtu.be/zUzSxWer1bw", date: "2026-10-20" },
