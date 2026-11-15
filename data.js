@@ -885,7 +885,7 @@ var EPISODES = [
     images: ["gukbap-1.jpg", "gukbap-2.jpg", "gukbap-3.jpg", "gukbap-4.jpg", "gukbap-5.jpg", "gukbap-6.jpg", "gukbap-7.jpg"],   // 첫째는 글 맨 위, 나머지는 [그림] 줄 자리
     audio: "https://drive.google.com/file/d/1LPGruKxugQNemySdyicL7_v1kPYkvtjJ/view?usp=drivesdk",
     // 반복 영상: 유튜브에 올린 뒤 아래 빈 따옴표 안에 링크를 넣으면 버튼이 나타나요. (비어 있으면 버튼이 안 보여요)
-    repeatVideos: ["", ""],
+    repeatVideos: ["https://youtu.be/CECZnSE7H6U", ""],
     target: {
       title: "-더라고",
       note: "Use it when you tell someone what you saw or experienced yourself. It sounds like \"I went there, and you know what, it was…\"",
