@@ -881,9 +881,7 @@ var EPISODES = [
   {
     book: "골목 국밥집", level: "Intermediate 1", episode: 1, title: "",
     date: "2026-11-15",
-    // 오디오: 구글 드라이브 speakthatkorean 계정 I1 폴더에 올린 뒤, 아래 audioSoon 줄을 지우고
-    // audio: "드라이브 공유 링크", 를 넣으면 돼요. (그 전엔 "Audio coming soon" 칸이 보여요)
-    audioSoon: true,
+    audio: "https://drive.google.com/file/d/1LPGruKxugQNemySdyicL7_v1kPYkvtjJ/view?usp=drivesdk",
     // 반복 영상: 유튜브에 올린 뒤 아래 빈 따옴표 안에 링크를 넣으면 버튼이 나타나요. (비어 있으면 버튼이 안 보여요)
     repeatVideos: ["", ""],
     target: {
