@@ -3517,5 +3517,257 @@ var READING = {
 "ev": "각자 먹은 걸로 해 주세요."
 }
 ]
+},
+"골목 국밥집 1": {
+"s": [
+[
+"수진이가 회사 앞 골목에 있는 작은 국밥집에 처음 가 봤어요.",
+"Sujin went to the little gukbap place in the alley in front of her office for the first time."
+],
+[
+"간판이 아주 낡았어요.",
+"The sign was very old and worn out."
+],
+[
+"다음 날 수진이가 민호한테 말했어요.",
+"The next day, Sujin said to Minho:"
+],
+[
+"야, 너 회사 앞 골목에 있는 국밥집 알지?",
+"Sujin: Hey, you know that gukbap place in the alley in front of the office?"
+],
+[
+"거기 보기보다 맛있더라고.",
+"It's way better than it looks."
+],
+[
+"같이 한번 가자.",
+"Let's go together sometime."
+],
+[
+"어, 알지.",
+"Minho: Yeah, I know it."
+],
+[
+"근데 거기 싫어.",
+"But I don't like that place."
+],
+[
+"거기 완전 더럽잖아.",
+"It's totally filthy."
+],
+[
+"나는 앞에만 지나가도 냄새 나던데.",
+"It smells even when I just walk past."
+],
+[
+"아니야, 들어가 보니까 의외로 깨끗하더라고.",
+"Sujin: No, I went inside, and it was surprisingly clean."
+],
+[
+"양도 엄청 넉넉해.",
+"And the portions are huge."
+],
+[
+"양이 아무리 넉넉해도 거기서는 먹기 싫은데.",
+"Minho: I don't care how big the portions are. I don't want to eat there."
+],
+[
+"너무 더러울 것 같아.",
+"It's probably filthy."
+],
+[
+"아니라니까, 진짜 깨끗하다니까.",
+"Sujin: I'm telling you, it's really clean."
+],
+[
+"아 그리고 우리 맨날 가는 회사 지하 국밥집 있지.",
+"Oh, and you know the gukbap place in our office basement where we always go?"
+],
+[
+"거기서 먹고 나면 항상 배가 고팠거든.",
+"I was always still hungry after eating there."
+],
+[
+"근데 이번에 골목 국밥집에서 먹어 보고 나서야 알았어.",
+"But it wasn't until I ate at the alley place that I realized"
+],
+[
+"지하 국밥집 양이 적다는 걸.",
+"the basement place gives tiny portions."
+],
+[
+"골목 국밥집은 지하 국밥집에 비해 양이 두 배야.",
+"The alley place gives you twice as much as the basement place."
+],
+[
+"그래도 거기는 너무 더러워.",
+"Minho: Still, it's too dirty."
+],
+[
+"가게만 봐도 알아.",
+"You can tell just by looking at it."
+],
+[
+"너는 맨날 겉만 보고 넘겨짚더라.",
+"Sujin: You always judge by appearances."
+],
+[
+"한 번 가 보고 말해.",
+"Go there once, then tell me."
+],
+[
+"민호가 대답 안 하고 커피만 마셨어요.",
+"Minho didn't answer and just drank his coffee."
+],
+[
+"그런데 며칠 뒤에 수진이가 그 국밥집에서 민호가 나오는 걸 봤어요.",
+"But a few days later, Sujin saw Minho coming out of that gukbap place."
+],
+[
+"민호가 이쑤시개를 물고 가게에서 나오다가 수진이한테 들켰어요.",
+"Minho got caught by Sujin as he walked out with a toothpick in his mouth."
+],
+[
+"수진이가 웃으면서 말했어요.",
+"Sujin laughed and said:"
+],
+[
+"맛있었냐?",
+"Sujin: Was it good?"
+],
+[
+"같이 가자니까 싫다며?",
+"I asked you to come with me, and you said no!"
+],
+[
+"민호가 눈을 피했어요.",
+"Minho looked away."
+],
+[
+"어? 아니… 그냥 지나가다가… 배가 고파서.",
+"Minho: Huh? No… I was just walking by… and I got hungry."
+],
+[
+"그래서 어땠어?",
+"Sujin: So how was it?"
+],
+[
+"민호가 한참 있다가 작게 말했어요.",
+"After a long pause, Minho said quietly:"
+],
+[
+"…은근히 괜찮더라고.",
+"Minho: …It was actually kind of good."
+],
+[
+"은근히 정도가 아니라 완전 맛있지?",
+"Sujin: Not just \"kind of good.\" It's amazing, right?"
+],
+[
+"…응.",
+"Minho: …Yeah."
+],
+[
+"내일 같이 갈래?",
+"Wanna go together tomorrow?"
+]
+],
+"w": [
+[
+"골목",
+"alley"
+],
+[
+"간판",
+"shop sign"
+],
+[
+"낡다",
+"old, worn out"
+],
+[
+"보기보다",
+"than it looks"
+],
+[
+"냄새(가) 나다",
+"to smell"
+],
+[
+"의외로",
+"surprisingly"
+],
+[
+"양",
+"portion, amount"
+],
+[
+"넉넉하다",
+"generous, more than enough"
+],
+[
+"지하",
+"basement"
+],
+[
+"두 배",
+"twice as much"
+],
+[
+"겉",
+"outside, surface"
+],
+[
+"넘겨짚다",
+"to jump to conclusions"
+],
+[
+"이쑤시개",
+"toothpick"
+],
+[
+"물다",
+"to hold in the mouth"
+],
+[
+"들키다",
+"to get caught"
+],
+[
+"눈을 피하다",
+"to look away"
+],
+[
+"한참",
+"for quite a while"
+],
+[
+"은근히",
+"low-key, more than you'd think"
+]
+],
+"p": [
+{
+"e": "-더라고 (I found that…)",
+"s": "거기 보기보다 맛있더라고.",
+"r": 1
+},
+{
+"e": "-아/어 보니까 (when I tried…)",
+"s": "들어가 보니까 의외로 깨끗하더라고.",
+"r": 1
+},
+{
+"e": "-고 나서야 (only after…)",
+"s": "골목 국밥집에서 먹어 보고 나서야 알았어.",
+"r": 1
+},
+{
+"e": "-자니까 …다며? (I said let's…, and you said…?)",
+"s": "같이 가자니까 싫다며?",
+"r": 2
+}
+]
 }
 };

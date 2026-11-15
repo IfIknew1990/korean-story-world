@@ -192,7 +192,7 @@
       title: String(e.title || '').trim(),
       en: String(e.en || '').trim(),
       text: String(e.text || ''),
-      images: (e.images || []).filter(Boolean).slice(0, 6),
+      images: (e.images || []).filter(Boolean).slice(0, 8),
       target: e.target || null,
       date: e.date,
       audio: null,
@@ -650,7 +650,7 @@
       '<button type="button" class="show-text">' + icon('text') + ' Show text</button></div>' +
       fig(0, 'top') + targetBox(ep.target) +
       '<div class="story-text" lang="ko">' + body + '</div>' +
-      storyExtras(extra) +
+      storyExtras(extra, ep) +
       '</article>' + nav;
   }
 
@@ -679,11 +679,14 @@
   }
 
   // Key expressions with practice videos, then the word list and translation, both folded.
-  function storyExtras(x) {
+  function storyExtras(x, ep) {
     if (!x) return '';
     var keys = (x.p || []).map(function (k) {
+      // "r": 1 = use the story's 1st repeat video (data.js repeatVideos), so the link is typed only once
+      var rid = k.r && ep && ep.repeats ? ep.repeats[k.r - 1] : null;
       return '<li><p class="key-expr" lang="ko">' + keep(k.e) + '</p><p class="key-sent" lang="ko">' + esc(k.s) + '</p>' +
-        (k.v ? '<a class="key-video" href="https://www.youtube.com/watch?v=' + k.v + '" target="_blank" rel="noopener">▶ Practice video' +
+        (rid ? '<a class="key-video" href="' + linkOf(rid) + '" target="_blank" rel="noopener">▶ Practice video<span>Repeat video ' + k.r + '</span></a>'
+          : k.v ? '<a class="key-video" href="https://www.youtube.com/watch?v=' + k.v + '" target="_blank" rel="noopener">▶ Practice video' +
           '<span lang="ko">' + esc(shortTitle(k.t).text) + '</span></a>'
           : '<p class="key-empty">Practice video · coming soon</p>') + '</li>';
     }).join('');
