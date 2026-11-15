@@ -195,7 +195,9 @@
       images: (e.images || []).filter(Boolean).slice(0, 6),
       target: e.target || null,
       date: e.date,
-      audio: null
+      audio: null,
+      audioSoon: !!e.audioSoon,
+      repeats: Array.isArray(e.repeatVideos) ? e.repeatVideos.map(function (u) { return youtubeId(u); }) : []   // same order as data.js; blanks stay blank
     };
     if (!ep.num) return problems.push(where + ': episode number is missing.');
     if (e.audio) {
@@ -618,7 +620,20 @@
         '<button type="button" class="mode" data-mode="read" aria-pressed="false">' + icon('eye') + 'Read only</button>' +
         '<button type="button" class="mode" data-mode="listen" aria-pressed="false">' + icon('headphones') + 'Listen only</button></div>';
       player = '<section class="player" id="player" aria-label="Audio">' + audioPlayer(ep.audio) + '</section>';
+    } else if (ep.audioSoon) {      // audio not uploaded yet: keep the same layout with a placeholder
+      modes = '<div class="modes" role="group" aria-label="How do you want to study?">' +
+        '<button type="button" class="mode" data-mode="both" aria-pressed="true">' + icon('book') + 'Read + listen</button>' +
+        '<button type="button" class="mode" data-mode="read" aria-pressed="false">' + icon('eye') + 'Read only</button>' +
+        '<button type="button" class="mode" data-mode="listen" aria-pressed="false">' + icon('headphones') + 'Listen only</button></div>';
+      player = '<section class="player player-soon" id="player" aria-label="Audio">' + icon('headphones') + '<span>Audio coming soon</span></section>';
     }
+    // "Repeat video" buttons: only the links that exist; none at all when the list is empty
+    var reps = '';
+    ep.repeats.forEach(function (id, k) {
+      if (id) reps += '<a class="repeat-btn" href="' + linkOf(id) + '" target="_blank" rel="noopener">' + icon('external') +
+        'Repeat video' + (ep.repeats.length > 1 ? ' ' + (k + 1) : '') + '</a>';
+    });
+    if (reps) reps = '<div class="repeat-videos">' + reps + '</div>';
     var prev = b.episodes[idx - 1], next = b.episodes[idx + 1];
     var nav = (prev || next) ? '<nav class="ep-nav">' +
       (prev ? '<a href="' + bookHref(b) + '/' + prev.num + '">' + icon('back') + epLabel(prev) + '</a>' : '') +
@@ -629,7 +644,7 @@
       '<h1 class="page-title book-font" lang="ko">' + esc(b.name) + '</h1>' +
       '<p class="page-lead">' + epLabel(ep) + (ep.title ? ' · <span class="book-font" lang="ko">' + esc(ep.title) + '</span>' : '') + '</p>' +
       (ep.en ? '<p class="page-en">' + esc(ep.en) + '</p>' : '') +
-      modes + player +
+      reps + modes + player +
       '<article class="story" id="story">' +
       '<div class="hidden-note" role="status">' + icon('headphones') + '<span>Text is hidden.</span>' +
       '<button type="button" class="show-text">' + icon('text') + ' Show text</button></div>' +

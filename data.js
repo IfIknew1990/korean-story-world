@@ -35,6 +35,8 @@
        images에는 원본 파일 이름을 그대로 적으면 돼요(예: "tina-2.png").
      - 둘째 그림을 원하는 곳(글 끝도 됨)에 넣고 싶으면 글 안에 [그림] 이라고 한 줄 적어요. 없으면 이야기 중간에 들어가요.
      - 오디오가 유튜브 영상이면: audio: "유튜브 링크", start: "2:15"  (그 시간부터 재생)
+     - 반복 영상(유튜브 쉐도잉 영상) 버튼: repeatVideos: ["유튜브 링크", "유튜브 링크"],  (여러 개면 "Repeat video 1, 2"로 나란히. 링크가 없거나 빈 따옴표면 버튼이 안 보여요)
+     - 오디오를 곧 올릴 예정이면 audio 대신 audioSoon: true, (그러면 "Audio coming soon" 칸이 보여요. 링크를 넣을 땐 이 줄을 지워요)
      - 오디오가 없으면 audio 줄을 지워요. 그러면 재생 창과 모드 버튼이 숨겨져요.
      - 글 안에 ` (백틱) 글자는 쓰지 마세요.
      - 본문 위 "Target structure" 안내 상자를 넣으려면 text 위에 아래 덩어리를 붙여요(없으면 상자가 안 나와요).
@@ -217,6 +219,7 @@ var EPISODES = [
   {
     book: "티나 이야기", level: "Beginner 1", episode: 1, title: "티나가 배가 아파요.",
     date: "2026-09-07",
+    repeatVideos: ["https://youtu.be/Y7-my-X0j-w", "https://youtu.be/2XZJMZI9C2M"],
     images: ["tina-1.png"],
     audio: "https://drive.google.com/file/d/1MNvgjT1EupnOzarGHiNsj5AQRl6KRkpI/view?usp=drive_link",
     target: {
@@ -872,6 +875,53 @@ var EPISODES = [
 웨이터: 네, 잠시만요.
 
 웨이터: 여기 카드랑 영수증 있습니다. 여기에 사인해 주세요.
+`,
+  },
+
+  {
+    book: "골목 국밥집", level: "Intermediate 1", episode: 1, title: "",
+    date: "2026-11-15",
+    // 오디오: 구글 드라이브 speakthatkorean 계정 I1 폴더에 올린 뒤, 아래 audioSoon 줄을 지우고
+    // audio: "드라이브 공유 링크", 를 넣으면 돼요. (그 전엔 "Audio coming soon" 칸이 보여요)
+    audioSoon: true,
+    // 반복 영상: 유튜브에 올린 뒤 아래 빈 따옴표 안에 링크를 넣으면 버튼이 나타나요. (비어 있으면 버튼이 안 보여요)
+    repeatVideos: ["", ""],
+    target: {
+      title: "-더라고",
+      note: "Use it when you tell someone what you saw or experienced yourself. It sounds like \"I went there, and you know what, it was…\"",
+      examples: [
+        ["거기 보기보다 맛있더라고.", "That place was better than it looks, I found."],
+        ["들어가 보니까 의외로 깨끗하더라고.", "When I went in, it was surprisingly clean."],
+      ],
+    },
+    text: `
+수진이가 회사 앞 골목에 있는 작은 국밥집에 처음 가 봤어요. 간판이 아주 낡았어요.
+다음 날 수진이가 민호한테 말했어요.
+
+수진: 야, 너 회사 앞 골목에 있는 국밥집 알지? 거기 보기보다 맛있더라고. 같이 한번 가자.
+민호: 어, 알지. 근데 거기 싫어. 거기 완전 더럽잖아. 나는 앞에만 지나가도 냄새 나던데.
+수진: 아니야, 들어가 보니까 의외로 깨끗하더라고. 양도 엄청 넉넉해.
+민호: 양이 아무리 넉넉해도 거기서는 먹기 싫은데. 너무 더러울 것 같아.
+수진: 아니라니까, 진짜 깨끗하다니까. 아 그리고 우리 맨날 가는 회사 지하 국밥집 있지. 거기서 먹고 나면 항상 배가 고팠거든. 근데 이번에 골목 국밥집에서 먹어 보고 나서야 알았어. 지하 국밥집 양이 적다는 걸. 골목 국밥집은 지하 국밥집에 비해 양이 두 배야.
+민호: 그래도 거기는 너무 더러워. 가게만 봐도 알아.
+수진: 너는 맨날 겉만 보고 넘겨짚더라. 한 번 가 보고 말해.
+
+민호가 대답 안 하고 커피만 마셨어요.
+
+그런데 며칠 뒤에 수진이가 그 국밥집에서 민호가 나오는 걸 봤어요. 민호가 이쑤시개를 물고 가게에서 나오다가 수진이한테 들켰어요. 수진이가 웃으면서 말했어요.
+
+수진: 맛있었냐? 같이 가자니까 싫다며?
+
+민호가 눈을 피했어요.
+
+민호: 어? 아니… 그냥 지나가다가… 배가 고파서.
+수진: 그래서 어땠어?
+
+민호가 한참 있다가 작게 말했어요.
+
+민호: …은근히 괜찮더라고.
+수진: 은근히 정도가 아니라 완전 맛있지?
+민호: …응. 내일 같이 갈래?
 `,
   },
 ];
