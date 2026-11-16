@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-11-15 22:00 KST",
+ "updated": "2026-11-16 22:00 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -656,6 +656,13 @@
    "letters": [
     "ㄷ"
    ]
+  },
+  "auto_94": {
+   "en": "I said let's…, and you said…?",
+   "ko": "-자니까 …다며?",
+   "letters": [
+    "ㅈ"
+   ]
   }
  },
  "pattern_order": [
@@ -749,7 +756,8 @@
   "auto_88",
   "auto_89",
   "auto_92",
-  "auto_93"
+  "auto_93",
+  "auto_94"
  ],
  "pattern_tabs": [],
  "videos": [
@@ -4099,6 +4107,35 @@
    "pattern_en": "I found that…",
    "pattern_ko": "-더라고",
    "added": "2026-11-15"
+  },
+  {
+   "id": "m5TNCI5RXsI",
+   "url": "https://youtu.be/m5TNCI5RXsI",
+   "title": "골목 국밥집 (The Alley Gukbap Place) 2 | 은근히 괜찮더라고",
+   "section": "Shadowing",
+   "tab": "Intermediate",
+   "playlist": "Korean Shadowing | Intermediate",
+   "sentences": [
+    "그런데 며칠 뒤에 수진이가 그 국밥집에서 민호가 나오는 걸 봤어요.",
+    "민호가 이쑤시개를 물고 가게에서 나오다가 수진이한테 들켰어요.",
+    "수진이가 웃으면서 말했어요.",
+    "맛있었냐? 같이 가자니까 싫다며?",
+    "민호가 눈을 피했어요.",
+    "어? 아니… 그냥 지나가다가… 배가 고파서.",
+    "민호가 그냥 지나가다가 배가 고파서 먹었다고 했어요.",
+    "그래서 어땠어?",
+    "민호가 한참 있다가 작게 말했어요.",
+    "…은근히 괜찮더라고.",
+    "은근히 정도가 아니라 완전 맛있지?",
+    "…응. 내일 같이 갈래?"
+   ],
+   "patterns": [
+    "auto_94"
+   ],
+   "pattern": "auto_94",
+   "pattern_en": "I said let's…, and you said…?",
+   "pattern_ko": "-자니까 …다며?",
+   "added": "2026-11-16"
   },
   {
    "id": "zUzSxWer1bw",
