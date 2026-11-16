@@ -695,10 +695,10 @@
         (r[2] ? '<span class="tl">' + esc(r[2]) + '</span><span class="tn">' + esc(r[1]) + '</span>' : '<span>' + esc(r[1]) + '</span>') + '</li>';
     }).join('');
     return (keys ? '<section class="keys"><h2>Key expressions</h2><ul>' + keys + '</ul></section>' : '') +
-      '<details class="fold"><summary>Word list <span>Only if lost</span></summary><ul class="words">' + x.w.map(function (w) {
+      '<details class="fold"><summary>Word list <span>If you get stuck</span></summary><ul class="words">' + x.w.map(function (w) {
         return '<li><span lang="ko">' + esc(w[0]) + '</span><span>' + esc(w[1]) + '</span></li>';
       }).join('') + '</ul></details>' +
-      '<details class="fold fold-trans"><summary>English translation <span>Only if lost</span></summary>' +
+      '<details class="fold fold-trans"><summary>English translation <span>If you get stuck</span></summary>' +
       (x.s.some(function (r) { return r[2]; }) ? '<div class="trans-switch" role="group" aria-label="Translation style">' +
       '<button type="button" data-trans="l" aria-pressed="true">Literal</button>' +
       '<button type="button" data-trans="n" aria-pressed="false">Natural</button></div>' : '') +
