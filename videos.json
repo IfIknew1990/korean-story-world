@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-11-17 22:00 KST",
+ "updated": "2026-11-18 01:27 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -643,6 +643,20 @@
     "ㄹ"
    ]
   },
+  "auto_90": {
+   "en": "while ~ing",
+   "ko": "~고 있어요 (is/are ~ing) / ~(으)면서",
+   "letters": [
+    "ㄱ"
+   ]
+  },
+  "auto_91": {
+   "en": "because of ~",
+   "ko": "~고 있어요 (is/are ~ing) / ~때문에",
+   "letters": [
+    "ㄱ"
+   ]
+  },
   "auto_92": {
    "en": "it seems ~ / I think ~",
    "ko": "~(으)ㄴ 것 같아요",
@@ -755,6 +769,8 @@
   "auto_87",
   "auto_88",
   "auto_89",
+  "auto_90",
+  "auto_91",
   "auto_92",
   "auto_93",
   "auto_94"
@@ -1697,6 +1713,66 @@
    "pattern_en": "will / going to ~",
    "pattern_ko": "~(으)ㄹ 거예요 / ~(으)ㄹ 거야",
    "added": "2026-11-11"
+  },
+  {
+   "id": "SNMXROWVl0s",
+   "url": "https://youtu.be/SNMXROWVl0s",
+   "title": "민수가 자고 있어요",
+   "section": "Shadowing",
+   "tab": "Beginner 1 (old)",
+   "playlist": "Korean Shadowing | Beginner 1 (old)",
+   "sentences": [
+    "민수가 자고 있어요",
+    "지금 오후 11시예요[시에요].",
+    "민수가 침대에서 자고 있어요.",
+    "제리는 바닥에서 자고 있어요.",
+    "지금 오후 10시예요[시에요].",
+    "두 사람이 민수 집에서 맥주를 마시고 있어요.",
+    "민수가 테라를 마시고 있어요.",
+    "제리는 카스를 마시고 있어요.",
+    "지금 오후 9시예요[시에요].",
+    "두 사람이 싸우고 있어요.",
+    "두 사람이 여자 때문에 싸우고 있어요.",
+    "지금 오후 8시 반이에요.",
+    "두 사람이 회를 먹고 있어요."
+   ],
+   "patterns": [
+    "auto_91"
+   ],
+   "pattern": "auto_91",
+   "pattern_en": "because of ~",
+   "pattern_ko": "~고 있어요 (is/are ~ing) / ~때문에",
+   "added": "2026-11-18"
+  },
+  {
+   "id": "p82QZWmL5Gw",
+   "url": "https://youtu.be/p82QZWmL5Gw",
+   "title": "제리가 울고 있어요.",
+   "section": "Shadowing",
+   "tab": "Beginner 1 (old)",
+   "playlist": "Korean Shadowing | Beginner 1 (old)",
+   "sentences": [
+    "제리가 울고 있어요.",
+    "지금 오후 8시예요[시에요].",
+    "두 사람이 웃고 있어요.",
+    "지금 오후 7시 반이에요.",
+    "두 사람이 이야기(를) 하고 있어요.",
+    "두 사람이 웃으면서 이야기를 하고 있어요.",
+    "민수가 말하고 있어요.",
+    "제리가 (민수 말을) 듣고 있어요.",
+    "지금 오후 7시예요[시에요].",
+    "그래서 민수가 제리를 달래고 있어요. \"울지 마.\"",
+    "지금 오후 6시 반이에요.",
+    "민수가 버스에 타고 있어요.",
+    "제리가 지하철에 타고 있어요."
+   ],
+   "patterns": [
+    "auto_90"
+   ],
+   "pattern": "auto_90",
+   "pattern_en": "while ~ing",
+   "pattern_ko": "~고 있어요 (is/are ~ing) / ~(으)면서",
+   "added": "2026-11-18"
   },
   {
    "id": "Y9QlQyF8bWg",
