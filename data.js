@@ -61,6 +61,7 @@ var VIDEOS = [
   { section: "story", playlist: "Learn Korean Through Stories | Beginner", ko: "초급", videos: [
     { title: "Beginner Korean Story | Peter Hates Bananas? EP1", youtube: "https://youtu.be/tPmjW4tIt5I", date: "2026-10-20" },
     { title: "Beginner Korean Story | A Gorilla Works at Starbucks? EP2", youtube: "https://youtu.be/zlph8Dxw7MM", date: "2026-10-20" },
+    { title: "Learn Korean with a Gorilla Story | Beginner EP1 (A0, Comprehensible Input)", youtube: "https://youtu.be/miKtf1rwMGM", date: "2026-11-17" },
   ]},
 
   // ==================== Shadowing ====================
@@ -198,6 +199,7 @@ var VIDEOS = [
     { title: "Beginner Korean Shadowing | Jerry Is at School | S0002", youtube: "https://youtu.be/I1SaaJyJJL0", date: "2026-10-20" },
     { title: "Beginner Korean Shadowing | Do You Like Coffee? | S0003", youtube: "https://youtu.be/GwCR2M6txvc", date: "2026-10-20" },
     { title: "Beginner Korean Shadowing | Do You Eat Kimchi? | S0004", youtube: "https://youtu.be/OC-3qYe1lhY", date: "2026-10-20" },
+    { title: "Beginner Korean Shadowing | Are You Lady Gaga? | S0001", youtube: "https://youtu.be/219AuanS00g", date: "2026-11-17" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Sentence Endings", ko: "문장 종결 어미", videos: [
     { title: "F001 먹을래?", youtube: "https://youtu.be/U3QPfe8c-So" },
