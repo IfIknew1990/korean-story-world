@@ -98,6 +98,8 @@ var VIDEOS = [
     { title: "제리가 주로 8시에 학교에 가요", youtube: "https://youtu.be/rztKRwsQdZw", date: "2026-11-11" },
     { title: "제리가 온라인으로 한국어를 공부해요.", youtube: "https://youtu.be/dOnlq7ucbQQ", date: "2026-11-11" },
     { title: "너 오늘도 게임할 거야?", youtube: "https://youtu.be/UvmqrS3ApRs", date: "2026-11-11" },
+    { title: "민수가 자고 있어요", youtube: "https://youtu.be/SNMXROWVl0s", date: "2026-11-18" },
+    { title: "제리가 울고 있어요.", youtube: "https://youtu.be/p82QZWmL5Gw", date: "2026-11-18" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Beginner 2", ko: "초급 2", videos: [
     { title: "S018-1 제리는 미국 사람이고 토니는 영국사람이에요", youtube: "https://youtu.be/Y9QlQyF8bWg" },
