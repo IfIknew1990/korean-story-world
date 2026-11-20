@@ -300,19 +300,20 @@
     return '<div class="tile-media video"><img loading="lazy" src="https://i.ytimg.com/vi/' + id + '/mqdefault.jpg" alt=""></div>';
   }
   // Card = link to YouTube + two small buttons: copy this link / pick it (to copy several at once).
-  function videoTile(v) {
+  var KIND = { story: 'Story', shadowing: 'Shadowing', hangul: 'Hangul' };
+  function videoTile(v, label) {
     var picked = !!selected[v.id];
     var name = esc(shortTitle(v.title).text);
     return '<div class="tile lift video-tile' + (picked ? ' picked' : '') + '" data-id="' + v.id + '">' +
       '<a class="tile-link" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener" title="' + esc(v.title) + '">' + thumb(v.id) +
       (videoIsNew(v) ? '<span class="badge-new">New</span>' : '') +
-      '<div class="tile-body">' + titleHtml(v.title) + '</div></a>' +
+      '<div class="tile-body">' + (label ? '<span class="rail-kind">' + (KIND[v.section] || '') + '</span>' : '') + titleHtml(v.title) + '</div></a>' +
       '<div class="tile-actions">' +
       '<button type="button" class="tile-btn" data-copy="' + v.id + '" aria-label="Copy title and link: ' + name + '">' + icon('link') + '<span>Copy</span></button>' +
       '<button type="button" class="tile-btn pick" data-pick="' + v.id + '" aria-pressed="' + picked + '" aria-label="Pick: ' + name + '">' + icon(picked ? 'check' : 'plus') + '<span>' + (picked ? 'Picked' : 'Pick') + '</span></button>' +
       '</div></div>';
   }
-  function grid(list) { return '<div class="grid">' + list.map(videoTile).join('') + '</div>'; }
+  function grid(list, label) { return '<div class="grid">' + list.map(function (v) { return videoTile(v, label); }).join('') + '</div>'; }
 
   /* ---------- copy links ---------- */
   var selected = {};          // id -> true, kept while moving between tabs
@@ -356,7 +357,7 @@
     var hint = window.matchMedia('(max-width: 480px)').matches ? 'e.g. 강아지, want to' : 'Search a word or grammar, e.g. 강아지, want to';
     return '<form class="search" role="search" onsubmit="return false">' +
       '<label class="search-field">' + icon('search') +
-      '<input type="search" id="q" placeholder="' + hint + '" value="' + esc(query) + '" autocomplete="off" aria-label="Search videos by sentence or title">' +
+      '<input type="search" id="q" placeholder="' + hint + '" value="' + esc(query) + '" autocomplete="off" aria-label="Search videos and books by sentence, word or title">' +
       '</label></form><div id="search-results" aria-live="polite"></div>';
   }
   function patternHits(q) {             // grammar patterns whose Korean name or English meaning has the words
@@ -376,6 +377,54 @@
         (info.ps || []).some(function (k) { return pk.indexOf(k) >= 0; });
     });
   }
+  /* books: title, English title, story sentences, words and key expressions (reading.js loads the first time someone searches) */
+  function loadReading() {
+    if (window.READING || readingAsked) return;
+    readingAsked = true;
+    var rs = document.createElement('script');
+    rs.src = 'reading.js';
+    rs.onload = function () { if (/^#\/books\/[^/]+\/[^/]+\/\d+/.test(location.hash)) render(true); else showSearch(); };
+    document.head.appendChild(rs);
+  }
+  function bookHits(q) {
+    var nq = squash(q);
+    if (!nq) return [];
+    var has = function (t) { return squash(t).indexOf(nq) >= 0; };
+    var out = [];
+    bookOrder.forEach(function (n) {
+      var b = books[n];
+      b.episodes.forEach(function (ep) {
+        var x = (window.READING || {})[b.name + ' ' + ep.num];
+        var hit = [b.name, ep.title, ep.en].some(has), snip = '';
+        if (x) {
+          (x.s || []).some(function (r) {
+            if (has(r[0]) || has(r[1]) || (r[2] && has(r[2]))) { snip = r[0] + ' — ' + r[1]; return true; }
+            return false;
+          });
+          if (!snip) (x.w || []).some(function (w) { if (has(w[0]) || has(w[1])) { snip = w[0] + ' — ' + w[1]; return true; } return false; });
+          if (!snip) (x.p || []).some(function (k) { if (has(k.e) || has(k.s)) { snip = k.s; return true; } return false; });
+        }
+        if (!snip) ep.text.split(/[\r\n]+/).some(function (ln) {
+          if (/^\s*\[(?:그림|image|picture)\]\s*$/i.test(ln)) return false;
+          if (has(ln)) { snip = ln.trim(); return true; }
+          return false;
+        });
+        if (hit || snip) out.push({ b: b, ep: ep, snip: snip });
+      });
+    });
+    return out;
+  }
+  function bookResults(list) {
+    return '<div class="grid">' + list.map(function (h) {
+      var cover = h.ep.images[0], multi = h.b.episodes.length > 1;
+      return '<a class="tile lift" href="' + bookHref(h.b) + '/' + h.ep.num + '">' +
+        '<div class="tile-media book">' + (cover ? '<img loading="lazy" src="' + imgSrc(cover) + '" alt="">' : '') + '</div>' +
+        '<div class="tile-body"><span class="rail-kind">Book</span><p class="tile-title book-font" lang="ko">' + esc(h.b.name) + (multi ? ' · Ep ' + h.ep.num : '') + '</p>' +
+        (h.ep.en ? '<p class="tile-en">' + esc(h.ep.en) + '</p>' : '') +
+        (h.snip ? '<p class="tile-snippet">' + esc(h.snip.length > 110 ? h.snip.slice(0, 108) + '…' : h.snip) + '</p>' : '') +
+        '</div></a>';
+    }).join('') + '</div>';
+  }
   function showSearch() {
     var box = document.getElementById('search-results');
     var body = document.getElementById('page-body');
@@ -383,11 +432,14 @@
     var q = query.trim();
     body.hidden = !!q;
     if (!q) { box.innerHTML = ''; return; }
+    loadReading();
     var hits = searchHits(q);
     var pk = patternHits(q);
+    var bk = bookHits(q);
     box.innerHTML = (pk.length ? '<div class="search-patterns"><p class="tab-count">Grammar patterns</p><div class="pattern-list">' +
         pk.map(function (k) { return patternItem(k, patternLetters(k)[0]); }).join('') + '</div></div>' : '') +
-      '<p class="tab-count">' + (hits.length ? hits.length + (hits.length === 1 ? ' video' : ' videos') : 'No videos') + ' with “' + esc(q) + '”</p>' + grid(hits);
+      (hits.length || !bk.length ? '<p class="tab-count">' + (hits.length ? hits.length + (hits.length === 1 ? ' video' : ' videos') : 'No videos') + ' with “' + esc(q) + '”</p>' + grid(hits, true) : '') +
+      (bk.length ? '<p class="tab-count">' + bk.length + (bk.length === 1 ? ' book' : ' books') + ' with “' + esc(q) + '”</p>' + bookResults(bk) : '');
   }
 
   // "Just added": only items that carry a date in data.js (the day they were added to this site).
@@ -768,7 +820,7 @@
     showSearch();
   });
   function redrawTile(id) {
-    Array.prototype.forEach.call(document.querySelectorAll('.video-tile[data-id="' + id + '"]'), function (tile) { tile.outerHTML = videoTile(byId[id]); });
+    Array.prototype.forEach.call(document.querySelectorAll('.video-tile[data-id="' + id + '"]'), function (tile) { tile.outerHTML = videoTile(byId[id], !!query.trim()); });
   }
   app.addEventListener('click', function (ev) {
     var b = ev.target.closest ? ev.target.closest('[data-copy], [data-pick]') : null;

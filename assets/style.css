@@ -642,3 +642,5 @@ a.letter-btn:hover { border-color: var(--text-soft); }
 .pattern-back { margin-top: 0; }
 .search-patterns { margin-bottom: 12px; }
 @media (max-width: 639px) { .letter-bar { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); } .letter-btn { min-width: 0; padding: 0; } }
+
+.tile-snippet { margin: 4px 0 0; font-size: 0.82rem; color: var(--text-soft); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow-wrap: anywhere; }
