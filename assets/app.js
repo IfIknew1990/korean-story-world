@@ -438,7 +438,7 @@
     var bk = bookHits(q);
     box.innerHTML = (pk.length ? '<div class="search-patterns"><p class="tab-count">Grammar patterns</p><div class="pattern-list">' +
         pk.map(function (k) { return patternItem(k, patternLetters(k)[0]); }).join('') + '</div></div>' : '') +
-      (hits.length || !bk.length ? '<p class="tab-count">' + (hits.length ? hits.length + (hits.length === 1 ? ' video' : ' videos') : 'No videos') + ' with “' + esc(q) + '”</p>' + grid(hits, true) : '') +
+      (hits.length || !bk.length ? '<p class="tab-count">' + (hits.length ? hits.length + (hits.length === 1 ? ' video' : ' videos') + ' with “' + esc(q) + '”' : 'No results for “' + esc(q) + '”') + '</p>' + grid(hits, true) : '') +
       (bk.length ? '<p class="tab-count">' + bk.length + (bk.length === 1 ? ' book' : ' books') + ' with “' + esc(q) + '”</p>' + bookResults(bk) : '');
   }
 
