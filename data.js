@@ -206,6 +206,7 @@ var VIDEOS = [
     { title: "F002 우리 내일 영화 볼까", youtube: "https://youtu.be/bosuXygZUYU" },
     { title: "F003  거든 /  잖아 반말", youtube: "https://youtu.be/VqglPFATXxM" },
     { title: "F004  거든요  잖아요 존댓말", youtube: "https://youtu.be/zsbY6KNjdhg" },
+    { title: "민수의 토요일 (-ㄹ게요 / -ㄹ 거예요)", youtube: "https://youtu.be/IsCthFcIx00", date: "2026-11-20" },
   ]},
   { section: "shadowing", playlist: "Korean Shadowing | Real-Life Situations", ko: "상황별 한국어", videos: [
     { title: "식당 한국어", youtube: "https://youtu.be/c2iIca8ocYs" },

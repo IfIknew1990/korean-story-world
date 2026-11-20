@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-11-18 01:27 KST",
+ "updated": "2026-11-20 17:06 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -677,6 +677,13 @@
    "letters": [
     "ㅈ"
    ]
+  },
+  "auto_95": {
+   "en": "will ~, going to ~",
+   "ko": "-(으)ㄹ게요 (I'll ~) / -(으)ㄹ 거예요",
+   "letters": [
+    "ㄹ"
+   ]
   }
  },
  "pattern_order": [
@@ -773,7 +780,8 @@
   "auto_91",
   "auto_92",
   "auto_93",
-  "auto_94"
+  "auto_94",
+  "auto_95"
  ],
  "pattern_tabs": [],
  "videos": [
@@ -4428,6 +4436,36 @@
    "pattern_en": "you see, ... (giving a reason or background)",
    "pattern_ko": "-거든(요)",
    "added": null
+  },
+  {
+   "id": "IsCthFcIx00",
+   "url": "https://youtu.be/IsCthFcIx00",
+   "title": "민수의 토요일 (-ㄹ게요 / -ㄹ 거예요)",
+   "section": "Shadowing",
+   "tab": "Sentence Endings",
+   "playlist": "Korean Shadowing | Sentence Endings",
+   "sentences": [
+    "민수의 토요일 (-ㄹ게요 / -ㄹ 거예요)",
+    "오늘은 토요일이라서 민수가 부모님하고 같이 아침을 먹고 있어요.",
+    "엄마: 너 오늘도 게임할 거야?",
+    "민수: 아니요. 오늘은 게임 안 할 거예요[거에요].",
+    "엄마: 오늘 뭐 할 거야? 민수: 오늘 제리하고 축구할 거예요[거에요].",
+    "엄마: 근데 너 방 청소 했어? 민수: 아니요. 아직 안 했어요. 이따가 할게요.",
+    "엄마: 너 어제도 그렇게 말했잖아. 민수: 오늘은 진짜 할게요.",
+    "민수: 아빠, 참교육 한번 보세요. 재미있어요. 아빠: 그래? 오케이. 볼게.",
+    "민수: 야, 너 참교육 봤어? 제리: 그게 뭐야?",
+    "민수: 넷플릭스에 새로 나온 드라마인데, 진짜 재미있어. 너 액션 좋아하잖아. 한번 봐 봐. 제리: 그래? 어. 볼게.",
+    "제리: 너 뭐 먹을래? 민수: 나는 라면 먹을게. 너는? 제리: 나는 김밥 (먹을게).",
+    "민수: 여기요~ 주문할게요.",
+    "민수: 여기요, 계산할게요."
+   ],
+   "patterns": [
+    "auto_95"
+   ],
+   "pattern": "auto_95",
+   "pattern_en": "will ~, going to ~",
+   "pattern_ko": "-(으)ㄹ게요 (I'll ~) / -(으)ㄹ 거예요",
+   "added": "2026-11-20"
   },
   {
    "id": "c2iIca8ocYs",
