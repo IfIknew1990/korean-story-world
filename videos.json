@@ -1,6 +1,6 @@
 {
  "about": "K-Storyteller Library video list (public/unlisted videos shown on this site). Auto-made daily.",
- "updated": "2026-11-21 15:10 KST",
+ "updated": "2026-11-21 15:46 KST",
  "patterns": {
   "itda_loc": {
    "en": "to be somewhere / at a place",
@@ -899,7 +899,27 @@
     "11 그래서 제리가 저녁에 마트에 갔어요.",
     "12 제리가 마트에서 키위를 많이 샀어요."
    ],
-   "en": [],
+   "en": [
+    "→ Jerry and Tina went to New Zealand.",
+    "*하고: and",
+    "→ The weather was very hot.",
+    "*날씨: weather",
+    "→ So Jerry and Tina went scuba diving in the morning.",
+    "*그래서: so / therefore",
+    "*아침에: in the morning",
+    "*했어요: did",
+    "→ Scuba diving was really fun.",
+    "→ Jerry and Tina ate steak for lunch.",
+    "*점심에: at lunch / for lunch",
+    "→ The steak was really delicious.",
+    "→ Jerry drank wine.",
+    "→ But Tina doesn’t drink wine.",
+    "→ So Tina didn’t drink wine.",
+    "→ Kiwis in New Zealand are delicious.",
+    "→ So Jerry went to the supermarket in the evening.",
+    "*저녁에: in the evening",
+    "→ Jerry bought a lot of kiwis at the supermarket."
+   ],
    "patterns": [
     "eseo",
     "past"
@@ -925,7 +945,20 @@
     "민수도 한국에 있어요? 네, 민수도 한국에 있어요.",
     "요코도 한국에 있어요? 아니요. 요코는 일본에 있어요."
    ],
-   "en": [],
+   "en": [
+    "A: Is Jerry in Korea or Japan?",
+    "B: He is in Korea.",
+    "A: Where is Yoko now?",
+    "B: She is in Japan right now.",
+    "A: Hanssam, where are you?",
+    "Hanssam: I am in Hong Kong.",
+    "A: Who is in Korea right now?",
+    "B: Jerry is in Korea right now.",
+    "A: Is Minsu in Korea too?",
+    "B: Yes, Minsu is also in Korea.",
+    "A: Is Yoko in Korea too?",
+    "B: No. Yoko is in Japan."
+   ],
    "patterns": [
     "itda_loc",
     "do"
@@ -947,7 +980,12 @@
     "토요일에 일해요.",
     "요코가 무슨 요일에 일해요?"
    ],
-   "en": [],
+   "en": [
+    "when does Jerry work?",
+    "He works on Saturday.",
+    "What day does Yoko work?",
+    "She works on Sunday."
+   ],
    "patterns": [
     "qword"
    ],
@@ -972,7 +1010,22 @@
     "맥도날드에 요코 언니도 있었어요.",
     "누나, 안녕하세요~"
    ],
-   "en": [],
+   "en": [
+    "Jerry goes to McDonald's every day.",
+    "Jerry goes to McDonald's every single day.",
+    "Today too, he went to McDonald's.",
+    "He went to McDonald's again today.",
+    "But at McDonald's, Yoko was there.",
+    "But Yoko was there at McDonald's.",
+    "\"Huh? What are you doing here?\"",
+    "\"Oh? What are you doing here?\"",
+    "\"Me, I work here.\"",
+    "\"I work here.\"",
+    "At McDonald's, Yoko's older sister was there too.",
+    "Yoko's older sister was at McDonald's too.",
+    "Noona (older sister), hello~",
+    "Hi there~ (to an older woman, said by a guy)"
+   ],
    "patterns": [
     "ganda",
     "past"
@@ -1000,7 +1053,17 @@
     "제리가 오늘은 버스에서 음악을 안 들었어요.",
     "제리가 요코하고 이야기 했어요."
    ],
-   "en": [],
+   "en": [
+    "Jerry goes to school by bus with his younger sibling.",
+    "He always listens to music on the bus.",
+    "Jerry went to school by bus today, too.",
+    "Today, Yoko was on the bus.",
+    "\"Oh? You take this bus?\"",
+    "\"Yeah, I take this bus. Do you take this bus, too?\"",
+    "\"Yeah, I take this bus, too.\"",
+    "Jerry didn't listen to music on the bus today.",
+    "Jerry talked with Yoko."
+   ],
    "patterns": [
     "euro",
     "banmal"
@@ -1028,7 +1091,12 @@
     "그래서 오늘은 버스에서 음악을 안 들었어요.",
     "그냥 요코랑 이야기했어요."
    ],
-   "en": [],
+   "en": [
+    "You know how I listen to music on the bus every morning, right?",
+    "Today, Yoko was on the bus.",
+    "So today I didn't listen to music on the bus.",
+    "I just chatted with Yoko."
+   ],
    "patterns": [
     "an",
     "janha"
@@ -1055,7 +1123,16 @@
     "제임스씨가 어디에 있어요?",
     "제가 캐나다에 있어요."
    ],
-   "en": [],
+   "en": [
+    "Where is Jerry?",
+    "Jerry is in Korea.",
+    "Where is Yoko right now?",
+    "Yoko is in Japan right now.",
+    "Where am I?",
+    "You are in Korea.",
+    "Where are you, James?",
+    "I am in Canada."
+   ],
    "patterns": [
     "itda_loc",
     "qword"
@@ -1080,7 +1157,14 @@
     "저도 집에 있어요.",
     "윤서도 지금 학교에 있어요."
    ],
-   "en": [],
+   "en": [
+    "Jerry is at school.",
+    "Yoko is at home.",
+    "Minsu is also at home.",
+    "I am also at home.",
+    "Jerry is at school right now.",
+    "Yunseo is also at school right now."
+   ],
    "patterns": [
     "itda_loc",
     "do"
@@ -1105,7 +1189,14 @@
     "제가 사람이에요.",
     "제임스씨도 사람이에요. (제임스라는 학생한테 아는 말)"
    ],
-   "en": [],
+   "en": [
+    "Jerry is a person.",
+    "Minsu is also a person.",
+    "A gorilla is an animal.",
+    "A penguin is also an animal.",
+    "I am a person.",
+    "James, you are also a person. (addressing a student named James)"
+   ],
    "patterns": [
     "do",
     "ieyo"
@@ -1130,7 +1221,14 @@
     "제가 동물이 아니에요.",
     "제임스씨도 동물이 아니에요. (제임스라는 학생한테 아는 말)"
    ],
-   "en": [],
+   "en": [
+    "Jerry is not an animal.",
+    "Minsu is not an animal.",
+    "A gorilla is not a person.",
+    "A penguin is not a person.",
+    "I am not an animal.",
+    "James, you are not an animal. (addressing a student named James)"
+   ],
    "patterns": [
     "anieyo"
    ],
@@ -1180,7 +1278,19 @@
     "요코가 누구랑 언제 어디서 일해요?",
     "레이디 가가랑 일요일에 맥도날드에서 일해요."
    ],
-   "en": [],
+   "en": [
+    "Yoko works at McDonald's.",
+    "Yoko works at McDonald's on Sunday.",
+    "Yoko works at McDonald's with Lady Gaga on Sunday.",
+    "Where does Yoko work? She works at McDonald's.",
+    "When does Yoko work? She works on Sunday.",
+    "What day does Yoko work? She works on Sunday.",
+    "Who does Yoko work with? She works with Lady Gaga.",
+    "Who does Yoko work with, and when? She works with Lady Gaga on Sunday.",
+    "Who does Yoko work with, and where? She works with Lady Gaga at McDonald's.",
+    "Who, when, and where does Yoko work?",
+    "She works with Lady Gaga at McDonald's on Sunday."
+   ],
    "patterns": [
     "eseo",
     "rang",
@@ -1209,7 +1319,18 @@
     "제리가 레이디 가가랑 일해요? 아니요. 레이디 가가랑 일 안 해요.",
     "제리가 혼자 일해요? 아니요. 혼자 일 안 해요."
    ],
-   "en": [],
+   "en": [
+    "Does Jerry work at Burger King? Does he work at McDonald's?",
+    "He works at Burger King.",
+    "Does Jerry work at McDonald's? No. He doesn't work at McDonald's.",
+    "Does Jerry work on Saturday? Does he work on Sunday?",
+    "He works on Saturday.",
+    "Does Jerry work on Sunday? No. He doesn't work on Sunday.",
+    "Does Jerry work with his dad? Does he work with Lady Gaga?",
+    "He works with his dad.",
+    "Does Jerry work with Lady Gaga? No. He doesn't work with Lady Gaga.",
+    "Does Jerry work alone? No. He doesn't work alone."
+   ],
    "patterns": [
     "an",
     "eseo",
@@ -1237,7 +1358,15 @@
     "누가 버거킹에서 일해요? 제리가 버거킹에서 일해요.",
     "누가 맥도날드에서 일해요? 요코가요."
    ],
-   "en": [],
+   "en": [
+    "Does Jerry work at Burger King? Does he study? He works.",
+    "Does Jerry work at Burger King? No. He doesn't work.",
+    "What does Jerry do at Burger King? He works.",
+    "Does Jerry work at Burger King? Does he sing? He works.",
+    "Does Jerry sing at Burger King? No. He doesn't sing.",
+    "Who works at Burger King? Jerry works at Burger King.",
+    "Who works at McDonald's? Yoko does."
+   ],
    "patterns": [
     "eseo",
     "qword",
@@ -1265,7 +1394,12 @@
     "그래서 오늘은 버스에서 음악을 안 들었어요.",
     "그냥 요코랑 이야기했어요."
    ],
-   "en": [],
+   "en": [
+    "You know how I listen to music on the bus every morning, right?",
+    "Today, Yoko was on the bus.",
+    "So today I didn't listen to music on the bus.",
+    "I just chatted with Yoko."
+   ],
    "patterns": [
     "eseo",
     "janha"
@@ -1292,7 +1426,15 @@
     "어제 갑자기 짜장면이 너무 먹고 싶었어요. 그래서 한국 식당에 갔어요.",
     "원래 아이폰 16을 사고 싶었어요. 근데 돈이 없어서 아이폰 14을 샀어요."
    ],
-   "en": [],
+   "en": [
+    "I'm so tired these days, so tomorrow I just want to rest at home.",
+    "I want to learn to swim. But I don't have time these days.",
+    "Today I want to be alone.",
+    "This year for my birthday, I want to get an iPad.",
+    "Mom: Was your trip to Korea fun? Minsu: Yes, it was fun. I want to go again.",
+    "Yesterday I suddenly really wanted to eat jjajangmyeon, so I went to a Korean restaurant.",
+    "I originally wanted to buy an iPhone 16, but I didn't have the money, so I bought an iPhone 14."
+   ],
    "patterns": [
     "go_sipeo"
    ],
@@ -1345,7 +1487,20 @@
     "제리가 고양이도 있어요. 그 고양이가 진짜 작아요.",
     "강아지하고 고양이가 항상 싸워요. 오늘도 싸웠어요."
    ],
-   "en": [],
+   "en": [
+    "Jerry has younger siblings.",
+    "Jerry has a younger brother.",
+    "Jerry also has a younger sister.",
+    "Jerry's younger brother is big.",
+    "Jerry's younger sister is small.",
+    "The younger brother and the younger sister always fight.",
+    "They fought today too.",
+    "Jerry has a dog.",
+    "That dog is really big.",
+    "Jerry has a cat.",
+    "That cat is really small.",
+    "The dog and the cat always fight."
+   ],
    "patterns": [
     "itda_have"
    ],
@@ -1370,7 +1525,20 @@
     "날씨가 안 좋으면 그냥 집에서 스트레칭을 해요.",
     "오트밀이 없으면 토스트를 먹어요."
    ],
-   "en": [],
+   "en": [
+    "What time does Jerry usually get up?",
+    "→ Jerry usually gets up at six o'clock.",
+    "→ What does he do in the morning if the weather is nice?",
+    "→ If the weather is nice in the morning, he goes jogging outside.",
+    "→ What does he do if the weather isn't good?",
+    "→ If the weather isn't good, he just stretches at home.",
+    "그리고 일곱(7)시에 아침을 먹어요.  → not in the audio",
+    "→ And he eats breakfast at seven o'clock.",
+    "주로 아침에 오트밀을 먹어요.  → not in the audio",
+    "→ He usually eats oatmeal in the morning.",
+    "→ What does he eat if there's no oatmeal?",
+    "→ If there's no oatmeal, he eats toast."
+   ],
    "patterns": [
     "meogeoyo",
     "qword",
@@ -1399,7 +1567,26 @@
     "나는 밥을 많이 먹어도 안 졸려.",
     "나는 아침에 바빠도 밥을 먹어."
    ],
-   "en": [],
+   "en": [
+    "• As for Jerry, if he drinks a lot of alcohol, the next day his head hurts.",
+    "• Jerry gets a headache the next day when he drinks too much.",
+    "• As for Yoko, even when she drinks a lot of alcohol, the next day her head does not hurt.",
+    "• Yoko never wakes up with a headache, no matter how much she drinks.",
+    "• As for Minsu, if he eats a lot of food, he gets sleepy.",
+    "• Minsu gets drowsy after a big meal.",
+    "• As for Seoyun, even when she eats a lot of food, she does not get sleepy.",
+    "• Seoyun stays wide awake even after a big meal.",
+    "• As for Hyunwoo, if he is busy in the morning, he does not eat food.",
+    "• Hyunwoo skips breakfast when his mornings are hectic.",
+    "• As for Yeeun, even when she is busy in the morning, she eats food.",
+    "• Yeeun never skips breakfast, however rushed she is.",
+    "• As for me, even when I drink a lot of alcohol, I am fine.",
+    "• I can hold my liquor.",
+    "• As for me, even when I eat a lot of food, I am not sleepy.",
+    "• A big meal doesn't make me sleepy.",
+    "• As for me, even when I am busy in the morning, I eat food.",
+    "• I always have breakfast, no matter how rushed my morning is."
+   ],
    "patterns": [
     "an",
     "myeon",
@@ -1429,7 +1616,19 @@
     "제리가 여동생도 한 명 있어요.",
     "남동생하고 여동생이 같이 안 놀아요."
    ],
-   "en": [],
+   "en": [
+    "Jerry has a dog.",
+    "That dog is really heavy.",
+    "Jerry has a cat, too.",
+    "That cat is really light.",
+    "The dog and the cat always play together.",
+    "(The dog and the cat) played together today, too.",
+    "Jerry has two younger siblings.",
+    "Jerry has one younger brother.",
+    "Jerry has one younger sister, too.",
+    "The younger brother and younger sister don't play together.",
+    "They didn't play together today, either."
+   ],
    "patterns": [
     "itda_have",
     "counter"
@@ -1457,7 +1656,17 @@
     "비가 오면 아빠 차로 학교에 가요.",
     "비가 안 오면 탱크로 학교에 가요."
    ],
-   "en": [],
+   "en": [
+    "Jerry usually wakes up at six o'clock.",
+    "If the weather is nice in the morning, she does yoga outside.",
+    "But if the weather is bad, she does yoga at home.",
+    "Jerry usually eats breakfast at seven o'clock.",
+    "Usually she eats tteokbokki for breakfast.",
+    "But if there's no tteokbokki, she eats samgyeopsal (pork belly).",
+    "Jerry usually goes to school at 8 o'clock.",
+    "If it's raining, she goes to school in her dad's car.",
+    "If it's not raining, she goes to school by tank."
+   ],
    "patterns": [
     "eseo",
     "myeon"
@@ -1511,7 +1720,22 @@
     "제리가 매일 햄버거를 먹어요. 그런데 오늘은 안 먹었어요.",
     "제리가 보통 아침을 안 먹어요. 그런데 오늘은 먹었어요."
    ],
-   "en": [],
+   "en": [
+    "Minsu lives in Seoul now. As for before, (he) lived in Busan.",
+    "Minsu lives in Seoul now. He used to live in Busan, though.",
+    "Minsu lived in Busan before. As for now, (he) lives in Seoul.",
+    "Minsu used to live in Busan, but now he lives in Seoul.",
+    "Minsu likes beef. (He) likes chicken too. But as for pork, (he) doesn't like (it).",
+    "Minsu likes beef and chicken, but pork, he doesn't like.",
+    "Jerry goes to school from Monday to Friday.",
+    "Jerry goes to school Monday through Friday.",
+    "(He) goes to school on Saturday too. But as for on Sunday, (he) doesn't go to school.",
+    "He goes to school on Saturdays too, but on Sundays he doesn't go.",
+    "Jerry eats a hamburger every day. But as for today, (he) didn't eat (it).",
+    "Jerry eats a hamburger every day, but today he didn't.",
+    "Jerry usually doesn't eat breakfast. But as for today, (he) ate (it).",
+    "Jerry usually skips breakfast, but today he had some."
+   ],
    "patterns": [
     "salda",
     "past",
@@ -1542,7 +1766,13 @@
     "내일 무슨 요일이에요? (slow)",
     "내일 무슨 요일이에요? (fast)"
    ],
-   "en": [],
+   "en": [
+    "Today is Saturday.",
+    "Tomorrow is Sunday.",
+    "Today is not Sunday.",
+    "Tomorrow is not Saturday.",
+    "What day is tomorrow?"
+   ],
    "patterns": [
     "ieyo",
     "anieyo"
@@ -1568,7 +1798,15 @@
     "티나가 BTS를 좋아해요. BTS 회사 빌딩이 서울에 있어요.",
     "그래서 자주 서울에 가요. 매주 일요일에 버스로 서울에 가요."
    ],
-   "en": [],
+   "en": [
+    "Tina is American.",
+    "But she doesn’t live in the U.S. now. She lives in Korea.",
+    "Her dad and mom are in the U.S. now.",
+    "Tina lives at her aunt’s house.",
+    "Her aunt’s house is in Suwon.",
+    "Tina likes BTS. The BTS company building is in Seoul.",
+    "So she often goes to Seoul. Every Sunday she goes to Seoul by bus."
+   ],
    "patterns": [
     "eseo",
     "salda"
@@ -1594,7 +1832,22 @@
     "어제 (신용) 카드를 잃어버려서 현금으로 (돈을) 냈어요.",
     "내일 시험이 있어서 늦게까지 공부했어요."
    ],
-   "en": [],
+   "en": [
+    "Yoko went to the study cafe this morning to prepare for an exam.",
+    "Yoko headed to a study cafe this morning to get ready for an exam.",
+    "Because the weather was cold, Yoko wore a coat today.",
+    "It was cold out, so Yoko wore a coat today.",
+    "Because it snowed a lot last night, the roads were very slippery (today).",
+    "It snowed heavily last night, so the roads were really slippery today.",
+    "Because she was hungry, she stopped by a convenience store and bought a sandwich.",
+    "She got hungry, so she swung by a convenience store and grabbed a sandwich.",
+    "Because she was thirsty, she bought bottled water too.",
+    "She was thirsty, so she picked up some water as well.",
+    "Because she lost her (credit) card yesterday, she paid (money) in cash.",
+    "She lost her credit card yesterday, so she paid with cash.",
+    "Because she has an exam tomorrow, she studied until late.",
+    "She has an exam tomorrow, so she studied late into the night."
+   ],
    "patterns": [
     "past",
     "reo_ga",
@@ -1623,7 +1876,17 @@
     "티나가 다이어트를 해요. 그래서 제로 콜라를 마셨어요.",
     "티나가 제로 콜라를 다섯 캔 마셨어요."
    ],
-   "en": [],
+   "en": [
+    "What time did Tina wake up?",
+    "Tina woke up at five in the morning.",
+    "“Huh? It’s five o’clock.” She woke up too early.",
+    "So she went back to sleep. And she woke up again at seven.",
+    "“Tina, come eat!”",
+    "Her aunt made toast.",
+    "Tina ate five pieces of toast. She ate a lot.",
+    "Tina is on a diet. So she drank Zero Coke.",
+    "Tina drank five cans of Zero Coke."
+   ],
    "patterns": [
     "past",
     "number"
@@ -1648,7 +1911,20 @@
     "티나가 오늘 아침에 화장실에 세 번 갔어요.",
     "티나가 계속 배가 아팠어요."
    ],
-   "en": [],
+   "en": [
+    "\"Ah, stomach hurts.\"",
+    "\"Ah, my stomach hurts.\"",
+    "Tina's stomach was hurting.",
+    "Tina had a stomachache.",
+    "So she went to the restroom. But stomach was hurt again.",
+    "So she went to the bathroom, but her stomach started hurting again.",
+    "So again she went to the restroom. But stomach was hurt again.",
+    "So she went to the bathroom again, but her stomach still hurt.",
+    "Tina went to the restroom three times this morning.",
+    "Tina went to the bathroom three times this morning.",
+    "Tina continuously stomach was hurting.",
+    "Tina kept having a stomachache."
+   ],
    "patterns": [
     "past"
    ],
@@ -1721,6 +1997,7 @@
     "Jerry shops on Amazon every day.",
     "Yoko doesn't shop on Amazon. Yoko shops on Coupang.",
     "Jerry studied Korean with Hansaem on Zoom today.",
+    "(한쌤 is my nickname, short for \"Korean teacher.\" In Korean, we often use a name or title instead of \"you.\")",
     "Jerry often plays games on his phone these days."
    ],
    "patterns": [
@@ -1893,7 +2170,26 @@
     "테블릿하고 휴대폰이 둘 다 커요?",
     "아니요, 태블릿은 크고 휴대폰은 작아요."
    ],
-   "en": [],
+   "en": [
+    "Are both Jerry and Tony American?",
+    "No, Jerry is American and/but Tony is British.",
+    "Are you both American?",
+    "No, I am Koran and Jerry is American.",
+    "Are both Jerry and Sandy men?",
+    "No Jerry is man and Sandy is woman.",
+    "Do both Jerry and Sandy live in the US?",
+    "No, Jerry lives in Korean and Sandy lives in the US.",
+    "Are both Jerry and Sandy in the US now?",
+    "No, Jerry is in Korea now and Sandy is in the US now.",
+    "You both live in Korean?",
+    "No, I live in Korea and Sandy lives in the United States.",
+    "Both the tablet and the cell phone are white?",
+    "No the mobile phone is white and the tablet is black.",
+    "Both the tablet and the mobile phone cheap?",
+    "No, the mobile phone is expensive and the tablet is cheap",
+    "Both the tablet and the mobile phone big?",
+    "No, the tablet is big and the mobile phone is small."
+   ],
    "patterns": [
     "ieyo",
     "go_and",
@@ -1931,7 +2227,40 @@
     "아침에 커피를 마시고 싶었어요.",
     "어제 저녁에 한국 드라마를 보고 싶었어요."
    ],
-   "en": [],
+   "en": [
+    "What does Jerry want to have?",
+    "What does Jerry want?",
+    "Jerry wants to have a puppy.",
+    "Jerry wants a puppy.",
+    "Does Jerry want to have a puppy? Does he want to have a cat?",
+    "Does Jerry want a puppy or a cat?",
+    "How many puppies does Jerry want to have?",
+    "How many puppies does Jerry want?",
+    "Jerry wants to have one puppy.",
+    "Jerry wants just one puppy.",
+    "What color puppy does Jerry want to have?",
+    "What color puppy does Jerry want?",
+    "Jerry wants to have a red puppy.",
+    "Jerry wants a red puppy.",
+    "What does Jerry want to buy?",
+    "What is Jerry hoping to buy?",
+    "Jerry wants to buy a puppy.",
+    "Jerry wants to get a puppy.",
+    "Jerry wanted to eat cake yesterday.",
+    "Yesterday, Jerry was craving cake.",
+    "Jerry wanted to watch Netflix yesterday.",
+    "Yesterday, Jerry felt like watching Netflix.",
+    "I want to eat hamburger in the lunch time(I want to eat hamburger for lunch)",
+    "At Christmas, I want to go to Thailand.",
+    "I want to go to Thailand for Christmas.",
+    "In New Zealand, I want to do bungee jumping.",
+    "I want to go bungee jumping in New Zealand.",
+    "I want to ski in this winter (I want to go skiing in this winter)",
+    "On Saturday, I want to sleep at my friend's house.",
+    "I want to stay over at my friend's place on Saturday.",
+    "I wanted to drink coffee in the(this) morning.",
+    "Jerry wanted to watch Korean drama yesterday day everning."
+   ],
    "patterns": [
     "go_sipeohae"
    ],
@@ -1969,7 +2298,40 @@
     "제리는 어제 BTS 콘서트를 보러 갔어요.",
     "제리는 주말에 친구 집에 놀러 갈 거예요."
    ],
-   "en": [],
+   "en": [
+    "What did Jerry go to buy?",
+    "What did Jerry go out to buy?",
+    "He went to buy a puppy.",
+    "He went to get a puppy.",
+    "What color puppy did Jerry go to buy?",
+    "What color puppy did Jerry go to get?",
+    "He went to buy a blue puppy.",
+    "He went to get a blue puppy.",
+    "How many puppies did Jerry go to buy?",
+    "How many puppies did Jerry go to get?",
+    "He went to buy one puppy.",
+    "He went to get just one puppy.",
+    "Where did Jerry go to buy a puppy?",
+    "Where did Jerry go to get a puppy?",
+    "He went to the pet shop to buy a puppy.",
+    "He went to a pet shop to get a puppy.",
+    "Jerry went to the pet shop to buy one blue puppy.",
+    "Jerry went to a pet shop to get a blue puppy.",
+    "Did you go to a supermarket today to buy what?",
+    "I went to buy tofu and beef.",
+    "Yesterday, at what time did you go to the restaurant to eat dinner?",
+    "What time did you go out for dinner yesterday?",
+    "I went to eat at 7 o'clock.",
+    "I went for dinner at 7.",
+    "Yesterday, who did you go to the restaurant with to eat dinner?",
+    "Who did you go out for dinner with yesterday?",
+    "I went to the restaurant with my family to eat dinner.",
+    "I went out for dinner with my family.",
+    "Jerry went home just now to get my wallet.",
+    "Mom went to school to pick up Jerry / Mom went to school to take Jerry.",
+    "Jerry went to watch BTS concert yesterday",
+    "Jerry will go to his friend's house to hang out on this weekend."
+   ],
    "patterns": [
     "past",
     "reo_ga"
@@ -2008,7 +2370,27 @@
     "어머니가 제리한테 오늘 일찍 자라고 했어요.",
     "어머니가 제리한테 빨리 밥 먹으라고 했어요."
    ],
-   "en": [],
+   "en": [
+    "Hello I am called Jerry ( I am Jerry)",
+    "(Jerry suggested playing tennis with me/us tomorrow.",
+    "Jerry suggested watching a movie together with me/us at his house on Sunday.",
+    "Jerry suggested going to Busan with me/us next week.",
+    "Jerry suggested eating dinner with me/us today.",
+    "Jerry said he can’t play tennis together because he’s busy.",
+    "Jerry said he can't watch movie together becuase he is sick.",
+    "Jerry said he can't go to Busan together because of an exam.",
+    "Jerry said he can't eat dinner together because he has a stomachache.",
+    "Jerry asked Min-su what his name is.",
+    "Minsu replied that his name is Kim Minsu.",
+    "Jerry asked Yoko when she is returning to Japan.",
+    "Yoko said she is returning to Japan next year.",
+    "Jerry asked Yoko what time she usually has breakfast.",
+    "Jerry said he usually eats breakfast at 8 o’clock",
+    "Mom told Jerry to go to school with his younger sibling.",
+    "Mom told Jerry to come home early today.",
+    "Mom told Jerry to sleep early today.",
+    "Mom told Jerry to eat quickly."
+   ],
    "patterns": [
     "indirect",
     "hante"
@@ -2049,7 +2431,29 @@
     "민수가 제리한테 티나하고 무슨 사이냐고 물었어요.",
     "제리가 (티나하고) 사귀는 사이라고 대답했어요."
    ],
-   "en": [],
+   "en": [
+    "Jerry asked Tina where she was yesterday evening.",
+    "Tina said she was at work.",
+    "Jerry asked Tina if she is busy these days.",
+    "Tina said she is busy.",
+    "Jerry asked Tina if she is sick today.",
+    "Tina said she is sick.",
+    "Jerry asked Tony if Min-su's sister is pretty.",
+    "Tony said she is pretty.",
+    "Jerry asked Tony if the phone is expensive.",
+    "Tony said it is expensive.",
+    "Jerry asked Tina what she wants to eat today.",
+    "Tina said she wants to eat a hamburger.",
+    "Jerry asked Tina where she wants to go during this vacation.",
+    "Tina said she wants to go Everland.",
+    "Jerry asked Tina what movie she wants to watch tomorrow at the cinema.",
+    "Tina said she wants to watch Avatar 3.",
+    "Jerry asked Tina and Yoko if they know about New Jeans.",
+    "Tina said she knows about New Jeans.",
+    "Yoko said she doesn't know about it.",
+    "Min-su asked Jerry what kind of relationship he has with Tina.",
+    "Jerry answered that they are dating."
+   ],
    "patterns": [
     "indirect",
     "hante"
@@ -2086,7 +2490,26 @@
     "민지씨, 아까 우리 부서에 새로운 부장님이 온다고 들었는데, 진짜예요?",
     "민지씨, 부장님이 회사를 그만둔다고 들었는데, 진짜예요?"
    ],
-   "en": [],
+   "en": [
+    "I think that actor is good at acting.",
+    "My girlfriend thinks I’m handsome.",
+    "I don’t think our team will lose.",
+    "I don’t think I did anything wrong.",
+    "Seo Hyun-jin doesn’t think she’s pretty.  (Seo Hyun-jin is a famous actress in Korean)",
+    "I believe that Min-su will pass this exam.",
+    "I believe this project will succeed.",
+    "My father always calls me “우리 아들”.     (우리 아들 means our son or my son)",
+    "Korean people call North Korea 북한.",
+    "Min-su promised his father that he would be the first in this exam.",
+    "Jerry promised the loan shark that he would pay him back by next month.",
+    "(사채업차 is a private lender but often has a negative association)",
+    "Dad promised Jerry that he would take him to France next year.",
+    "Tina felt that the skin toner suited her well.",
+    "Min-su felt that the people in the meeting hated him.",
+    "Tina yelled at Jerry to break up.",
+    "민지씨, I heard that a new manager came to our department, is it true?",
+    "I heard that the/our manager is quitting the company, is it true?"
+   ],
    "patterns": [
     "dago_think",
     "hante"
@@ -2110,7 +2533,41 @@
     "제리는 강아지를 몇 마리 가지고 싶어 해요?",
     "제리는 강아지를 한 마리 가지고 싶어 해요."
    ],
-   "en": [],
+   "en": [
+    "What does Jerry want to have?",
+    "What does Jerry want?",
+    "Jerry wants to have a puppy.",
+    "Jerry wants a puppy.",
+    "Does Jerry want to have a puppy? Does he want to have a cat?",
+    "Does Jerry want a puppy or a cat?",
+    "How many puppies does Jerry want to have?",
+    "How many puppies does Jerry want?",
+    "Jerry wants to have one puppy.",
+    "Jerry wants just one puppy.",
+    "What color puppy does Jerry want to have?",
+    "What color puppy does Jerry want?",
+    "Jerry wants to have a red puppy.",
+    "Jerry wants a red puppy.",
+    "What does Jerry want to buy?",
+    "What is Jerry hoping to buy?",
+    "Jerry wants to buy a puppy.",
+    "Jerry wants to get a puppy.",
+    "Jerry wanted to eat cake yesterday.",
+    "Yesterday, Jerry was craving cake.",
+    "Jerry wanted to watch Netflix yesterday.",
+    "Yesterday, Jerry felt like watching Netflix.",
+    "I want to eat hamburger in the lunch time(I want to eat hamburger for lunch)",
+    "At Christmas, I want to go to Thailand.",
+    "I want to go to Thailand for Christmas.",
+    "In New Zealand, I want to do bungee jumping.",
+    "I want to go bungee jumping in New Zealand.",
+    "I want to ski in this winter (I want to go skiing in this winter)",
+    "On Saturday, I want to sleep at my friend's house.",
+    "I want to stay over at my friend's place on Saturday.",
+    "I wanted to drink coffee in the(this) morning.",
+    "Yesterday evening, I wanted to watch a Korean drama.",
+    "Last night, I felt like watching a Korean drama."
+   ],
    "patterns": [
     "go_sipeohae"
    ],
@@ -2136,7 +2593,40 @@
     "제리는 어제 넷플릭스를 보고 싶어 했어요.",
     "점심에 햄버거를 먹고 싶어요."
    ],
-   "en": [],
+   "en": [
+    "What does Jerry want to have?",
+    "What does Jerry want?",
+    "Jerry wants to have a puppy.",
+    "Jerry wants a puppy.",
+    "Does Jerry want to have a puppy? Does he want to have a cat?",
+    "Does Jerry want a puppy or a cat?",
+    "How many puppies does Jerry want to have?",
+    "How many puppies does Jerry want?",
+    "Jerry wants to have one puppy.",
+    "Jerry wants just one puppy.",
+    "What color puppy does Jerry want to have?",
+    "What color puppy does Jerry want?",
+    "Jerry wants to have a red puppy.",
+    "Jerry wants a red puppy.",
+    "What does Jerry want to buy?",
+    "What is Jerry hoping to buy?",
+    "Jerry wants to buy a puppy.",
+    "Jerry wants to get a puppy.",
+    "Jerry wanted to eat cake yesterday.",
+    "Yesterday, Jerry was craving cake.",
+    "Jerry wanted to watch Netflix yesterday.",
+    "Yesterday, Jerry felt like watching Netflix.",
+    "I want to eat hamburger in the lunch time(I want to eat hamburger for lunch)",
+    "At Christmas, I want to go to Thailand.",
+    "I want to go to Thailand for Christmas.",
+    "In New Zealand, I want to do bungee jumping.",
+    "I want to go bungee jumping in New Zealand.",
+    "I want to ski in this winter (I want to go skiing in this winter)",
+    "On Saturday, I want to sleep at my friend's house.",
+    "I want to stay over at my friend's place on Saturday.",
+    "I wanted to drink coffee in the(this) morning.",
+    "Jerry wanted to watch K-drama yesterday evening"
+   ],
    "patterns": [
     "go_sipeo",
     "go_sipeohae"
@@ -2162,7 +2652,40 @@
     "아침에 커피를 마시고 싶었어요.",
     "어제 저녁에 한국 드라마를 보고 싶었어요."
    ],
-   "en": [],
+   "en": [
+    "What does Jerry want to have?",
+    "What does Jerry want?",
+    "Jerry wants to have a puppy.",
+    "Jerry wants a puppy.",
+    "Does Jerry want to have a puppy? Does he want to have a cat?",
+    "Does Jerry want a puppy or a cat?",
+    "How many puppies does Jerry want to have?",
+    "How many puppies does Jerry want?",
+    "Jerry wants to have one puppy.",
+    "Jerry wants just one puppy.",
+    "What color puppy does Jerry want to have?",
+    "What color puppy does Jerry want?",
+    "Jerry wants to have a red puppy.",
+    "Jerry wants a red puppy.",
+    "What does Jerry want to buy?",
+    "What is Jerry hoping to buy?",
+    "Jerry wants to buy a puppy.",
+    "Jerry wants to get a puppy.",
+    "Jerry wanted to eat cake yesterday.",
+    "Yesterday, Jerry was craving cake.",
+    "Jerry wanted to watch Netflix yesterday.",
+    "Yesterday, Jerry felt like watching Netflix.",
+    "I want to eat hamburger in the lunch time(I want to eat hamburger for lunch)",
+    "At Christmas, I want to go to Thailand.",
+    "I want to go to Thailand for Christmas.",
+    "In New Zealand, I want to do bungee jumping.",
+    "I want to go bungee jumping in New Zealand.",
+    "I want to ski in this winter (I want to go skiing in this winter)",
+    "On Saturday, I want to sleep at my friend's house.",
+    "I want to stay over at my friend's place on Saturday.",
+    "I wanted to drink coffee in the(this) morning.",
+    "Jerry wanted to watch K-drama yesterday day everning."
+   ],
    "patterns": [
     "go_sipeo",
     "go_sipeohae"
@@ -2200,7 +2723,37 @@
     "술 잘 마셔요?",
     "맥주는 잘 마셔요. 그런데 소주는 잘 못 마셔요."
    ],
-   "en": [],
+   "en": [
+    "\"Jerry can speak Korean. But James can't speak Korean.\"",
+    "\"Of Jerry and James, who can speak Korean?\"",
+    "This question is asking who out of Jerry and James can speak Korean.",
+    "\"Jerry can speak Korean.\"",
+    "This is the answer to the previous question.",
+    "\"Can Sam speak Korean well?\"",
+    "This question is asking if Sam can speak Korean well.",
+    "\"No, Sam doesn't speak Korean well.\"",
+    "\"Can Minsoo play tennis?\"",
+    "This question is asking if Minsoo can play tennis.",
+    "\"No, Minsoo can't play tennis.\"",
+    "\"Can Tina play tennis?\"",
+    "This question is asking if Tina can play tennis.",
+    "\"Yes, Tina can play tennis. But she's not good at it.\"",
+    "\"Who in our class plays tennis the best?\"",
+    "This question is asking who in the speaker's class is the best at tennis.",
+    "\"Jerry plays the best.\"",
+    "\"Can you eat spicy food?\"",
+    "This question is asking if the speaker can eat spicy food.",
+    "\"No, I can't eat it well.\"",
+    "\"Can Jerry eat spicy food?\"",
+    "This question is asking if Jerry can eat spicy food.",
+    "\"Yes, but he can't eat too spicy food.\"",
+    "\"Can you drink alcohol?\"",
+    "This question is asking if the speaker can drink alcohol.",
+    "\"Yes, I can.\"",
+    "\"Can you drink alcohol well?\"",
+    "This question is asking if the speaker can drink alcohol well.",
+    "\"I can drink beer well. But I can't drink soju well.\""
+   ],
    "patterns": [
     "su_itda"
    ],
@@ -2229,7 +2782,18 @@
     "윤후야, 윤지한테 소금 좀 줘. 어머니가 윤후한테 윤지한테 소금을 주라고 했어요.",
     "여기요, 소갈비 1인분만 더 주세요. 민수가 직원한테 소갈비 1인분만 더 달라고 했어요."
    ],
-   "en": [],
+   "en": [
+    "\"Minsu said he wanted to go to Busan together, but now he suddenly says he’s not going.\"",
+    "\"Hey, you're the one who suggested going, and now you're saying you can't go?\"",
+    "Jihun got angry because Minsu said he wanted to go to Busan together, but then suddenly said he couldn't.",
+    "Yoonhoo, please pass the salt. Mom asked Yoonhoo to give her the salt.",
+    "Mom, please give me just 20,000 won. Yoonhoo asked his mom to give him 20,000 won.",
+    "Dad, please help me build the Lego. Yoonhoo asked his dad to help him build the Lego.",
+    "Send me the photo via KakaoTalk. Minsu asked Jihun to send the photo via KakaoTalk.",
+    "Yoonhoo, give the salt to Yoonji. Mom told Yoonhoo to give the salt to Yoonji.",
+    "Send that photo to Tony. Minsu told Jihun to send the photo to Tony.",
+    "Excuse me, one more serving of beef ribs, please. Minsu asked the staff for one more serving of beef ribs."
+   ],
    "patterns": [
     "indirect",
     "dallago",
@@ -2259,7 +2823,17 @@
     "마침내 내가 이겼는데 이번에는 벌칙이 뺨을 때리는 거였어.",
     "그래서 제리 뺨을 진짜 세게 때렸어. 엄청 아파하더라고."
    ],
-   "en": [],
+   "en": [
+    "Yesterday I played a game with Jerry.",
+    "The first game's penalty was to hit the wrist one time.",
+    "I won first, so I gave Jerry a light tap on the wrist as the penalty.",
+    "Next Jerry won, but the penalty was to hit the forehead one time.",
+    "But he hit me hard.",
+    "I mean, I hit him gently, but that guy hit me hard.",
+    "I waited until I won in order to take revenge on him.",
+    "Finally I won, but this time the penalty was to hit the cheek.",
+    "So I slapped Jerry really hard on the cheek. He was acting like he was in so much pain."
+   ],
    "patterns": [
     "deora",
     "geodeun",
@@ -2289,7 +2863,17 @@
     "마침내 제가 이겼는데 이번에는 벌칙이 뺨을 때리는 거였어요.",
     "그래서 제리 뺨을 진짜 세게 때렸어요. 엄청 아파하더라고요."
    ],
-   "en": [],
+   "en": [
+    "Yesterday I played a game with Jerry.",
+    "The first game's penalty was to hit the wrist one time.",
+    "I won first, so I gave Jerry a light tap on the wrist as the penalty.",
+    "Next Jerry won, but the penalty was to hit the forehead one time.",
+    "But he hit me hard.",
+    "I mean, I hit him gently, but that guy hit me hard.",
+    "I waited until I won in order to take revenge on him.",
+    "Finally I won, but this time the penalty was to hit the cheek.",
+    "So I slapped Jerry really hard on the cheek. He was acting like he was in so much pain."
+   ],
    "patterns": [
     "past",
     "deora",
@@ -2316,7 +2900,19 @@
     "그러니까 엘리스가 자기는 배부르다고 하면서 나한테 자기 거 먹으라고 하더라구.",
     "그래서 내 거 다 먹고 엘리스가 남긴 거도 다 먹었어."
    ],
-   "en": [],
+   "en": [
+    "You know my little sister Alice, right?",
+    "I never leave food behind, but Alice always leaves food.",
+    "I never leave any food, but Alice always leaves some.",
+    "Yesterday, with my family all together, we ordered hamburgers and ate them, but Alice again didn't eat all her hamburger and left some.",
+    "Yesterday my whole family ordered hamburgers together, but once again Alice didn't finish hers and left some.",
+    "So Mom, getting all annoyed at Alice, said why don't you eat it all and leave it.",
+    "So Mom got irritated at Alice and asked why she doesn't finish her food.",
+    "Then Alice, saying that she's full, told me to eat her portion.",
+    "Then Alice said she was full and told me to eat hers.",
+    "So I ate all of mine and also ate everything Alice left.",
+    "So I finished mine and ate all of Alice's leftovers too."
+   ],
    "patterns": [
     "an",
     "rang",
@@ -2346,7 +2942,19 @@
     "\"배불러요. 오빠, 내 거 먹을래?\" 콜",
     "제리가 자기 거 다 먹고 엘리스가 남긴 거도 먹었어요."
    ],
-   "en": [],
+   "en": [
+    "Jerry never leaves food behind, but Alice always leaves food.",
+    "Jerry never leaves any food on his plate, but Alice always leaves some.",
+    "Today Jerry, with his family, ordered hamburgers and ate them.",
+    "Today Jerry and his whole family ordered hamburgers together.",
+    "But Alice, today too, didn't eat all the hamburger and left some.",
+    "But once again, Alice didn't finish her hamburger and left some behind.",
+    "\"Hey, why do you not eat it all and leave it?\" Mom, in an annoyed voice, scolded Alice.",
+    "\"Hey, why don't you finish your food?\" Mom scolded Alice in an irritated tone.",
+    "\"I'm full. 오빠, do you want mine?\"    Deal",
+    "Jerry ate all of his own, and also ate what Alice left.",
+    "Jerry finished his own and ate Alice's leftovers too."
+   ],
    "patterns": [
     "rang",
     "past",
@@ -2375,7 +2983,37 @@
     "→ 제리가 보고 싶으니까 빨리 오라고 했어요.",
     "→ 티나가 알았다고 했어요."
    ],
-   "en": [],
+   "en": [
+    "• Jerry to Tina made a call.",
+    "• Jerry called Tina.",
+    "• Jerry said, \"Tomorrow, Lotte World, let's go.\"",
+    "• Jerry said, \"Let's go to Lotte World tomorrow.\"",
+    "• Jerry to Tina said let's go to Lotte World tomorrow.",
+    "• Jerry told Tina they should go to Lotte World tomorrow.",
+    "• Tina said, \"Lotte World? Oh, that'll be fun. But me, tomorrow, grandma's house I go.\"",
+    "• Tina said, \"Lotte World? Oh, sounds fun. But I'm going to my grandma's tomorrow.\"",
+    "• Tina said tomorrow to grandma's house she goes.",
+    "• Tina said she was going to her grandma's house tomorrow.",
+    "• Jerry asked, \"Oh, is that so? Then when do you come back?\"",
+    "• Jerry asked, \"Oh, really? So when will you be back?\"",
+    "• Jerry asked when she comes back.",
+    "• Jerry asked when she would come back.",
+    "• Tina answered, \"On Monday I come back.\"",
+    "• Tina answered, \"I'll be back on Monday.\"",
+    "• Tina answered on Monday she comes back.",
+    "• Tina answered that she'd come back on Monday.",
+    "• Jerry said, \"Really? Ah... too bad. Then next time let's go.\"",
+    "• Jerry said, \"Oh, really? Aw, that's a shame. Let's go some other time then.\"",
+    "• Jerry said next time let's go.",
+    "• Jerry said they should go some other time.",
+    "• Jerry said, \"Because I'll miss you, come quickly~\"",
+    "• Jerry said, \"I'll miss you, so come back soon~\"",
+    "• Jerry said because he misses her, come quickly.",
+    "• Jerry told her to come back soon because he'd miss her.",
+    "• Tina said, \"Okay~\"",
+    "• Tina said, \"Okay, got it~\"",
+    "• Tina said she understood."
+   ],
    "patterns": [
     "past",
     "indirect",
@@ -2403,7 +3041,22 @@
     "쿠키를 명당 두 개(씩) 줬는데 너무 적어서 더 먹고 싶었어.",
     "그래서 엄마한테 더 만들어 달라고 하니까 오늘은 안 된다고 했어."
    ],
-   "en": [],
+   "en": [
+    "Mom made six cookies and divided them equally among the children.",
+    "Mom made six cookies and split them evenly between the kids.",
+    "She gave out two cookies per person.",
+    "She gave everyone two cookies each.",
+    "The thing is, yesterday my younger siblings and I begged Mom to make cookies for us.",
+    "See, yesterday my little siblings and I kept nagging Mom to make us some cookies.",
+    "So Mom made six cookies and divided them equally among us.",
+    "So Mom made six cookies and split them evenly between us.",
+    "She gave two cookies per person, but it was too few, so I wanted to eat more.",
+    "She gave us two cookies each, but that was so little I wanted more.",
+    "She gave two cookies per head, but it was too few, so I wanted to eat more.",
+    "She gave us two cookies apiece, but that was so little I wanted more.",
+    "So when I asked Mom to make more, she said not today.",
+    "So I asked Mom to make more, but she said no, not today."
+   ],
    "patterns": [
     "rang",
     "dallago",
@@ -2433,7 +3086,22 @@
     "한 강아지당 두 개(씩) 줬는데 더 달라고 하더라구.",
     "근데 너무 많이 먹으면 안 될 것 같아서 더 안 만들어줬어."
    ],
-   "en": [],
+   "en": [
+    "Tina has five puppies, and their birthdays are all the same.",
+    "Tina has five puppies, and they all share the same birthday.",
+    "There are five puppies at our house, and their birthdays are all the same.",
+    "We have five puppies at home, and they all have the same birthday.",
+    "Yesterday was their birthday, so I wanted to make \"puppy cookies\" for the dogs.",
+    "It was their birthday yesterday, so I wanted to make the pups some \"puppy cookies.\"",
+    "But I didn't know how to make them, so I asked Mom to help me (make them).",
+    "But I had no idea how to make them, so I asked Mom to help.",
+    "So Mom helped me make the cookies.",
+    "So Mom helped out with making the cookies.",
+    "I gave two per puppy, but they kept asking for more.",
+    "I gave each puppy two, but they were begging for more.",
+    "But I thought they shouldn't eat too much, so I didn't make any more.",
+    "But I figured too much wouldn't be good for them, so I didn't make more."
+   ],
    "patterns": [
     "iraseo",
     "dallago",
@@ -2464,7 +3132,22 @@
     "강아지당 두 개(씩) 줬는데 더 달라고 하더라구요.",
     "근데 너무 많이 먹으면 안 될 것 같아서 더 안 만들어줬어요."
    ],
-   "en": [],
+   "en": [
+    "There are five puppies at our house, and their birthdays are all the same.",
+    "We have five puppies at home, and they all share the same birthday.",
+    "Yesterday was their birthday, so I wanted to make \"puppy cookies\" for the dogs.",
+    "It was their birthday yesterday, so I wanted to make the pups some \"puppy cookies.\"",
+    "But I didn't know how to make them, so I asked Mom to help.",
+    "But I had no idea how to make them, so I asked Mom for help.",
+    "So Mom helped me make them.",
+    "So Mom helped out with making them.",
+    "I gave two per dog, but they kept asking for more.",
+    "I gave each one two, but they were begging for more.",
+    "I gave two per puppy, but they kept asking for more.",
+    "I gave each puppy two, but they were begging for more.",
+    "But I thought they shouldn't eat too much, so I didn't make any more.",
+    "But I figured too much wouldn't be good for them, so I didn't make more."
+   ],
    "patterns": [
     "iraseo",
     "dallago",
@@ -2494,7 +3177,15 @@
     "제리가 강아지를 몇 마리 사고 싶어해요?",
     "한 마리 사고 싶어해요."
    ],
-   "en": [],
+   "en": [
+    "Jerry wants to buy a puppy.",
+    "Jerry wants to buy a black puppy.",
+    "Jerry wants to buy one black puppy.",
+    "What does Jerry want to buy?",
+    "What color puppy does Jerry want to buy?",
+    "How many puppies does Jerry want to buy?",
+    "He wants to buy one."
+   ],
    "patterns": [
     "go_sipeohae"
    ],
@@ -2518,7 +3209,26 @@
     "여자 친구가 \"선물 안 사도 돼. 그냥 저녁 같이 먹으면 돼\"라고 했어요.",
     "비싼 선물을 사면 안 돼요. 여자친구가 비싼 선물을 싫어해요. 그래서 여자친구한테 혼나요."
    ],
-   "en": [],
+   "en": [
+    "Tomorrow is Valentine's Day.",
+    "Valentine's Day is tomorrow.",
+    "But Minsu's girlfriend went on a business trip to Busan for a month.",
+    "However, Minsu's girlfriend is away in Busan on a month-long business trip.",
+    "So Minsu has to go to Busan this evening.",
+    "That's why Minsu needs to head down to Busan tonight.",
+    "Minsu hasn't bought a Valentine's gift yet, so he has to buy a gift today.",
+    "Since Minsu hasn't picked out a Valentine's present yet, he needs to get one today.",
+    "The department store is far from home, so he has to take a bus.",
+    "The department store is quite a distance from his place, so he'll have to catch a bus.",
+    "His girlfriend said, \"You don't have to buy a gift. We can just have dinner together.\"",
+    "His girlfriend told him, \"Don't worry about getting me a present. Just having dinner together is enough.\"",
+    "However, Minsu wanted to give her a gift.",
+    "Still, Minsu really wanted to surprise her with something.",
+    "He must not buy an expensive gift.",
+    "He shouldn't buy anything too pricey.",
+    "His girlfriend dislikes expensive gifts. So he will get scolded by his girlfriend.",
+    "His girlfriend hates lavish gifts, and he'll get in trouble if he buys one."
+   ],
    "patterns": [
     "aya",
     "ado_dwae",
@@ -2545,7 +3255,18 @@
     "그래서 이번에는 50kg 바벨을 들어봤어. 50kg 바벨이 나한테 적당했어.",
     "그래서 그 날 50kg 바벨로 운동했어."
    ],
-   "en": [],
+   "en": [
+    "I finished running and did weights, you see.",
+    "So, after my run, I did some weight training.",
+    "At first, I tried lifting a '10kg barbell' once.",
+    "First, I tried lifting a 10kg barbell.",
+    "But (the barbell) was too light for me. So I lifted it too easily.",
+    "But it turned out way too light for me, so I lifted it really easily.",
+    "So this time I tried lifting a 100kg barbell, but this time it was too heavy. So I couldn't lift it. So this time I tried lifting a 50kg barbell.",
+    "So next I tried a 100kg barbell, but that was way too heavy and I couldn't lift it. Then I tried 50kg.",
+    "The 50kg barbell was just right for me. So that day I worked out with the 50kg barbell.",
+    "50kg was just right for me, so that day I trained with the 50kg barbell."
+   ],
    "patterns": [
     "neunde",
     "a_bwatda",
@@ -2573,7 +3294,20 @@
     "그런데 민지가 \"거실에서 텔레비전 보지 마. 나 거실에서 숙제 해야 돼.\"라고 했어요.",
     "그래서 서준이가 방에 들어가서 축구를 봤어요."
    ],
-   "en": [],
+   "en": [
+    "Seojun came home early today to watch the national soccer team match.",
+    "Seojun came home early today to catch the national soccer game.",
+    "There were rice cakes on the dining table, and Seojun was going to eat them.",
+    "Spotting some rice cakes on the dining table, Seojun reached for a bite.",
+    "At that moment, Minji said, \"Don't eat that. It has gone bad.\"",
+    "Just then, Minji stopped him, saying, \"Don't eat those, they're spoiled.\"",
+    "Seojun tried to watch the soccer match on television.",
+    "He turned to the TV to watch the game.",
+    "But Minji said, \"Don't watch TV in the living room. I have to do my homework in the living room.\"",
+    "However, Minji spoke up, \"Don't watch TV in the living room, I need to do my homework here.\"",
+    "So Seojun went into his room and watched soccer.",
+    "So Seojun headed to his room and watched the match there instead."
+   ],
    "patterns": [
     "ryeogo",
     "jima"
@@ -2600,7 +3334,16 @@
     "민지가 지금 펫샵에 강아지를 사러 가고 있어요.",
     "진수가 지금 맥도날드에 점심을 먹으러 가고 있어요."
    ],
-   "en": [],
+   "en": [
+    "Jerry went to buy a puppy.",
+    "Jerry went to the BTS concert (venue) to buy a puppy.",
+    "But there were no puppies at the concert venue.",
+    "So Jerry was very disappointed.",
+    "Minsu went to his friend's house to study on Sunday.",
+    "Yunseo is going to go study tomorrow.",
+    "Minji is going to the pet shop now to buy a puppy.",
+    "Jinsu is going to McDonald's now to eat lunch."
+   ],
    "patterns": [
     "past",
     "reo_ga"
@@ -2630,6 +3373,7 @@
     "토니가 지금 썬글라스를 쓰고 있어요. 토니가 지금 썬글라스를 썼어요."
    ],
    "en": [
+    "It was very hot today",
     "So Jerry put on a short-sleeved T-shirt and shorts and went out.",
     "So Jerry headed outside in a T-shirt and shorts.",
     "Jerry is wearing shorts now. Jerry is dressed in shorts now.",
@@ -2644,7 +3388,7 @@
     "Tony is wearing sneakers right now. Tony is wearing sneakers right now.",
     "Jerry put on a red hat today and went outside.",
     "Jerry went out today wearing a red hat.",
-    "Tony didn’t wear a hat and went out.",
+    "Tony didn't wear a hat and went out.",
     "Tony went out without a hat.",
     "Tony is wearing sunglasses now. Tony has sunglasses on now.",
     "Tony is wearing sunglasses right now. Tony is wearing sunglasses right now."
@@ -2674,7 +3418,15 @@
     "그런데 벌써 8시 40분이었어요. 시간이 조금밖에 없었어요.",
     "시간이 조금밖에 없어서 핫바를 조금밖에 못 먹었어요."
    ],
-   "en": [],
+   "en": [
+    "→ Hoyoung only ate a little breakfast, so he was hungry.",
+    "→ So he went to the convenience store to buy cheese gimbap.",
+    "→ But the convenience store only had kimchi gimbap.",
+    "→ He was going to buy the kimchi gimbap, but it was 2,500 won.",
+    "→ He only had 2,000 won, so he bought a hot bar (sausage snack).",
+    "→ But it was already 8:40. He only had a little time.",
+    "→ Because he only had a little time, he could only eat a little of the hot bar."
+   ],
    "patterns": [
     "past",
     "batkke"
@@ -2701,7 +3453,30 @@
     "카레라이스가 나왔어요. 그래서 한 입 먹었어요. 너무 매웠어요.",
     "\"너 수학 숙제 다 했어?\" \"아니, 조금밖에 못 했어.\""
    ],
-   "en": [],
+   "en": [
+    "Minsu today ate only a little breakfast.",
+    "Minsu only ate a little breakfast this morning.",
+    "Because he ate only a little breakfast, at lunchtime his stomach was hungry.",
+    "Since he'd only eaten a little breakfast, he was hungry by lunchtime.",
+    "At lunchtime, together with Jerry, he went to the curry restaurant that is in front of the school.",
+    "At lunch he went with Jerry to the curry place near the school.",
+    "At that restaurant, as for the menu, there is only curry.",
+    "That place doesn't serve anything but curry.",
+    "And as for drinks, there is only cola.",
+    "And the only drink they have is cola.",
+    "Boss, is there Zero Coke?",
+    "Excuse me, do you have Coke Zero?",
+    "Sorry. There is only regular cola.",
+    "Sorry, we've only got regular Coke.",
+    "The curry rice came out. So he ate one bite.",
+    "The curry rice arrived, and he took a bite.",
+    "It was too spicy.",
+    "It was way too spicy.",
+    "You, math homework, did you do it all? Minsu asked to Jerry.",
+    "\"Did you finish the math homework?\" Minsu asked Jerry.",
+    "No, I could only do a little.",
+    "Nah, I've only done a little of it so far."
+   ],
    "patterns": [
     "an",
     "past",
@@ -2729,7 +3504,24 @@
     "그래서 이 커피숍이 손님이 많아요.",
     "이 커피숍이 인테리어가 안 예뻐요. 그렇지만 (이 커피숍이) 손님이 많아요."
    ],
-   "en": [],
+   "en": [
+    "Tony, his job is doctor.",
+    "Tony is a doctor.",
+    "Tony, his money is a lot.",
+    "Tony is rich.",
+    "Tony, his car is Porsche.",
+    "Tony drives a Porsche.",
+    "Tony, his hobby is racing.",
+    "Tony is into racing.",
+    "But Tony, his eyes are bad. So (Tony) wears glasses.",
+    "But Tony has bad eyesight, so he wears glasses.",
+    "This coffee shop, its latte is delicious.",
+    "This coffee shop has a great latte.",
+    "So this coffee shop, its customers are many.",
+    "So this coffee shop gets a lot of customers.",
+    "This coffee shop, its interior is not pretty. However, this coffee shop, its customers are many.",
+    "The interior of this coffee shop isn't pretty, but it's always busy."
+   ],
    "patterns": [
     "ieyo",
     "double_subj"
@@ -2756,7 +3548,22 @@
     "커피 대신에 과일을 먹기로 했어요.",
     "그런데 할아버지가 과일 사는 걸 자꾸 잊어버려요."
    ],
-   "en": [],
+   "en": [
+    "Jerry's grandfather smokes cigarettes a lot.",
+    "Jerry's grandfather smokes a lot.",
+    "But because (he) coughs a lot, (he) decided to quit cigarettes.",
+    "But he was coughing so much that he decided to quit smoking.",
+    "Instead of cigarettes, (he) started to drink coffee.",
+    "He started drinking coffee instead.",
+    "But because (he) drank coffee too much, at night sleep didn't come.",
+    "But he drank so much coffee that he couldn't sleep at night.",
+    "So (he) decided to quit coffee too.",
+    "So he decided to give up coffee too.",
+    "Instead of coffee, (he) decided to eat fruit.",
+    "He decided to eat fruit instead of coffee.",
+    "But grandfather keeps forgetting the buying of fruit.",
+    "But he keeps forgetting to buy fruit."
+   ],
    "patterns": [
     "past",
     "giro",
@@ -2786,7 +3593,19 @@
     "제리가 \"빨리 와\"라고 했어요.",
     "제리가 빨리 오라고 했어요."
    ],
-   "en": [],
+   "en": [
+    "Jerry said, \"Let's go to Lotte World tomorrow.\"",
+    "Jerry suggested to Tina that they go to Lotte World tomorrow.",
+    "Tina said, \"I'm going to my grandma's tomorrow.\"",
+    "Tina said she's going to her grandma's tomorrow.",
+    "Jerry asked, \"When are you coming back?\"",
+    "Jerry asked when she comes back.",
+    "Jerry asked when she'd be back.",
+    "Jerry said, \"Come quickly.\"",
+    "Jerry said, \"Hurry up and come.\"",
+    "Jerry said to come quickly.",
+    "Jerry told her to hurry up and come."
+   ],
    "patterns": [
     "past",
     "indirect",
@@ -2813,7 +3632,22 @@
     "제리가 몸이 다 젖었는데 계속 축구를 해서 감기에 걸렸어요.",
     "감기에 걸렸는데 다음날 학교에 가서 감기가 더 심해졌어요."
    ],
-   "en": [],
+   "en": [
+    "Today it was raining, but Jerry played soccer outside, so his clothes all got wet.",
+    "Jerry played soccer outside even though it was raining today, so all his clothes got wet.",
+    "His pants got all wet, his T-shirt got all wet, his hat got all wet, and his shoes got all wet.",
+    "His pants, T-shirt, hat, and shoes all got wet.",
+    "His phone was in his pocket, so it only got a little wet.",
+    "His phone was in his pocket, so it only got slightly wet.",
+    "His clothes all got wet, so he took off his clothes and played soccer.",
+    "All his clothes were wet, so he took them off and played soccer.",
+    "His shoes all got wet too, so he took off his shoes too and played soccer.",
+    "His shoes were wet too, so he took them off as well and played soccer.",
+    "Jerry's body was all wet, but he kept playing soccer, so he caught a cold.",
+    "Jerry was wet all over, but he kept playing soccer, so he caught a cold.",
+    "He caught a cold, but he went to school the next day, so his cold got worse.",
+    "He had a cold but went to school the next day, so it got worse."
+   ],
    "patterns": [
     "eseo",
     "past",
@@ -2840,7 +3674,20 @@
     "티나가 제일 좋아하는 가수는 BTS예요.",
     "그래서 티나가 매주 BTS 회사가 있는 서울에 가요."
    ],
-   "en": [],
+   "en": [
+    "Jerry's favorite food is tonkatsu.",
+    "The food Jerry likes the most is tonkatsu.",
+    "There is a delicious tonkatsu restaurant in Gangnam.",
+    "There's a tasty tonkatsu place in Gangnam.",
+    "So Jerry goes to that tonkatsu restaurant in Gangnam every weekend.",
+    "That's why Jerry goes to that tonkatsu place in Gangnam every weekend.",
+    "Tina lives at her aunt's house in Suwon.",
+    "Tina lives in her aunt's house, which is in Suwon.",
+    "Tina's favorite singer is BTS.",
+    "The singer Tina likes the most is BTS.",
+    "So Tina goes every week to Seoul, where the BTS company is.",
+    "That's why Tina goes every week to Seoul, where BTS's company is."
+   ],
    "patterns": [
     "ieyo",
     "neun_noun",
@@ -2866,7 +3713,22 @@
     "\"나 돈(을) 안 가지고 왔어. 돈 좀 가지고 여기로 와.\"",
     "아빠가 점집에 돈을 가지고 왔어요."
    ],
-   "en": [],
+   "en": [
+    "Because Mijoo’s stomach hurt, her mom took Mijoo to the hospital.",
+    "Mijoo had a stomachache, so her mom took her to the hospital.",
+    "But because the doctor said there was no problem at all, she took her to a bigger hospital.",
+    "But the doctor said nothing was wrong, so she took her to a bigger hospital.",
+    "Because the doctor at the big hospital also said there was no problem at all, she took her to a fortune-teller’s place.",
+    "The doctor at the big hospital said nothing was wrong either, so she took her to a fortune teller.",
+    "But the mom didn’t take any money to the fortune-teller’s place.",
+    "But Mom had gone to the fortune teller without any money.",
+    "So she made a phone call to Dad.",
+    "So she gave Dad a call.",
+    "“I didn’t bring money. Bring some money and come here.”",
+    "“I forgot to bring any cash. Grab some money and come over here.”",
+    "Dad brought money to the fortune-teller’s place.",
+    "Dad showed up at the fortune teller’s with the money."
+   ],
    "patterns": [
     "past",
     "aseo",
@@ -2895,7 +3757,25 @@
     "시어머니: 뭐 해? 며느리: 아, 커피를 내리기 전에 전기포트 한 번 세척하려고요.",
     "여자가 지금 커피 내리기 전에 전기포트를 한 번 세척하려고 해요."
    ],
-   "en": [],
+   "en": [
+    "What do you intend to do, honey?",
+    "What are you doing, honey?",
+    "I intend to boil ramen.",
+    "I’m making ramen.",
+    "Coworker: What do you intend to do?",
+    "Coworker: What are you doing?",
+    "Minsu: Oh, I intend to brew coffee.",
+    "Minsu: Oh, I’m making some coffee.",
+    "Why? Do you intend to go?",
+    "Why? Are you leaving?",
+    "Yeah, I intend to go.",
+    "Yeah, I’m leaving.",
+    "What are you doing?",
+    "Oh, before I brew the coffee, I intend to wash the electric kettle once.",
+    "Oh, I’m just giving the electric kettle a quick wash before I make coffee.",
+    "The woman now intends to wash the inside of the electric kettle once before she brews coffee.",
+    "The woman is giving the inside of the electric kettle a quick wash before she makes coffee."
+   ],
    "patterns": [
     "qword",
     "ryeogo"
@@ -3014,7 +3894,22 @@
     "\"나(를) 학원(에) 좀 데려다 줘\"",
     "태형이가 미주를 학원에 데려다 줬어요."
    ],
-   "en": [],
+   "en": [
+    "“Taehyung, take this puppy to its owner.”",
+    "“Taehyung, can you take this puppy back to its owner?”",
+    "Mom told Taehyung to take the puppy to its owner.",
+    "Mom asked Taehyung to take the puppy back to its owner.",
+    "So Taehyung took the puppy to its owner together with Mijoo.",
+    "So Taehyung and Mijoo took the puppy back to its owner together.",
+    "“Oppa, what time is it now?” “It’s four thirty now.”",
+    "“Oppa, what time is it?” “It’s 4:30.”",
+    "“Ah, it’s time for me to go to the academy.”",
+    "“Oh, it’s time for me to go to my class.”",
+    "“Please take me to the academy.”",
+    "“Can you give me a ride to my class?”",
+    "Taehyung took Mijoo to the academy.",
+    "Taehyung dropped Mijoo off at her class."
+   ],
    "patterns": [
     "rang",
     "past",
@@ -3476,7 +4371,16 @@
     "어찌저찌해서 아침 먹고 나서 학교에 가다가 토니를 만났어.",
     "근데 토니가 배가 고프다고 ((말)하면서) 빵집에 가자(고 말하)는 거야."
    ],
-   "en": [],
+   "en": [
+    "I studied until 3 a.m. yesterday and then slept, you see.",
+    "So, I was up studying until 3 a.m. last night before I went to bed.",
+    "So in the morning I was so sleepy. So while eating breakfast, I dozed off.",
+    "So I was super sleepy this morning. I even nodded off while eating breakfast.",
+    "Somehow, after eating breakfast, while going to school, I met Tony.",
+    "Somehow I got through breakfast, and on my way to school I ran into Tony.",
+    "But Tony, saying he was hungry, said let's go to the bakery.",
+    "But Tony said he was hungry and wanted to go to the bakery."
+   ],
    "patterns": [
     "indirect",
     "daga",
@@ -3501,7 +4405,16 @@
     "어찌저찌해서 아침 먹고 나서 학교에 가다가 토니를 만났어요.",
     "근데 토니가 배가 고프다고 ((말)하면서) 빵집에 가자(고 말하)는 거예요."
    ],
-   "en": [],
+   "en": [
+    "I studied until 3 a.m. yesterday and then slept, you see.",
+    "So, I was up studying until 3 a.m. last night before I went to bed.",
+    "So in the morning I was so sleepy. So while eating breakfast, I dozed off.",
+    "So I was really sleepy this morning. I even nodded off while eating breakfast.",
+    "Somehow, after eating breakfast, while going to school, I met Tony.",
+    "Somehow I got through breakfast, and on my way to school I ran into Tony.",
+    "But Tony, saying he was hungry, said let's go to the bakery.",
+    "But Tony said he was hungry and wanted to go to the bakery."
+   ],
    "patterns": [
     "indirect",
     "daga",
@@ -3531,7 +4444,40 @@
     "그리고 다음 달에 서울로 다시 돌아온다는 이야기를 들었어요.",
     "그런데 민서는 잘 지내냐는 문자에 답장을 하지 않았어요."
    ],
-   "en": [],
+   "en": [
+    "\"Shall we stop now?\"",
+    "\"Maybe we should end this.\"",
+    "Minseo said, setting down her coffee cup. Jihoon thought he had misheard.",
+    "\"What do you mean?\"",
+    "\"It's the words that say let's break up.\"",
+    "\"I'm saying I want to break up.\"",
+    "At Minseo's words that said let's break up, Jihoon couldn't say anything for a long while.",
+    "Minseo's saying she wanted to end it left Jihoon speechless for a long moment.",
+    "Even up until last week, the person who was doing the talk that said let's go to Jeju together in the summer was Minseo.",
+    "Only last week, Minseo had been the one making plans for the two of them to go to Jeju that summer.",
+    "\"You're joking, right? Why are you doing this all of a sudden?\"",
+    "At the words that asked why she was suddenly like this, Minseo did not answer right away and looked out the window.",
+    "Minseo didn't answer his question. She just looked out the window.",
+    "There was no news that said rain would come, but raindrops began to fall.",
+    "There'd been nothing on the news about rain, but it started coming down anyway.",
+    "\"I'm quitting my job.\"",
+    "\"What?\"",
+    "\"I received a notice that told me to go to the Busan branch.\"",
+    "\"They're transferring me to the Busan office.\"",
+    "Jihoon couldn't say anything more.",
+    "He and his last girlfriend had broken up over the same distance, so he couldn't bring himself to ask her to stay.",
+    "〈Eight months later〉",
+    "Jihoon sometimes heard from friends the talk that said Minseo was living well in Busan.",
+    "Now and then friends mentioned that Minseo was doing fine down in Busan.",
+    "He also heard the news that said she had been promoted a few months ago.",
+    "He heard about her promotion too, a few months back.",
+    "And he heard the talk that said she was coming back to Seoul next month.",
+    "And then he heard she was moving back to Seoul the following month.",
+    "Jihoon reached out to her exactly once.",
+    "\"You doing okay?\"",
+    "But Minseo did not reply to the text that asked whether she was living well.",
+    "She never answered."
+   ],
    "patterns": [
     "quoted_noun",
     "hante"
@@ -3558,7 +4504,19 @@
     "한참 뒤에 민서한테 왜 그러냐고 물었어.",
     "근데 바로 대답을 안 하고 창밖만 바라보는 거야."
    ],
-   "en": [],
+   "en": [
+    "Yesterday I met Jihoon. ← no audio",
+    "내가 이제 그만하자고 하니까 무슨 말이냐고 묻는 거야. When I said to stop now, he asked what I meant. When I said we should stop seeing each other, he asked what that meant.",
+    "그래서 헤어지자는 말이라고 하니까 한참동안 아무 말도 못하더라. So when I said it meant to break up, he couldn't say anything for a long time. So I told him it meant breaking up, and he was rendered speechless for a good while.",
+    "갑자기 왜 그러냐고 물어서 내가 바로 대답을 못하고 창밖만 바라봤어. He asked why I was doing that all of a sudden, so I couldn't answer immediately and only looked out the window. He asked where this was coming from, but I couldn't answer right away and just stared out the window.",
+    "비가 온다는 뉴스가 없었는데, 빗방울이 떨어지더라. ← no audio There was no news saying it would rain, but raindrops were falling. ← no audio",
+    "Yesterday I met Minseo. ← no audio",
+    "근데 갑자기 이제 그만하자고 하는거야. But suddenly she said to stop now. But out of nowhere, she told me she wanted to end things.",
+    "그래서 무슨 말이냐고 물으니까 헤어지자는 말이라는 거야. So when I asked what that meant, she said it meant to break up. So I asked what she meant by that, and she said she wanted to break up.",
+    "너무 놀라서 한참동안 아무 말도 못하겠더라고. I was so surprised that I couldn't say anything for a long time. I was in such shock that I couldn't utter a word for quite some time.",
+    "한참 뒤에 민서한테 왜 그러냐고 물었어. A long time later, I asked Minseo why she was doing that. After a long pause, I asked Minseo what was going on.",
+    "근데 바로 대답을 안 하고 창밖만 바라보는 거야. But she didn't answer right away and only looked out the window. But instead of answering right away, she just kept gazing out the window."
+   ],
    "patterns": [
     "qword",
     "indirect",
@@ -3588,7 +4546,16 @@
     "제가 아까 우유 먹였어요.",
     "제가 아까 트림 시켰어요."
    ],
-   "en": [],
+   "en": [
+    "Mother, please help me with this.",
+    "Mother, please help me with changing the diaper.",
+    "Mother, please help me with feeding Noah his milk.",
+    "Mother, please help me with making Noah burp.",
+    "Mother, I’m sorry, but please help me with changing the diaper.",
+    "I changed the diaper a little while ago.",
+    "I fed him milk a little while ago.",
+    "I made him burp a little while ago."
+   ],
    "patterns": [
     "ajuseyo",
     "neun_geo",
@@ -3622,7 +4589,30 @@
     "도서관에서 음식을 먹어도 돼요? 아니요. 먹으면 안 돼요.",
     "버스에서 담배 피워도 돼요? 아니요, 버스에서 담배 피우면 안 돼요."
    ],
-   "en": [],
+   "en": [
+    "S: Do you have to wake up early tomorrow?",
+    "Y: No, I don't have to wake up early.",
+    "S: Do you have to work today?",
+    "Y: No, I don't have to work.",
+    "S: Do you have to go to bed early tonight?",
+    "Y: No, I can stay up late.",
+    "S: Do you have to go to the grocery store this weekend?",
+    "Y: No, I don't have to go.",
+    "Y: Yes, I need to buy some eggs.",
+    "J: Mom, can I eat this?",
+    "M: Yeah, go ahead.",
+    "M: No, you can't eat that. It's spoiled.",
+    "S: Can I eat food in the library?",
+    "Y: No, you're not allowed to eat here.",
+    "S: Can I smoke on the bus?",
+    "Y: No, you're not allowed to smoke on the bus.",
+    "S: Can I drink coffee on the bus?",
+    "Y: No, you can't drink it.",
+    "S: Is it okay if you sleep in tomorrow?",
+    "Y: Yes, I can sleep in. I don't have to go to work tomorrow.",
+    "S: Is it okay if youI sleep in tomorrow?",
+    "Y: No, I can't. I have to go to work."
+   ],
    "patterns": [
     "aya",
     "ado_dwae",
@@ -3710,7 +4700,34 @@
     "제리가 어려서 칼질을 잘 못하기 때문에 제리가 쉽게 먹을 수 있게 아버지가 스테이크를 잘라줬어요.",
     "제리가 심심하지 않게 아버지가 블랙핑크 노래를 틀어줬어요."
    ],
-   "en": [],
+   "en": [
+    "If you finish eating the kimchi stew, put it in the fridge so it won’t spoil.",
+    "After you’re done with the kimchi stew, stick it in the fridge so it doesn’t go bad.",
+    "And raise the boiler temperature so it won’t be cold.",
+    "Also, turn up the heat so you don’t get cold.",
+    "Don’t mess up the house so you won’t get scolded by Dad.",
+    "Keep the house tidy unless you wanna get yelled at by Dad.",
+    "Order delivery so your sibling won’t be hungry.",
+    "Just order some food so your sibling doesn’t go hungry.",
+    "Jerry closed the curtains so sunlight wouldn’t come in.",
+    "Jerry pulled the curtains shut to block the sunlight.",
+    "Jerry, go buy some tofu so I can make kimchi stew.",
+    "Hey Jerry, can you go buy some tofu? I want to make kimchi stew.",
+    "Since it snowed today so the traffic might get heavy, the two people left home early so they wouldn’t be late for the concert.",
+    "Since it snowed today so the traffic might get bad, the two of them headed out early to make sure they wouldn’t be late for the concert.",
+    "Dad moved the bag to the back seat so Jerry could sit.",
+    "Dad shifted the bag to the back so Jerry would have a seat.",
+    "Dad drove slowly so the car wouldn’t slip.",
+    "Dad took it slow so the car wouldn’t skid on the road.",
+    "Jerry held Dad’s hand tightly so he wouldn’t get separated from him.",
+    "Jerry grabbed tightly onto Dad’s hand so he wouldn’t get separated.",
+    "Dad put Jerry on his shoulders so Jerry could see faces well.",
+    "Dad lifted Jerry onto his shoulders so he could see everyone better.",
+    "Because Jerry is young and can’t use a knife well, Dad cut the steak so Jerry could eat it easily.",
+    "Since Jerry’s too young to cut it himself, Dad sliced the steak for him so he could eat comfortably.",
+    "Dad played BLACKPINK songs so Jerry wouldn’t get bored.",
+    "Dad put on some BLACKPINK so Jerry wouldn’t feel bored."
+   ],
    "patterns": [
     "ge",
     "hante"
@@ -3744,7 +4761,36 @@
     "13 제리는 보통 자기 전에 샤워를 해요.",
     "14 그런데 오늘은 6시에 샤워를 했어요. 그래서 자기 전에 샤워를 안 했어요."
    ],
-   "en": [],
+   "en": [
+    "• Today is Sunday. So Jerry woke up a little late today.",
+    "• It’s Sunday today, so Jerry woke up a little later than usual.",
+    "• Jerry usually brushes his teeth before eating breakfast.",
+    "• Jerry normally brushes his teeth before having breakfast.",
+    "• “Jerry, eat the hamburger! Eat quickly before Alice eats it all,” Mom said.",
+    "• Mom said, “Jerry, hurry and eat your burger before Alice finishes it!”",
+    "• So he ate the hamburger first and then brushed his teeth.",
+    "• He ate his hamburger first, then brushed his teeth afterward.",
+    "• Jerry ate breakfast and turned on the PlayStation.",
+    "• After breakfast, Jerry turned on his PlayStation.",
+    "• Mom said, “Do your homework first, then play games.”",
+    "• Mom told him, “Finish your homework before playing.”",
+    "• So Jerry turned off the PlayStation.",
+    "• He switched off the PlayStation.",
+    "• And before playing games, he did his homework first.",
+    "• He decided to do his homework before playing.",
+    "• He finished his homework and then played games.",
+    "• After finishing his homework, he finally got to play.",
+    "• He played games for two hours and then went jogging.",
+    "• He gamed for two hours, then went out for a jog.",
+    "• Before jogging, he did stretching.",
+    "• He stretched before going for his jog.",
+    "• After finishing jogging, he took a shower.",
+    "• When he was done jogging, he took a shower.",
+    "• Jerry usually takes a shower before going to bed.",
+    "• Jerry normally showers before bedtime.",
+    "• But today he took a shower at six o’clock. So he didn’t take a shower before bed.",
+    "But today he showered at six, so he skipped his usual bedtime shower."
+   ],
    "patterns": [
     "gi_jeone"
    ],
@@ -3772,7 +4818,28 @@
     "\"현장에서 사면 오래 기다려야 될지도 모르니까 온라인으로 사자.\"",
     "현장에서 사면 오래 기다려야 될지도 몰라서 온라인으로 티켓(을) 사기로 했어요."
    ],
-   "en": [],
+   "en": [
+    "• Minsoo! It might rain today, so take three umbrellas.",
+    "• Minoo! It might rain today, so take three umbrellas with you.",
+    "• Mom told Minsoo to take an umbrella because it might rain today.",
+    "• Mom told Minsoo to bring an umbrella just in case it rains today.",
+    "• It might be heavy traffic, so let’s leave early.",
+    "• There might be heavy traffic, so let’s leave early.",
+    "• They left early in the morning because there might be heavy traffic.",
+    "• They left early in the morning in case there was heavy traffic.",
+    "• We might get hungry on the way, so let’s buy hamburgers at Lotteria.",
+    "• Let’s grab some Lotteria hamburgers in case we get hungry on the way.",
+    "• Dad said they should buy hamburgers at Lotteria in case they get hungry on the way.",
+    "• Dad suggested stopping by Lotteria to buy hamburgers just in case they got hungry on the way.",
+    "• You might need to go number two later, so use the bathroom at home first.",
+    "• You might have to poop later, so better go at home before we leave.",
+    "• Mom told Jerry to use the bathroom at home first because he might need to go number two later.",
+    "• Mom told Jerry to go to the bathroom at home first, since he might need to poop later.",
+    "• If we buy on site, we might have to wait a long time, so let’s buy online.",
+    "• We might have to wait in line a long time if we buy at the venue, so let’s get the tickets online.",
+    "• They decided to buy the tickets online because they might have to wait a long time if they bought them on site.",
+    "They decided to buy the tickets online, since buying at the venue might mean waiting in line for a long time."
+   ],
    "patterns": [
     "counter",
     "jido",
@@ -3804,7 +4871,31 @@
     "요즘에는 여행갈 때 종이 지도가 없어도 돼요.",
     "좋은 유튜브 동영상을 만들려면 괜찮은 마이크가 있어야 돼요."
    ],
-   "en": [],
+   "en": [
+    "Singers have to sing well.",
+    "A singer has to be good at singing.",
+    "For singers, it's okay even if they can't act well.",
+    "A singer doesn't have to be good at acting.",
+    "Actors have to act well.",
+    "An actor has to be good at acting.",
+    "For actors, it's okay even if they can't sing well.",
+    "An actor doesn't have to be a good singer.",
+    "For actors, it's okay even if they can't dance well.",
+    "An actor doesn't have to be a good dancer.",
+    "Dancers have to dance well.",
+    "A dancer has to be good at dancing.",
+    "For dancers, it's okay even if they can't sing well.",
+    "A dancer doesn't have to be good at singing.",
+    "Web designers have to know JavaScript well.",
+    "A web designer needs to know JavaScript well.",
+    "For web designers, it's okay even if they don't know Python.",
+    "A web designer doesn't need to know Python.",
+    "These days, when you go traveling, it's okay even if you don't have a paper map.",
+    "These days, you don't need a paper map when you travel.",
+    "If you want to make good YouTube videos, you have to have a decent microphone.",
+    "To make good YouTube videos, you need a decent mic.",
+    "*A려면  if you want to do A; in order to do A"
+   ],
    "patterns": [
     "aya",
     "ado_dwae"
@@ -3832,7 +4923,30 @@
     "붕어빵 얼마예요? 세 마리에 2천원이에요.",
     "제리는 매일 버스를 2번 타요. 아침에는 보통 2번 버스를 타고 학교에 가요. 오후에는 보통 1번 버스를 타고 집에 와요."
    ],
-   "en": [],
+   "en": [
+    "Dad: How many hours do you sleep a day?",
+    "Son: I sleep 8 hours.",
+    "시간 time/hour",
+    "한 시간 1 hour",
+    "두 시간 2 hour",
+    "Dad: How many hours did you play games yesterday?",
+    "Son: I played for 2 hours.",
+    "했어 did/play",
+    "When is your birthday? It's August 9th.",
+    "생일 birthey",
+    "8월 August",
+    "9일 9th date (of the month)",
+    "When is Christmas? It's December 25th.",
+    "12월 December",
+    "25일 25th date (of the month)",
+    "Our house is a two-story house. There's one room on the first floor. There are two rooms on the second floor.",
+    "우리 we/our/us",
+    "방 room",
+    "What time is it now? It's 2:35.",
+    "How much is an Americano at Starbucks? It's 4,700 won.",
+    "얼마예요 how much?",
+    "How much are bungeoppang? It's 2,000 won for three."
+   ],
    "patterns": [
     "number"
    ],
@@ -3859,7 +4973,30 @@
     "보통 몇 시에 자요? 10시에 자요.",
     "티나가 결혼식 때문에 3주일 동안 다이어트를 했어요."
    ],
-   "en": [],
+   "en": [
+    "Jerry takes the #15 bus to school every day.",
+    "Jerry used to live on the 8th floor. Now he lives on the 6th floor.",
+    "Jerry drinks two cups of coffee every day.",
+    "Tina has had two nose surgeries.",
+    "코 nose",
+    "수술 surgery",
+    "I only ate porridge for three days because of diarrhea.",
+    "설사 diarrhea",
+    "because of diarrhea",
+    "동안 for , during",
+    "3일 동안  for 3 days",
+    "I drank five cups of coffee every day for three days because of the exam.",
+    "시험 때문에 because of an/the exam",
+    "What time is it now? It's 7 o'clock.",
+    "What time do you usually go to bed? I go to bed at 10 o'clock.",
+    "자요 sleep/go to sleep",
+    "결혼 marraige",
+    "결혼식 wedding",
+    "결혼식 때문에 because of a/the wedding",
+    "3주일 3 weeks",
+    "했어요 did",
+    "Tina was on a diet for three weeks for her wedding."
+   ],
    "patterns": [
     "ganda",
     "number",
@@ -3891,7 +5028,10 @@
     "그래서 11km로 달렸어요. 그런데 너무 빨랐어요.",
     "그래서 7km로 달렸어요. 이번에는 적당했어요."
    ],
-   "en": [],
+   "en": [
+    "I walk in the park every evening these days. That's why I'm in good condition lately.",
+    "I walk in the park every evening these days. So I'm in good condition lately."
+   ],
    "patterns": [
     "past",
     "number",
@@ -3954,7 +5094,24 @@
     "토니 집에는 사촌동생들이 와 있었는데 너무 시끄러웠어요.",
     "토니한테 주려고 과일을 샀는데 토니 사촌동생들이 과일을 다 먹었어요."
    ],
-   "en": [],
+   "en": [
+    "It was raining today. But he played football outside so he got all wet.",
+    "Jerry got all wet playing football outside in the midst of rain today.",
+    "His clotes were all wet, but he kept playing football so he caught a cold",
+    "Even though his clothes were all wet, he kept playing football and caught a cold.",
+    "He had a cold but he went to school so his cold got worse.",
+    "He still went to school the next day even though he had a cold, and his cold got worse.",
+    "Jerry doesn't like medicine, but he took some that day and went to bed.",
+    "He went to school the next day, and he found that his friend Tony was sick so he didn't come to school.",
+    "He went to school the next day, but his friend Tony was sick and didn't come to school.",
+    "Jerry decided to go to Tony's house to visit him that day.",
+    "*문병가다 to go visit a sick person",
+    "On the way to Tony's house, he dropped by a grocery store and bouth some fruit, but it was very expensive.",
+    "On the way to Tony's house, he stopped at the grocery store to buy some fruit, but it was very expensive.",
+    "Tony's cousins came to his house and were there when Jerry got to his house, and it was very noisy.",
+    "Tony's cousins were there when Jerry got to his house, and it was very noisy.",
+    "He bought the fruit to give to Tony, but Tony's cousins ate all the fruit. (Tony's cousins ate all the fruit before he could give it to Tony)"
+   ],
    "patterns": [
     "eseo",
     "past",
@@ -3991,7 +5148,22 @@
     "제리는 지금 직장인이에요.",
     "제리는 지금 학생이 아니에요."
    ],
-   "en": [],
+   "en": [
+    "Today is Sunday.",
+    "Yesterday was Saturday.",
+    "Today is not Saturday.",
+    "Yesterday was not Sunday.",
+    "Tina was not a vegan before. She is a vegan now.",
+    "Jerry was a vegan before. He is not a vegan now.",
+    "Tina was a tennis player when she was a student.",
+    "She is not a tennis player now.",
+    "Jerry was a swimmer when he was a student.",
+    "He is not a swimmer now.",
+    "Jerry was a student last year.",
+    "Jerry was not a working adult last year.",
+    "Jerry is a working adult now.",
+    "Jerry is not a student now."
+   ],
    "patterns": [
     "ieosseoyo",
     "past"
@@ -4022,7 +5194,22 @@
     "여기는 도시가 아니라서 지하철이 없어요.",
     "제리는 성인이 아니라서 술을 못 사요."
    ],
-   "en": [],
+   "en": [
+    "Hyun Bin appears a lot in Crash Landing on You because he is the main character.",
+    "Hyun Bin's screen time is long in Crash Landing on You becaus he is the main character.",
+    "There are many people at the movie theater today because it is Saturday.",
+    "Jerry has to go to the military because he is a Korean man.",
+    "Jerry and Yoko are best friends, so they always hang out together.",
+    "Minju doesn't have to go to the military because ㄴhe is not a man.",
+    "Jerry can't buy things at Costco because he is not a member.",
+    "Jerry can't buy things at Costco because he doesn't have membership.",
+    "Mi-ju doesn't see her boyfriend often because he is a soldier.",
+    "Sorry, I have to go home early today because it's my mom's birthday.",
+    "This is expensive because it's Hanwoo.",
+    "I'm not going to work tomorrow because it's my vacation this week.",
+    "There is no subway here because it is not a city.",
+    "Jerry can't buy alcohol because he is not an adult."
+   ],
    "patterns": [
     "iraseo"
    ],
@@ -4047,7 +5234,10 @@
     "어제 커피숍에서 니 앞에 앉아 있던 남자(는) 니 남자친구야?",
     "어제 니가 입고 있던 옷(이) 어디 거야?"
    ],
-   "en": [],
+   "en": [
+    "누나, have you not seen the milk that I was drinking ( but didn't finish) earlier?",
+    "누나, did you see the milk I was drinking earlier?"
+   ],
    "patterns": [
     "deon"
    ],
@@ -4079,7 +5269,19 @@
     "우리 작년에 간 스키장 기억나?",
     "어제 소개팅한 남자한테 연락(이) 왔어?"
    ],
-   "en": [],
+   "en": [
+    "Mom, what was the name of the restaurant we used to go to when I was little? I can't remember.",
+    "There was a small Chinese restaurant in front of the house I used to live in.",
+    "I am going to have dinner with someone from the company I used to go/work for. You eat first",
+    "I'm going to have dinner with someone from my old company today. You eat first.",
+    "*회사 사람 colleagues",
+    "What was the name of the video game we played last week?",
+    "I want to eat chicken. Let's order the chicken we ordered yesterday again.",
+    "Do you remember the ski resort we went to last year?",
+    "Did you get a call/text from the guy you met on a blind date yesterday?",
+    "*연락하다 to contact (someone)",
+    "연락 the action of 연락하다"
+   ],
    "patterns": [
     "deon",
     "hante"
@@ -4108,7 +5310,21 @@
     "여의도에는 높은 빌딩이 많아요. 낮은 빌딩은 많이 없어요.",
     "제리네 집은 좁아요. 그래서 제리는 넓은 집에서 살고 싶어해요."
    ],
-   "en": [],
+   "en": [
+    "The food I like the most is 떡볶이.",
+    "My favorite Korean food is 떡볶이.",
+    "Tina likes men who are good at sports.",
+    "The ticket of the plane that goes to Korea has goten much more expensive lately.",
+    "Flights to Korea have gotten much more expensive lately.",
+    "These days, there are really a lot of people in Korea who drink coffee every day.",
+    "The song Jerry is listening to is 'Dynamite'",
+    "If you tell the person jogging over there that you like him/her, I'll give you 100,000 won",
+    "Yoko likes tall men.",
+    "Yoko likes tall and stylish men.",
+    "Yoko likes tall men with good style.",
+    "There are many tall buildings in 여의도. There aren't many low-rise buildings.",
+    "Jerrys' house is small/caramped. So he wants to live in a big/spacious house."
+   ],
    "patterns": [
     "ieyo",
     "goingoing",
@@ -4139,7 +5355,28 @@
     "모기장을 쳐야 모기가 안 들어와요.",
     "너 밥 다 먹어야 게임하게 해 줄 거야."
    ],
-   "en": [],
+   "en": [
+    "Daddy, you can't just walk in here. Only if you buy a ticket can you get in.\"",
+    "Daddy, you can't just walk in here. You need to buy a ticket to get in.\"",
+    "\"Hey, you haven't told Minju that you like her yet? Only if you tell her, she would know.",
+    "\"Hey, you haven't told Minju that you like her yet? She won't know if you don't say anything.\"",
+    "Go to bed early. Only if you go to bed early, you can get up early.",
+    "God to bed early. You need to go to bed early today so that you can wake up early tomorrow.",
+    "Kimchi must be spicy for it to be delicious",
+    "Only if Kimchi is spiciy, it is delicious.",
+    "Only if (you/I/students) take this course can they graudate",
+    "(you/I/students)  must take this course so they can graduate.",
+    "*수업을 듣다 to take a lesson",
+    "Only if you go to Korean can you eat delicious 짜장면.",
+    "\"You can only find delicious jjajangmyeon in Korea.\"",
+    "Only if you have Samsung mobile phone can you use Samsung Pay.",
+    "You need to have a Samsung mobile phone to use Samsung Pay",
+    "Only if you hang a mosquito net, mosquitos don't come in.",
+    "You need to hang mosquito net to keep mosquitos out.",
+    "Mosquito nets will keep mosquitos out.",
+    "Only if you finish eating, I will let you play the game.",
+    "You have to finish your food before you can play games.\""
+   ],
    "patterns": [
     "su_itda",
     "aya_only",
@@ -4180,7 +5417,25 @@
     "토니가 제리한테 매운 음식을 먹을 수 있냐고 물었어요.",
     "제리가 먹을 수 있다고 했어요."
    ],
-   "en": [],
+   "en": [
+    "Tina asked Jerry if he had breakfast.",
+    "Jerry said he did.",
+    "Tina asked Jerry until what time he worked yesterday.",
+    "Jerry said he worked until 10 pm.",
+    "Tina asked Jerry what time he went to bed yesterday.",
+    "Jerry said he went to bed at 11 pm.",
+    "Tina asked Jerry if he watched “Itaewon Class” yesterday.",
+    "Jerry asked Tony if he was going to watch the World Cup football game today.",
+    "Tony said he was not going to watch it as he was busy.",
+    "Jerry asked Tony if he will go to the Blackpink concert/Jerry asked Tony if he was going to the Blackpink concert.",
+    "Tony said he will/Tony said he was going.",
+    "Jerry asked his mother what time (they) would have dinner today.",
+    "His mother said (they) would have dinner at 7 pm.",
+    "Tony asked Jerry if he could ride a bike.",
+    "Jerry said he could.",
+    "Tony asked Jerry if he could drink alcohol.",
+    "Tony asked Jerry if he could eat spicy food."
+   ],
    "patterns": [
     "indirect",
     "hante"
@@ -4215,7 +5470,7 @@
     "Ugh... I guess I'm tired because I couldn't sleep.",
     "Maybe because I ate my meal quickly, my stomach is upset.",
     "I think I ate too fast, and that's probably why my stomach feels off.",
-    "※ 속: the inside of something, and it's also used for your stomach or gut, like in \"속이 안 좋아요\" (my stomach is upset)."
+    "(속: the inside of something, and it's also used for your stomach or gut, like in \"속이 안 좋아요\" (my stomach is upset).)"
    ],
    "patterns": [
     "past",
@@ -4436,7 +5691,15 @@
     "완전 어이 없지 않냐? 어, 진짜 어이 없네.",
     "그치? 그래서 나도 n분의 1 안 한거 이번이 처음이라고 했더니 막 똥 씹은 표정 짓는 거 있지."
    ],
-   "en": [],
+   "en": [
+    "So I get treated to the second round, right?",
+    "Uh… I've never paid on a date before?",
+    "Really? This is actually my first time not splitting the bill evenly.",
+    "That's not even the whole thing. We've met three times so far. All three times, it was dinner first, then a bar for round two. But she never paid, not once.",
+    "So the third time we met, while I was paying for dinner, I joked and asked if I could at least get treated for round two. And she just said she's never paid on a date, not once.",
+    "That's totally ridiculous, right? Yeah, seriously ridiculous.",
+    "Right? So I told her this was my first time not splitting the bill evenly, and she made this totally sour face."
+   ],
    "patterns": [
     "an",
     "neun_geoya",
@@ -4464,7 +5727,23 @@
     "(그 영화관을) 겉에서 볼 땐 영화관 아닌 줄 알았는데 들어가니까 와.. 팝콘 냄새 죽이더라.",
     "다이어트만 아니었어도 폭풍흡입 하는 건데. 아.."
    ],
-   "en": [],
+   "en": [
+    "A: On Thursday, I went with Minsu and Momoko to see a movie, you know? Do you know what we saw?",
+    "A: So on Thursday I went to see a movie with Minsu and Momoko. Guess what we saw?",
+    "B: What did you see?",
+    "A: \"A Tale of Two Sisters (Janghwa Hongryeon).\" (pronounced Janghwa Hongnyeon)",
+    "A: \"A Tale of Two Sisters.\"",
+    "B: Huh? Isn't that an old movie?",
+    "B: Wait, isn't that an old movie?",
+    "A: Right. It's a movie that's over 20 years old, so I was so surprised when I heard it was being re-released.",
+    "A: Yeah. It's over 20 years old, so I was shocked when I heard they were re-releasing it.",
+    "Anyway, before watching the movie, I decided to meet Minsu at COEX, so I got off at Samseong Station and was going to COEX, and ah, Samseong Station was really complicated. I got a bit lost on the way.",
+    "Anyway, I was meeting Minsu at COEX before the movie, so I got off at Samseong Station — and wow, that station is a maze. I got kind of lost.",
+    "B: Ah, these days there's construction there, so it's a bit confusing.",
+    "B: Oh, they're doing construction there these days, so it's confusing.",
+    "A: Yeah, it was like that. I barely met Minsu and we went up to the theater. When I saw it from the outside, I thought it wasn't a theater, but when I went in, wow... the popcorn smell was amazing. If only I weren't on a diet, I would have devoured it. Ah...",
+    "A: Yeah, I noticed. I finally found Minsu and we went up to the theater. From outside it didn't even look like a cinema, but once we went in — wow, the popcorn smelled incredible. If I weren't on a diet, I'd have wolfed it down. Ugh..."
+   ],
    "patterns": [
     "rang",
     "deora",
@@ -4492,7 +5771,22 @@
     "제임스가 모모코 길치라고 그래서 좀 걱정이 됐어.",
     "맞아. 걔 좀 길치야."
    ],
-   "en": [],
+   "en": [
+    "Hey, what diet are you talking about? You're super slim.",
+    "Hey, why are you dieting? You're already so slim.",
+    "No. It's because you don't know. I've gained a lot of weight these days.",
+    "No way. You just don't know — I've put on a lot of weight lately.",
+    "Anyway, I was trying to buy a ticket at the kiosk, but the good seats were already all sold.",
+    "Anyway, I went to get tickets at the kiosk, but all the good seats were already sold out.",
+    "So I bought a seat that was at least okay, sat in the seat, and waited for Momoko, but",
+    "So I got the best seat I could, sat down, and waited for Momoko, but",
+    "no matter how long I waited, Momoko didn't come.",
+    "no matter how long I waited, she just didn't show up.",
+    "James said Momoko is bad with directions, so I got a little worried.",
+    "James had told me Momoko has no sense of direction, so I got kind of worried.",
+    "Right. She's a bit bad with directions.",
+    "Yeah, she gets lost pretty easily."
+   ],
    "patterns": [
     "eseo",
     "neunde",
@@ -4521,7 +5815,20 @@
     "아,나도 그 영화 OST 좋다고 들은 것 같아.",
     "처음 시작 부분은 ‘이게 공포영화라고?’ 싶을 정도로 약간 지브리 영화 도입부랑 비슷하다 싶었는데 (계속 보니까) 아니더라?….."
    ],
-   "en": [],
+   "en": [
+    "A: In the end, the movie started at 6, but I arrived after 6.",
+    "A: In the end, the movie started at 6 and I got there after 6.",
+    "B: But usually, don't they show ads before the movie?",
+    "B: But don't they usually show ads before the movie starts?",
+    "A: Yeah, right. The ad time was pretty long. So I came before the movie started.",
+    "A: Yeah, exactly. The ads went on for a while, so I made it before the movie actually started.",
+    "A: Because it was an old re-released movie, I didn't have big expectations, but Minsu said it was his favorite movie, and also said famous actors like Yum Jung-ah and Moon Geun-young are in it, so I got a bit excited. Before the movie started, Minsu said he likes this movie's OST, and when I heard the song at the start, I went, 'Ah, this song~'.",
+    "A: Since it was just an old movie being re-released, I wasn't expecting much. But Minsu said it was his all-time favorite, and that big names like Yum Jung-ah and Moon Geun-young were in it, so I got kind of excited. He also said he loved the soundtrack, and when the opening song came on, I was like, 'Oh, this song!'",
+    "B: Ah, I think I also heard that the movie's OST is good.",
+    "B: Oh, I think I've heard the soundtrack is good too.",
+    "A: The beginning part was so much like the opening of a Ghibli movie that I thought, 'This is a horror movie?', but (as I kept watching) it wasn't?.....",
+    "A: The opening felt so much like a Ghibli movie that I was like, 'This is supposed to be horror?' But then... it really wasn't..."
+   ],
    "patterns": [
     "rang",
     "aseo",
@@ -4551,7 +5858,28 @@
     "안녕히 계세요. 다음에 또 봬요.",
     "이제 말 봐~ 반말해도 돼. 나도 언니들에게 말 놓잖아."
    ],
-   "en": [],
+   "en": [
+    "Please recommend me some good restaurants in Seoul.",
+    "Could you recommend some good places to eat in Seoul?",
+    "Please recommend me some places to go in Seoul.",
+    "Any recommendations for places to visit in Seoul?",
+    "Please teach me some Korean food that can be made easily.",
+    "Could you show me some easy Korean dishes to make?",
+    "How is your age?",
+    "How old are you?",
+    "Please say it just one more time.",
+    "Could you say that again?",
+    "What is 식탁 (in English)?",
+    "What's 식탁 in English?",
+    "What is \"wallet\" in Korean?",
+    "How do you say \"wallet\" in Korean?",
+    "Bye, see you again next time.",
+    "Bye, see you later!",
+    "Stay well. I'll see you again next time.",
+    "Goodbye. See you next time.",
+    "Drop the formal speech now~ You can use casual speech. I also drop the formal speech with my older sisters.",
+    "You can talk casually with me now~ It's fine to use banmal. I speak casually with my unnies too."
+   ],
    "patterns": [
     "ajuseyo",
     "seyo"
@@ -4579,7 +5907,16 @@
     "나이가 어떻게 돼?",
     "몇 학년이야?"
    ],
-   "en": [],
+   "en": [
+    "Hi, nice to see you~",
+    "You're Hana, right?",
+    "Huh? You're not? Then are you Eunchae?",
+    "Junho! It's been a long time. Do you remember Auntie?",
+    "No. I don't remember.",
+    "Right. I last saw you when you were a baby...",
+    "How old are you?",
+    "What grade are you in?"
+   ],
    "patterns": [
     "insa"
    ],
@@ -4605,7 +5942,33 @@
     "\"야, 저기 자리 났다. 얼른 앉자.\"",
     "\"너겟 하나 시켜서 나눠 먹을까?\""
    ],
-   "en": [],
+   "en": [
+    "\"Hey, I'm craving a burger — wanna go to Lotteria?\"",
+    "\"Hey, I'm in the mood for a burger. Lotteria?\"",
+    "\"Hey, I'm craving a burger, so wanna go to Lotteria?\"",
+    "\"Hey, I've got a burger craving — should we hit Lotteria?\"",
+    "\"Deal.\"",
+    "\"You're on.\"",
+    "Jerry suggested to Tony that they go to Lotteria.",
+    "Jerry asked Tony to go to Lotteria with him.",
+    "For some reason today, Lotteria was crowded.",
+    "Lotteria was packed that day, of all days.",
+    "\"Ugh, why is it so crowded today of all days? There are no seats.\"",
+    "\"Ugh, why's it so busy today of all days? Not a single free seat.\"",
+    "After waiting about ten minutes, a seat opened up.",
+    "About ten minutes later, a table freed up.",
+    "\"Hey, a seat opened up over there. Let's sit down quick.\"",
+    "\"Hey, a spot just opened up over there — let's grab it fast.\"",
+    "\"I'm going to have a bulgogi burger — what are you going to have?\"",
+    "\"I'm getting the bulgogi burger. What do you want?\"",
+    "Jerry asked Tony.",
+    "\"I'll have a Big Mac.\"",
+    "\"I'll go with a Big Mac.\"",
+    "\"Should we order one nuggets and split it?\"",
+    "\"Wanna get a nuggets and share?\"",
+    "\"Sounds good.\"",
+    "\"For sure.\""
+   ],
    "patterns": [
     "neunde",
     "lae",
@@ -4640,7 +6003,6 @@
     "민호가 대답 안 하고 커피만 마셨어요."
    ],
    "en": [
-    "LEVEL: intermediate",
     "Sujin went, for the first time, to a small gukbap place in the alley in front of the office.",
     "Sujin tried the little gukbap place in the alley by her office for the first time.",
     "The sign was very old and worn out.",
@@ -4664,7 +6026,8 @@
     "You, always looking only at the outside, jump to conclusions, I've noticed. Try going once and then talk.",
     "You always judge by appearances. Go there once, then tell me.",
     "Minho, not answering, only drank coffee.",
-    "Minho didn't answer and just sipped his coffee."
+    "Minho didn't answer and just sipped his coffee.",
+    "LEVEL: intermediate"
    ],
    "patterns": [
     "auto_93"
@@ -4696,7 +6059,6 @@
     "…응. 내일 같이 갈래?"
    ],
    "en": [
-    "LEVEL: intermediate",
     "But a few days later, Sujin saw Minho coming out of that gukbap place.",
     "Minho, holding a toothpick in his mouth, while coming out of the shop, got caught by Sujin.",
     "Minho walked out with a toothpick in his mouth and got caught by Sujin.",
@@ -4718,7 +6080,8 @@
     "Not just at the low-key level, it's totally delicious, right?",
     "Not just \"kind of good.\" It's amazing, right?",
     "…Yeah. Tomorrow, will you go together?",
-    "…Yeah. Wanna go together tomorrow?"
+    "…Yeah. Wanna go together tomorrow?",
+    "LEVEL: intermediate"
    ],
    "patterns": [
     "auto_94"
@@ -4745,7 +6108,17 @@
     "제임스씨가 어디에 있어요?",
     "제가 캐나다에 있어요."
    ],
-   "en": [],
+   "en": [
+    "Where is Jerry?",
+    "Jerry is in Korea.",
+    "Where is Yoko right now?",
+    "Yoko is in Japan right now.",
+    "Where am I?",
+    "You are in Korea, Hansaem.",
+    "(한쌤 is my nickname, short for \"Korean teacher.\" In Korean, we often use a name or title instead of \"you.\")",
+    "Where are you, James?",
+    "I am in Canada."
+   ],
    "patterns": [
     "itda_loc"
    ],
@@ -4769,7 +6142,14 @@
     "제리가 지금 학교에 있어요.",
     "윤서도 지금 학교에 있어요."
    ],
-   "en": [],
+   "en": [
+    "Jerry is at school.",
+    "Yoko is at home.",
+    "Minsu is also at home.",
+    "I am also at home.",
+    "Jerry is at school right now.",
+    "Yunseo is also at school right now."
+   ],
    "patterns": [
     "itda_loc"
    ],
@@ -4797,7 +6177,19 @@
     "한쌤, 피자 좋아해요?",
     "아니요. 제가 피자 안 좋아해요."
    ],
-   "en": [],
+   "en": [
+    "Peter likes kimchi.",
+    "Amy doesn't like kimchi.",
+    "Does Mike like coffee?",
+    "Yes, Mike likes coffee a lot.",
+    "Do you like coffee too, Hansaem?",
+    "(한쌤 is my nickname, short for \"Korean teacher.\" In Korean, we often use a name or title instead of \"you.\")",
+    "Yes, I like coffee too.",
+    "Does Alex like coffee too?",
+    "No. Alex doesn't like coffee.",
+    "Hansaem, do you like pizza?",
+    "No. I don't like pizza."
+   ],
    "patterns": [
     "joahaeyo"
    ],
@@ -4823,7 +6215,17 @@
     "소피가 사과 좋아해요. 그래서 소피가 사과 많이 먹어요.",
     "에이미가 김치 안 좋아해요. 그래서 김치 안 먹어요."
    ],
-   "en": [],
+   "en": [
+    "Peter eats bananas.",
+    "Does Sara eat apples?",
+    "Yes, Sara eats apples.",
+    "Does Mina eat kimchi? Yes, she eats it.",
+    "Do you eat kimchi too, Hansaem?",
+    "(한쌤 is my nickname, short for \"Korean teacher.\" In Korean, we often use a name or title instead of \"you.\")",
+    "Yes, I eat kimchi too.",
+    "Sophie likes apples. So Sophie eats a lot of apples.",
+    "Amy doesn't like kimchi. So she doesn't eat kimchi."
+   ],
    "patterns": [
     "meogeoyo"
    ],
@@ -4853,7 +6255,24 @@
     "저 지금 점심 먹으러 갈 건데, 같이 가실래요?",
     "저랑 같이 수영 배울래요?"
    ],
-   "en": [],
+   "en": [
+    "• Minsu: Wanna eat? (Do you want to eat?)",
+    "• Seoyun: Oh, I'd love to! (Sounds good!)",
+    "• Minsu: Do you want to see a movie tomorrow?",
+    "• Seoyun: Sure. Let’s go.",
+    "• Minsu: Why don't we go see a movie tomorrow? (Don't you want to see a movie tomorrow?)",
+    "• Seoyun: I'm in! (Deal! / I'm down!)",
+    "• Minsu: Would you like to have Jajangmyeon or Jjamppong?",
+    "• Colleague: I'll go with Jjamppong.",
+    "• Minsu: What do you want to drink?",
+    "• Seoyun: I'll have a latte.",
+    "• I'm going to have Jajangmyeon, what do you want to have?",
+    "• Can you do the dishes today? (Could you do the dishes today?)",
+    "• I have to work now, but sorry, could you do the dishes today?",
+    "• Excuse me, but could you help me with this?",
+    "• I'm going to grab lunch now, do you want to come along? (Would you like to join me for lunch?)",
+    "• Would you like to learn how to swim with me? (Do you want to take swimming lessons with me?)"
+   ],
    "patterns": [
     "lae"
    ],
@@ -4881,7 +6300,18 @@
     "아, 덥다. 문 좀 열까요?",
     "아, 힘들다. 우리 잠깐 쉴까?"
    ],
-   "en": [],
+   "en": [
+    "Shall we watch a movie tomorrow?",
+    "Honey, shall we go see a movie tomorrow?",
+    "Do you want me to put an egg in the ramyeon?",
+    "Would you like some milk in your coffee?",
+    "Should I serve it hot or cold?",
+    "*식다 to get cold; to cool down",
+    "The pajeon is all cold.  Should I warm up the pajeon for you?",
+    "How many times should I listen to this shadowing practice video?",
+    "It's hot. Should we open the door?",
+    "I'm tired. Shall we take a break?"
+   ],
    "patterns": [
     "kka"
    ],
@@ -4910,7 +6340,20 @@
     "내가 비건이잖아. 근데 여자 친구 때문에 요즘에 매일 고기를 먹어.",
     "내가 맥도날드에 매일 가잖아. 그래서 거기 직원들이 다 나를 알아."
    ],
-   "en": [],
+   "en": [
+    "So last Saturday I went home late after drinking. I got scolded by my dad very hard that day.",
+    "So last Saturday I went home late after drinking. My dad really scolded me that day.",
+    "The thing is, I actually really love soju. But my girlfriend doesn't know yet.",
+    "I usually wake up at 7, you see. But today I was tired so I woke up at 8.",
+    "The thing is, I'm actually vegan. But because of my girlfriend, I've been eating meat every day lately.",
+    "I go to McDonald's every day, you see. So all the staff there know me.",
+    "You know how I went home late after drinking last Saturday, right? I got scolded by my dad so hard that day.",
+    "You know how I went home late after drinking last Saturday, right? My dad really scolded me that day.",
+    "You know how I really love soju, right? But my girlfriend doesn't know yet.",
+    "You know how I usually wake up at 7, right? But today I was tired so I woke up at 8.",
+    "You know how I'm vegan, right? But because of my girlfriend, I've been eating meat every day lately.",
+    "You know how I go to McDonald's every day, right? So all the staff there know me."
+   ],
    "patterns": [
     "geodeun",
     "janha",
@@ -4941,7 +6384,18 @@
     "제가 비건이잖아요. 근데 여자 친구 때문에 요즘에 매일 고기를 먹어요.",
     "제가 맥도날드에 매일 가잖아요. 그래서 거기 직원들이 다 저를 알아요."
    ],
-   "en": [],
+   "en": [
+    "So last Saturday I came home late after drinking. My dad really scolded me that day.",
+    "The thing is, I actually really love soju. But my girlfriend doesn't know yet.",
+    "I usually wake up at 7. But today I was tired so I woke up at 8.",
+    "The thing is, I'm actually vegan. But because of my girlfriend, I've been eating meat every day lately.",
+    "I go to McDonald's every day. So all the staff there know me.",
+    "You know how I came home late after drinking last Saturday, right? My dad really scolded me that day.",
+    "You know how I really love soju, right? But my girlfriend doesn't know yet.",
+    "You know how I usually wake up at 7, right? But today I was tired so I woke up at 8.",
+    "You know how I'm vegan, right? But because of my girlfriend, I've been eating meat every day lately.",
+    "You know how I go to McDonald's every day, right? So all the staff there know me."
+   ],
    "patterns": [
     "geodeun",
     "janha",
