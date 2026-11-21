@@ -354,7 +354,7 @@
   /* ---------- search (part of a sentence or a title) ---------- */
   var query = '';
   function searchBox() {                // phones get the short hint so it isn't cut off
-    var hint = window.matchMedia('(max-width: 480px)').matches ? 'Korean or English, e.g. 배고파 / hungry' : 'Search in Korean or English (e.g. 배고파 / hungry)';
+    var hint = window.matchMedia('(max-width: 480px)').matches ? 'Korean or English, e.g. 학교 / school' : 'Search in Korean or English (e.g. 학교 / school)';
     return '<form class="search" role="search" onsubmit="return false">' +
       '<label class="search-field">' + icon('search') +
       '<input type="search" id="q" placeholder="' + hint + '" value="' + esc(query) + '" autocomplete="off" aria-label="Search videos and books by sentence, word or title">' +
