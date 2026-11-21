@@ -129,7 +129,7 @@
   function sectionHasNew(section) { return (tabsBySection[section] || []).some(tabHasNew); }
 
   /* ---------- sentences + grammar patterns: videos.json (made daily from the teacher's video list) ---------- */
-  var INFO = {};            // id -> { s: [sentences], p: pattern key }
+  var INFO = {};            // id -> { s: [sentences], e: [English lines], p: pattern key }
   var PATTERNS = {};
   var PATTERN_ORDER = [];
   var PATTERN_TABS = [];
@@ -140,7 +140,7 @@
       PATTERNS = d.patterns || {};
       PATTERN_ORDER = d.pattern_order || [];
       PATTERN_TABS = d.pattern_tabs || [];
-      (d.videos || []).forEach(function (v) { INFO[v.id] = { s: v.sentences || [], p: v.pattern || '', ps: v.patterns || [] }; });
+      (d.videos || []).forEach(function (v) { INFO[v.id] = { s: v.sentences || [], e: v.en || [], p: v.pattern || '', ps: v.patterns || [] }; });
       var q = document.getElementById('q');
       var keep = q && document.activeElement === q;
       render(true);
@@ -354,7 +354,7 @@
   /* ---------- search (part of a sentence or a title) ---------- */
   var query = '';
   function searchBox() {                // phones get the short hint so it isn't cut off
-    var hint = window.matchMedia('(max-width: 480px)').matches ? 'e.g. 강아지, want to' : 'Search a word or grammar, e.g. 강아지, want to';
+    var hint = window.matchMedia('(max-width: 480px)').matches ? 'Korean or English, e.g. 배고파 / hungry' : 'Search in Korean or English (e.g. 배고파 / hungry)';
     return '<form class="search" role="search" onsubmit="return false">' +
       '<label class="search-field">' + icon('search') +
       '<input type="search" id="q" placeholder="' + hint + '" value="' + esc(query) + '" autocomplete="off" aria-label="Search videos and books by sentence, word or title">' +
@@ -373,7 +373,7 @@
     var pk = patternHits(q);
     return Object.keys(byId).map(function (id) { return byId[id]; }).filter(function (v) {
       var info = INFO[v.id] || {};
-      return [v.title].concat(info.s || []).some(function (s) { return squash(s).indexOf(nq) >= 0; }) ||
+      return [v.title].concat(info.s || [], info.e || []).some(function (s) { return squash(s).indexOf(nq) >= 0; }) ||
         (info.ps || []).some(function (k) { return pk.indexOf(k) >= 0; });
     });
   }
